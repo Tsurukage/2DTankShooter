@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5eb8d5918e79214d98a99cf54806557, type: 3}
+  m_Name: Bomb_Normal
+  m_EditorClassIdentifier: 
+  type: 0
+  ammon_name: BaicBomb
+  modelPrefab: {fileID: 6202644046553655913, guid: 6262ef0074e27854cb319a6613ca3ee5, type: 3}
+  ammoSpeed: 5
+  ammoDamage: 100
+  impactField: 0
+  ammoColor: {r: 1, g: 1, b: 1, a: 1}
+  rb: {fileID: 4077039197457992611, guid: 6262ef0074e27854cb319a6613ca3ee5, type: 3}
+  lastVelocity: {x: 0, y: 0}
