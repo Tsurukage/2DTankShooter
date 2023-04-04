@@ -18,11 +18,9 @@ public class PlayerInput : MonoBehaviour
     private void GetShottingInput()
     {
         OnShoot?.Invoke();
-        print("Shoot!");
     }
     private void Move(Vector2 input)
     {
-        print(input);
         OnRotateTurret?.Invoke(input);
     }
 }

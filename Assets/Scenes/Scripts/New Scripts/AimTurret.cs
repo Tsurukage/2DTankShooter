@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class AimTurret : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float turretRotationSpeed = 150;
 
-    // Update is called once per frame
-    void Update()
+    public void Aim(Vector2 inputPointerPosition)
     {
-        
+        var desiredAngle = Mathf.Atan2(inputPointerPosition.y, inputPointerPosition.x) * Mathf.Rad2Deg - 90;
+        Quaternion rotation = Quaternion.AngleAxis(desiredAngle, Vector3.forward);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, turretRotationSpeed);
     }
 }
