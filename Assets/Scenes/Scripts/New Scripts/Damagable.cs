@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Damagable : MonoBehaviour
 {
+    [SerializeField] private int MaxHealth = 100;
     [SerializeField] private int health = 0;
     public int Health
     {
@@ -12,8 +11,7 @@ public class Damagable : MonoBehaviour
         set 
         { 
             health = value;
-            var enemy = GetComponent<Enemy>();
-            OnHealthChange?.Invoke((float)Health/enemy.enemyScriptable.maxHealth);
+            OnHealthChange?.Invoke((float)Health/MaxHealth);
         }
     }
 
@@ -25,7 +23,7 @@ public class Damagable : MonoBehaviour
     {
         var enemy = GetComponent<Enemy>();
         if(health == 0)
-            Health = enemy.enemyScriptable.maxHealth;
+            Health = MaxHealth;
     }
 
     public void Hit(int damageppoint)

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DestroyUtl : MonoBehaviour
@@ -11,8 +9,8 @@ public class DestroyUtl : MonoBehaviour
     }
     public void DestroyHelper()
     {
-        print("TankDestroy");
+        print($"{gameObject.name} Destroy");
         Destroy(gameObject);
-        game.ShootingCD();
+        //game.ShootingCD();
     }
 }

@@ -35,7 +35,6 @@ public class MobileJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
     public void OnPointerUp(PointerEventData eventData)
     {
         joyStickTransform.anchoredPosition = Vector2.zero;
-        //OnMove?.Invoke(Vector2.up);
         OnUp?.Invoke();
     }
 
