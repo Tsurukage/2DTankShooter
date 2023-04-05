@@ -15,6 +15,7 @@ public class PlayerInput : MonoBehaviour
         joystick.OnMove += Move;
         joystick.OnUp += GetShottingInput;
     }
+
     private void GetShottingInput()
     {
         OnShoot?.Invoke();

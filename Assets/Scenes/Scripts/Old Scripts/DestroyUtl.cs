@@ -13,6 +13,6 @@ public class DestroyUtl : MonoBehaviour
     {
         print("TankDestroy");
         Destroy(gameObject);
-        game.ShootingCD();
+        //game.ShootingCD();
     }
 }

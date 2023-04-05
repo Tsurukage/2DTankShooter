@@ -36,13 +36,13 @@ public class PlayerController : MonoBehaviour
 
         for (int i = 0; i < reflections; i++)
         {
+            rayLine.positionCount += 1;
             if (Physics2D.Raycast(ray.origin, ray.direction, remainingLength))
             {
-                rayLine.positionCount += 1;
                 rayLine.SetPosition(rayLine.positionCount - 1, raycastHit.point);
                 remainingLength -= Vector2.Distance(ray.origin, raycastHit.point);
-                ray = new Ray2D(raycastHit.point, Vector2.Reflect(ray.direction, raycastHit.normal));
-                if (raycastHit.collider.tag == "Wall")
+                ray = new Ray2D(raycastHit.point, Vector2.Reflect(raycastHit.point, raycastHit.normal));
+                if (raycastHit.collider.tag != "Wall")
                     break;
             }
             else

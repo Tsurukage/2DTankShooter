@@ -6,6 +6,7 @@ public class TankController : MonoBehaviour
 {
     public AimTurret aimTurret;
     public Turret[] turrets;
+    public Laser laser;
 
     public void Start()
     {
@@ -13,6 +14,8 @@ public class TankController : MonoBehaviour
             aimTurret = GetComponentInChildren<AimTurret>();
         if(turrets == null || turrets.Length == 0)
             turrets = GetComponentsInChildren<Turret>();
+        if(laser == null)
+            laser = GetComponentInChildren<Laser>();
     }
     public void HandleShoot()
     {
@@ -20,9 +23,11 @@ public class TankController : MonoBehaviour
         {
             turret.Shoot();
         }
+        laser.EnableLine(false);
     }
     public void HandleTurretMovement(Vector2 rotateVec)
     {
         aimTurret.Aim(rotateVec);
+        laser.EnableLine(true);
     }
 }
