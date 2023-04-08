@@ -15,4 +15,4 @@ MonoBehaviour:
   speed: 20
   damage: 30
   maxDistance: 100
-  bulletSprite: {fileID: 21300000, guid: ea1781115a37c2348a1974c61ebb6d5d, type: 3}
+  bulletSprite: {fileID: 21300000, guid: d7f4d9b040cc95d4087e37c18c62cdb4, type: 3}

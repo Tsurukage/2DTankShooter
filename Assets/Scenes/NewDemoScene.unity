@@ -1388,7 +1388,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ab888066089988440aac7a6e51349346, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10843,9 +10843,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199567998d12d0d499816f3e4a8bf425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabBtn:
-  - {fileID: 2511282831115008338, guid: 29f43704e79442242af6aafc710216f5, type: 3}
-  - {fileID: 2511282831115008338, guid: f47b65070bb3d5e42924951240f435cf, type: 3}
+  _prefabBtn: {fileID: 2511282831115008338, guid: 29f43704e79442242af6aafc710216f5, type: 3}
+  _turretData: {fileID: 11400000, guid: cfe6e93d9d4201346b0158ff32f5ecef, type: 2}
+  _bulletData:
+  - {fileID: 11400000, guid: 87ad101e213cc2a488e30c3047915c63, type: 2}
+  - {fileID: 11400000, guid: 9f6b6541e6d54a7458028d06c10c4a87, type: 2}
   _prefabParent: {fileID: 588323750}
 --- !u!1 &2043196018
 GameObject:
