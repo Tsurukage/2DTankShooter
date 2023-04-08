@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 8434228569781330203}
   m_Layer: 8
   m_Name: ObstacleItem
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,7 +149,7 @@ SpriteRenderer:
   m_SortingLayerID: -1495791489
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -172592163, guid: ef1cfcef76082f5479c738eeab35ffd6, type: 3}
+  m_Sprite: {fileID: -1989206285, guid: ef1cfcef76082f5479c738eeab35ffd6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92609104ee8467640b7bc9fdd95f45b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 40
+  MaxHealth: 20
   health: 0
   OnDead:
     m_PersistentCalls:
@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 8434228570385511521}
   - component: {fileID: 8434228570385511520}
   m_Layer: 0
-  m_Name: "\u94C1\u7BB1"
+  m_Name: "\u6728\u7BB1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

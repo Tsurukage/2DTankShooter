@@ -87,8 +87,8 @@ GameObject:
   - component: {fileID: 8434228569781330200}
   - component: {fileID: 8434228569781330203}
   m_Layer: 9
-  m_Name: ObstacleItem
-  m_TagString: Untagged
+  m_Name: "\u6876"
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 8434228570385511521}
   - component: {fileID: 8434228570385511520}
   m_Layer: 0
-  m_Name: "\u5956\u52B1\u7BB1"
+  m_Name: "\u706B\u836F\u6876"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
