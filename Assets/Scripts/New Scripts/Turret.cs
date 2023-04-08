@@ -33,6 +33,10 @@ public class Turret : MonoBehaviour
             }
         }
     }
+    public void SetBulletData(BulletData bulletdata)
+    {
+        turretData.bulletData = bulletdata;
+    }
     public void Shoot()
     {
         if(canShoot)

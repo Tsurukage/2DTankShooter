@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     private Vector2 startPosition;
     private float conquaredDistance = 0;
     private Rigidbody2D rb2d;
+    bool bulletOutOfbound = false;
 
     public UnityEvent OnHit = new UnityEvent();
 
@@ -27,7 +28,7 @@ public class Bullet : MonoBehaviour
     private void Update()
     {
         conquaredDistance = Vector2.Distance(transform.position, startPosition);
-        if(conquaredDistance >= bulletData.maxDistance)
+        if(conquaredDistance >= bulletData.maxDistance || bulletOutOfbound)
         {
             DisableObject();
         }
@@ -37,6 +38,10 @@ public class Bullet : MonoBehaviour
         rb2d.velocity = Vector2.zero;
         gameObject.SetActive(false);
         Destroy(gameObject);
+    }
+    void OnBecameInvisible()
+    {
+        bulletOutOfbound = true;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
