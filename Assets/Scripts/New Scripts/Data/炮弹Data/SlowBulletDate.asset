@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51f643ce84ad9fa41b1918ee2355b17f, type: 3}
-  m_Name: FastBulletData
+  m_Name: SlowBulletDate
   m_EditorClassIdentifier: 
-  speed: 20
-  damage: 30
+  speed: 5
+  damage: 20
   maxDistance: 100
-  bulletSprite: {fileID: 21300000, guid: ea1781115a37c2348a1974c61ebb6d5d, type: 3}
-  bulletIcon: {fileID: 21300000, guid: d7f4d9b040cc95d4087e37c18c62cdb4, type: 3}
+  splashRange: 2
+  bulletSprite: {fileID: 21300000, guid: ccd677b9c8d055341b91f9a48d4e7135, type: 3}
+  bulletIcon: {fileID: 21300000, guid: 1581ae2beee4122488d057eb57b21c9b, type: 3}
