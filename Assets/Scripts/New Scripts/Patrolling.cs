@@ -13,7 +13,7 @@ public class Patrolling : MonoBehaviour
     void Start()
     {
         tankSprite = GetComponent<SpriteRenderer>();
-        speed = Random.Range(0.3f, 0.5f);
+        //speed = Random.Range(0.3f, 0.5f);
         boolValue = Random.Range(1, 4);
         if (boolValue < 3) moveRight = false;
         if (boolValue > 2) moveRight = true;

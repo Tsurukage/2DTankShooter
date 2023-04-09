@@ -47,11 +47,35 @@ public class Bullet : MonoBehaviour
     {
         print($"Collide {collision.name}");
         OnHit?.Invoke();
-        var damagable = collision.GetComponent<Damagable>();
-        if(damagable != null)
+        if (bulletData.splashRange > 0)
         {
-            damagable.Hit(bulletData.damage);
+            var hitColliders = Physics2D.OverlapCircleAll(transform.position, bulletData.splashRange);
+            foreach (var hitCollider in hitColliders)
+            {
+                var enemy = hitCollider.GetComponent<Damagable>();
+                if (enemy != null)
+                {
+                    var closestPoint = hitCollider.ClosestPoint(transform.position);
+                    var disance = Vector2.Distance(closestPoint, transform.position);
+                    var damagePercentage = Mathf.InverseLerp(bulletData.splashRange, 0, disance);
+                    enemy.Hit((int)(bulletData.damage * damagePercentage));
+                }
+            }
+
+        }
+        else
+        {
+            var damagable = collision.GetComponent<Damagable>();
+            if (damagable != null)
+            {
+                damagable.Hit(bulletData.damage);
+            }
         }
         DisableObject();
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, bulletData.splashRange);
     }
 }
