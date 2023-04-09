@@ -13,7 +13,7 @@ public class SpawnButtonManager : MonoBehaviour
 
     private void Start()
     {
-        Spawn(3);
+        Spawn(_bulletData.Length);
     }
     public void Spawn(int bulletNo)
     {
@@ -21,7 +21,7 @@ public class SpawnButtonManager : MonoBehaviour
         {
             int buttonIndex = i;
             var obj = Instantiate(_prefabBtn, _prefabParent);
-            obj.GetComponent<Image>().sprite = _bulletData[i].bulletSprite;
+            obj.GetComponent<Image>().sprite = _bulletData[i].bulletIcon;
             obj.onClick.AddListener(() => ChangeBulletData(buttonIndex));
         }
     }

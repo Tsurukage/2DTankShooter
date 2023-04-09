@@ -7,4 +7,5 @@ public class BulletData : ScriptableObject
     public int damage = 5;
     public float maxDistance = 10;
     public Sprite bulletSprite;
+    public Sprite bulletIcon;
 }
