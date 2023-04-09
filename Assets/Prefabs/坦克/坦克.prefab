@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 3160857415800144451}
   - component: {fileID: 2324800093519862957}
   - component: {fileID: 3114246529303911151}
+  - component: {fileID: 6807524068642881894}
   m_Layer: 7
   m_Name: Tank
   m_TagString: Untagged
@@ -442,6 +443,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 6807524068642881894}
+        m_TargetAssemblyTypeName: LootBag, Assembly-CSharp
+        m_MethodName: InstantiateLoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: InstantiateLoot
+          m_BoolArgument: 1
+        m_CallState: 2
   OnHealthChange:
     m_PersistentCalls:
       m_Calls:
@@ -500,7 +513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 8975602697230676506, guid: 9b0a69a66191a244fa751fe458d82c49, type: 3}
-  radius: 0.7
+  radius: 0
 --- !u!114 &3114246529303911151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,6 +527,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToinstantiate: {fileID: 2324829210072079084, guid: cfc0f071615a8084ba9257e3585c8499, type: 3}
+--- !u!114 &6807524068642881894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6938841390574633065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91d555845181e55478701fa195a46694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _droppedLootPrefab: {fileID: 4125518036124707129, guid: 2fc9b21e24eeacb48839a3b1f9137df2, type: 3}
+  lootList:
+  - {fileID: 11400000, guid: cfc2dbca668f6c243885e7116f239dea, type: 2}
+  - {fileID: 11400000, guid: 406fbc72c70af8e49b6ce321f3d7612e, type: 2}
 --- !u!1 &7001154017030775731
 GameObject:
   m_ObjectHideFlags: 0
