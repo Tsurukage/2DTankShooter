@@ -10,6 +10,7 @@ public class PlayerInput : MonoBehaviour
 
     void Start()
     {
+        joystick = FindObjectOfType<MobileJoystick>();
         joystick.OnMove += Move;
         joystick.OnUp += GetShottingInput;
     }
