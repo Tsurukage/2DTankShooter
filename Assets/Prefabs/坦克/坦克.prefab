@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 2324800093519862957}
   - component: {fileID: 3114246529303911151}
   - component: {fileID: 6807524068642881894}
+  - component: {fileID: 8193252663119690681}
   m_Layer: 7
   m_Name: Tank
   m_TagString: Untagged
@@ -473,17 +474,17 @@ MonoBehaviour:
   OnHit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
-        m_Mode: 6
+      - m_Target: {fileID: 8193252663119690681}
+        m_TargetAssemblyTypeName: GenerateDamangeValue, Assembly-CSharp
+        m_MethodName: ShowFloatingText
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 5892275062250354497}
+          m_ObjectArgumentAssemblyTypeName: Damagable, Assembly-CSharp
+          m_IntArgument: 30
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &3160857415800144451
 MonoBehaviour:
@@ -543,6 +544,19 @@ MonoBehaviour:
   lootList:
   - {fileID: 11400000, guid: cfc2dbca668f6c243885e7116f239dea, type: 2}
   - {fileID: 11400000, guid: 406fbc72c70af8e49b6ce321f3d7612e, type: 2}
+--- !u!114 &8193252663119690681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6938841390574633065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9932443d82dc37f4688150973ab59be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageValue: {fileID: 8354365977938313074, guid: 5e0d58e812ae85e4fb63142fad14950e, type: 3}
 --- !u!1 &7001154017030775731
 GameObject:
   m_ObjectHideFlags: 0

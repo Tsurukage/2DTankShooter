@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -5,6 +6,13 @@ public class Damagable : MonoBehaviour
 {
     [SerializeField] private int MaxHealth;
     [SerializeField] private int health = 0;
+    private int damageValue;
+
+    public int DamageValue
+    {
+        get { return damageValue; }
+        set { damageValue = value; }
+    }
     public int Health
     {
         get { return health; }
@@ -29,10 +37,13 @@ public class Damagable : MonoBehaviour
 
     public void Hit(int damageppoint)
     {
+        DamageValue = damageppoint;
         Health -= damageppoint;
         if (health <= 0)
             OnDead?.Invoke();
         else
+        {
             OnHit?.Invoke();
+        }
     }
 }
