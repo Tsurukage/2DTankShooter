@@ -75,7 +75,10 @@ public class Bullet : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, bulletData.splashRange);
+        if(bulletData != null)
+        {
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawWireSphere(transform.position, bulletData.splashRange);
+        }
     }
 }
