@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class Damagable : MonoBehaviour
 {
-    [SerializeField] private int MaxHealth = 100;
+    [SerializeField] private int MaxHealth;
     [SerializeField] private int health = 0;
     public int Health
     {
@@ -21,7 +21,8 @@ public class Damagable : MonoBehaviour
 
     private void Start()
     {
-        var enemy = GetComponent<Enemy>();
+        MaxHealth = Health;
+        OnHealthChange?.Invoke((float)Health / MaxHealth);
         if(health == 0)
             Health = MaxHealth;
     }
