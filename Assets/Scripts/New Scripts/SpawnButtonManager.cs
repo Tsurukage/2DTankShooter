@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,21 +9,37 @@ public class SpawnButtonManager : MonoBehaviour
 {
     [SerializeField] private Button _prefabBtn;
     [SerializeField] private TurretData _turretData;
-    [SerializeField] private BulletData[] _bulletData;
+    [SerializeField] List<BulletData> _bulletData = new List<BulletData>();
     [SerializeField] private Transform _prefabParent;
 
     private void Start()
     {
-        Spawn(_bulletData.Length);
+        Spawn();
+        if(_bulletData.Count > 0)
+            ChangeBulletData(0);
     }
-    public void Spawn(int bulletNo)
+    public void Spawn()
     {
-        for(int i =  0; i < bulletNo; i++)
+        var bullet = new List<(Sprite icon, int index)>();
+        for(int i =  0; i < _bulletData.Count; i++)
         {
-            int buttonIndex = i;
+            var blt = _bulletData[i];
+            bullet.Add((blt.bulletIcon, blt.damage));
+
+            //int buttonIndex = i;
+            //var obj = Instantiate(_prefabBtn, _prefabParent);
+            //var childObj = obj.transform.GetChild(0);
+            //childObj.GetComponent<Image>().sprite = _bulletData[i].bulletIcon;
+            //obj.onClick.AddListener(() => ChangeBulletData(buttonIndex));
+        }
+        for(int i = 0; i < bullet.Count; i++)
+        {
+            var bul = bullet[i];
+            var index = i;
             var obj = Instantiate(_prefabBtn, _prefabParent);
-            obj.GetComponent<Image>().sprite = _bulletData[i].bulletIcon;
-            obj.onClick.AddListener(() => ChangeBulletData(buttonIndex));
+            var childObj = obj.transform.GetChild(0);
+            childObj.GetComponent<Image>().sprite = bul.icon;
+            obj.onClick.AddListener(() => ChangeBulletData(index));
         }
     }
 
@@ -33,7 +50,7 @@ public class SpawnButtonManager : MonoBehaviour
 
     public void SetButtonList()
     {
-
+        Spawn();
     }
 
 }
