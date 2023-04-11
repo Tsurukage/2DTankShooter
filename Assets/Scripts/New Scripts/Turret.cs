@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,9 +11,11 @@ public class Turret : MonoBehaviour
     private bool canShoot = true;
     private Collider2D[] tankColliders;
     private float currentDelay = 0;
-
+    
     public UnityEvent OnShoot, OnCantShoot;
     public UnityEvent<float> OnReloading;
+
+    public event Action<bool> OnCountDown;
     private void Awake()
     {
         tankColliders = GetComponentsInParent<Collider2D>();
@@ -30,6 +33,7 @@ public class Turret : MonoBehaviour
             if(currentDelay <= 0)
             {
                 canShoot = true;
+                OnCountDown?.Invoke(canShoot);
             }
         }
     }
@@ -43,7 +47,7 @@ public class Turret : MonoBehaviour
         {
             canShoot = false;
             currentDelay = turretData.reloadDelay;
-
+            OnCountDown?.Invoke(canShoot);
             foreach( var barrel in turretBarrels )
             {
                 GameObject bullet = Instantiate(turretData.bulletPrefab);

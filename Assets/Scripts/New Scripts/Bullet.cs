@@ -45,7 +45,6 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print($"Collide {collision.name}");
         OnHit?.Invoke();
         if (bulletData.splashRange > 0)
         {

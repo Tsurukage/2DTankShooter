@@ -42,4 +42,8 @@ public class MobileJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
     {
         joystickTouchPos = Input.mousePosition;
     }
+    public void SetInteraction(bool isInteractable)
+    {
+        gameObject.SetActive(isInteractable);
+    }
 }

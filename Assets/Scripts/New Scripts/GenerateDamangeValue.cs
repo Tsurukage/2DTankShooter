@@ -13,6 +13,5 @@ public class GenerateDamangeValue : MonoBehaviour
         text.color = Color.red;
         var obj = Instantiate(_damageValue);
         obj.transform.position = transform.position + offset;
-
     }
 }

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f643ce84ad9fa41b1918ee2355b17f, type: 3}
   m_Name: FastBulletData
   m_EditorClassIdentifier: 
-  speed: 20
-  damage: 100
+  speed: 15
+  damage: 50
   maxDistance: 100
   splashRange: 0
   bulletSprite: {fileID: 21300000, guid: ea1781115a37c2348a1974c61ebb6d5d, type: 3}

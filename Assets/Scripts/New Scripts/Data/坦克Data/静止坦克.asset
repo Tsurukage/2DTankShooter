@@ -15,5 +15,5 @@ MonoBehaviour:
   enemySprite: {fileID: 1163555837, guid: b61938574437fa44aa75a28086378059, type: 3}
   enemyName: "\u9759\u6B62\u5766\u514B"
   enemySpeed: 0
-  maxHealth: 200
-  position: {x: 2, y: -3}
+  maxHealth: 300
+  position: {x: -0.5, y: -0.5}

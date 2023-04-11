@@ -9,7 +9,6 @@ public class DestroyUtl : MonoBehaviour
     }
     public void DestroyHelper()
     {
-        print($"{gameObject.name} Destroy");
         Destroy(gameObject);
         //game.ShootingCD();
     }
