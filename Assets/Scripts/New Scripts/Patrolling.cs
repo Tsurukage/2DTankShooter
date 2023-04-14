@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class Patrolling : MonoBehaviour
 {
-    public float speed = 0;
+    [SerializeField] private float speed = 0;
+    public float Speed
+    {
+        get { return speed; }
+        set { speed = value; }
+    }
     private SpriteRenderer tankSprite;
     public float boundary;
     private int boolValue;
@@ -25,14 +30,14 @@ public class Patrolling : MonoBehaviour
     {
         if(moveRight)
         {
-            transform.Translate(speed * Time.deltaTime, 0, 0);
+            transform.Translate(Speed * Time.deltaTime, 0, 0);
             tankSprite.flipX = moveRight;
             if (transform.position.x > boundary)
                 moveRight = false;
         }
         else
         {
-            transform.Translate(-speed * Time.deltaTime, 0, 0);
+            transform.Translate(-Speed * Time.deltaTime, 0, 0);
             tankSprite.flipX = moveRight;
             if (transform.position.x < -boundary)
                 moveRight = true;

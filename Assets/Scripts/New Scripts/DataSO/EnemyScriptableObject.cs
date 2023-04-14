@@ -7,7 +7,6 @@ public class EnemyScriptableObject : ScriptableObject
     public string enemyName;
     public float enemySpeed = 0;
     public int maxHealth = 100;
-    public Vector2 position = new Vector2();
 
     public EnemyScriptableObject(string enemyName, float enemySpeed, int maxHealth)
     {

@@ -12,9 +12,10 @@ public class Enemy : MonoBehaviour
     {
         foreach(EnemyScriptableObject enemy in _enemyList)
         {
-            GameObject enemyGO = Instantiate(_enemyPrefab, enemy.position, Quaternion.identity);
+            GameObject enemyGO = Instantiate(_enemyPrefab);
+            enemyGO.transform.rotation = Quaternion.identity;
             enemyGO.GetComponentInChildren<SpriteRenderer>().sprite = enemy.enemySprite;
-            enemyGO.GetComponentInChildren<Patrolling>().speed = enemy.enemySpeed;
+            enemyGO.GetComponentInChildren<Patrolling>().Speed = enemy.enemySpeed;
             enemyGO.GetComponentInChildren<Damagable>().Health = enemy.maxHealth;
         }
     }
