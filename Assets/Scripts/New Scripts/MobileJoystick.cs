@@ -44,6 +44,6 @@ public class MobileJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
     }
     public void SetInteraction(bool isInteractable)
     {
-        gameObject.SetActive(isInteractable);
+        transform.parent.gameObject.SetActive(isInteractable);
     }
 }
