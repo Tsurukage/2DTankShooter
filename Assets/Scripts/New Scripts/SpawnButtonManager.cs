@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,9 +11,11 @@ public class SpawnButtonManager : MonoBehaviour
     [SerializeField] private Transform _prefabParent;
 
     [SerializeField] private ScrollRect _scrollRect;
+    private SimpleGame _game;
 
     private void Start()
     {
+        _game = FindObjectOfType<SimpleGame>();
         Spawn();
         if (_bulletData.Count > 0)
             ChangeBulletData(0);
@@ -41,10 +44,15 @@ public class SpawnButtonManager : MonoBehaviour
             obj.onClick.AddListener(() => ChangeBulletData(index));
         }
     }
-
     private void ChangeBulletData(int buttonIndex)
     {
         _turretData.bulletData = _bulletData[buttonIndex];
+        for (int i = 0; i < _prefabParent.childCount; i++)
+        {
+            var btn = _prefabParent.GetChild(i);
+            var isSelected = i == buttonIndex;
+            btn.Find("img_selected").gameObject.SetActive(isSelected);
+        }
     }
 
     public void SetButtonList()
@@ -60,5 +68,18 @@ public class SpawnButtonManager : MonoBehaviour
             Destroy(childObj.gameObject);
         }
     }
-
+    
+}
+class PrefabButton
+{
+    private Image img_icon { get; }
+    private int ButtonIndex { get; }
+    private Button btn_bullet { get; }
+    private Image img_selected { get; }
+    public PrefabButton(int buttonIndex) 
+    {
+        ButtonIndex = buttonIndex;
+        img_icon = GameObject.Find("").GetComponent<Image>();
+        btn_bullet = GameObject.Find("").GetComponent<Button>();
+    }
 }
