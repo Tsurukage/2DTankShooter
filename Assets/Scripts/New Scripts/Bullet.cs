@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
     bool bulletOutOfbound = false;
 
     public UnityEvent OnHit = new UnityEvent();
+    public UnityEvent OnDestroy = new UnityEvent();
 
     private void Awake()
     {
@@ -36,8 +37,7 @@ public class Bullet : MonoBehaviour
     private void DisableObject()
     {
         rb2d.velocity = Vector2.zero;
-        gameObject.SetActive(false);
-        Destroy(gameObject);
+        OnDestroy?.Invoke();
     }
     void OnBecameInvisible()
     {

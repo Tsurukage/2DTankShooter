@@ -11,7 +11,7 @@ public class AmmoDestroyUtl : MonoBehaviour
     {
         print("AmmoDestroy");
         Destroy(gameObject);
-        game.Count();
+        //game.Count();
     }
 
     

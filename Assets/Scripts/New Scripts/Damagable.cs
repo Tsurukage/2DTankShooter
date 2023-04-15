@@ -41,7 +41,6 @@ public class Damagable : MonoBehaviour
         DamageValue = damageppoint;
         Health -= damageppoint;
         if (health <= 0)
-            //OnDead?.Invoke();
             StartCoroutine(Dead());
         else
         {
@@ -52,7 +51,5 @@ public class Damagable : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         OnDead?.Invoke();
-        var tankCount = FindObjectOfType<GameController>();
-        tankCount.TankCount();
     }
 }

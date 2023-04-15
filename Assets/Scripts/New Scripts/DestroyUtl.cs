@@ -2,14 +2,21 @@ using UnityEngine;
 
 public class DestroyUtl : MonoBehaviour
 {
-    private SimpleGame game;
+    private SimpleGame _game;
     private void Start()
     {
-        game = FindObjectOfType<SimpleGame>();
+        _game = FindObjectOfType<SimpleGame>();
     }
     public void DestroyHelper()
     {
         Destroy(gameObject);
-        //game.ShootingCD();
+    }
+    public void UpdateTankCount()
+    {
+        _game.UpdateTankCount();
+    }
+    public void UpdateShootingCount()
+    {
+        _game.UpdateShootingCount();
     }
 }

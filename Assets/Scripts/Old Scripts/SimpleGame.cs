@@ -1,42 +1,48 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class SimpleGame : MonoBehaviour
 {
-    public int shootingCount = 3;
-    public int tankCount;
-    public Text valueText, valueText2;
-    public Transform tankLt;
-    public Transform stageClearPanel, gameOverPanel;
+    [SerializeField] List<EnemyComp> _enemyComp;
+    [SerializeField] private int shootingCount = 3;
+    [SerializeField] private int tankCount;
+    [SerializeField] private GameObject _tankPrefab;
+    public Transform _canvas, _stageClearPanel, _gameOverPanel;
+
+    public UnityEvent<string> OnTankUpdate = new UnityEvent<string>();
+    public UnityEvent<string> OnShootingUpdate = new UnityEvent<string>();
     // Start is called before the first frame update
     void Awake()
     {
-        tankCount = tankLt.childCount;
-        if(valueText != null)
-            valueText.text = tankCount.ToString();
-        if (valueText2 != null)
-            valueText2.text = shootingCount.ToString();
+        tankCount = _enemyComp.Count;
+        OnTankUpdate?.Invoke(tankCount.ToString());
+        OnShootingUpdate?.Invoke(shootingCount.ToString());
+        SpawnCurrentLevel();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void SpawnCurrentLevel()
     {
-        
+        foreach(EnemyComp enemyComp in _enemyComp)
+        {
+            GameObject enemyGO = Instantiate(_tankPrefab);
+            enemyGO.transform.position = enemyComp.position;
+            enemyGO.GetComponentInChildren<SpriteRenderer>().sprite = enemyComp._enemySO.enemySprite;
+            enemyGO.GetComponentInChildren<Patrolling>().Speed = enemyComp._enemySO.enemySpeed;
+            enemyGO.GetComponentInChildren<Damagable>().Health = enemyComp._enemySO.maxHealth;
+        }
     }
-
-    public void ShootingCD()
+    public void UpdateTankCount()
     {
-        if(tankCount > 0)
-            tankCount--;
-        valueText.text = tankCount.ToString();
+        tankCount--;
+        OnTankUpdate?.Invoke(tankCount.ToString());
         CheckGame();
-        
     }
-    public void Count()
+    public void UpdateShootingCount()
     {
-        if (shootingCount > 0)
-            shootingCount--;
-        valueText2.text = shootingCount.ToString();
+        shootingCount--;
+        OnShootingUpdate?.Invoke(shootingCount.ToString());
         CheckGame();
     }
     public void CheckGame()
@@ -44,14 +50,21 @@ public class SimpleGame : MonoBehaviour
         if (tankCount == 0)
         {
             Debug.Log("Stage Complete");
-            var gL = Instantiate(stageClearPanel, transform.parent);
+            var gL = Instantiate(_stageClearPanel, _canvas);
             gL.gameObject.SetActive(true);
         }
         else if (tankCount > 0 && shootingCount == 0)
         {
             Debug.Log("Game Over!");
-            var gL = Instantiate(gameOverPanel, transform.parent);
+            var gL = Instantiate(_gameOverPanel, _canvas);
             gL.gameObject.SetActive(true);
         }
     }
+}
+[Serializable]
+public class EnemyComp
+{
+    public string _name;
+    public EnemyScriptableObject _enemySO;
+    public Vector2 position;
 }
