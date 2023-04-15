@@ -22,11 +22,11 @@ public class SpawnButtonManager : MonoBehaviour
     }
     public void Spawn()
     {
-        var bullet = new List<(Sprite icon, int index)>();
+        var bullet = new List<(Sprite icon, Sprite gradeBase ,int index)>();
         for (int i = 0; i < _bulletData.Count; i++)
         {
             var blt = _bulletData[i];
-            bullet.Add((blt.bulletIcon, blt.damage));
+            bullet.Add((blt.bulletIcon, blt.bulletGradeBase, blt.damage));
 
             //int buttonIndex = i;
             //var obj = Instantiate(_prefabBtn, _prefabParent);
@@ -39,6 +39,7 @@ public class SpawnButtonManager : MonoBehaviour
             var bul = bullet[i];
             var index = i;
             var obj = Instantiate(_prefabBtn, _prefabParent);
+            obj.GetComponent<Image>().sprite = bul.gradeBase; 
             var childObj = obj.transform.GetChild(0);
             childObj.GetComponent<Image>().sprite = bul.icon;
             obj.onClick.AddListener(() => ChangeBulletData(index));

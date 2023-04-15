@@ -9,4 +9,5 @@ public class BulletData : ScriptableObject
     public float splashRange = 1;
     public Sprite bulletSprite;
     public Sprite bulletIcon;
+    public Sprite bulletGradeBase;
 }

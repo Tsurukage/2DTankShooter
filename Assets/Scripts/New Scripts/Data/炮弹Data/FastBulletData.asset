@@ -18,3 +18,4 @@ MonoBehaviour:
   splashRange: 0
   bulletSprite: {fileID: 21300000, guid: ea1781115a37c2348a1974c61ebb6d5d, type: 3}
   bulletIcon: {fileID: 21300000, guid: d7f4d9b040cc95d4087e37c18c62cdb4, type: 3}
+  bulletGradeBase: {fileID: 21300000, guid: a660f2a32cc32b546a347330db045595, type: 3}
