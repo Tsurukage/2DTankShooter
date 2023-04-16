@@ -12,7 +12,7 @@ public class SpawnButtonManager : MonoBehaviour
 
     [SerializeField] private ScrollRect _scrollRect;
     private SimpleGame _game;
-
+    private int SelectedIndex { get; set; }
     private void Start()
     {
         _game = FindObjectOfType<SimpleGame>();
@@ -22,26 +22,20 @@ public class SpawnButtonManager : MonoBehaviour
     }
     public void Spawn()
     {
-        var bullet = new List<(Sprite icon, Sprite gradeBase ,int index)>();
+        var bullets = new List<(Sprite icon, Sprite gradeBase ,int index)>();
         for (int i = 0; i < _bulletData.Count; i++)
         {
             var blt = _bulletData[i];
-            bullet.Add((blt.bulletIcon, blt.bulletGradeBase, blt.damage));
-
-            //int buttonIndex = i;
-            //var obj = Instantiate(_prefabBtn, _prefabParent);
-            //var childObj = obj.transform.GetChild(0);
-            //childObj.GetComponent<Image>().sprite = _bulletData[i].bulletIcon;
-            //obj.onClick.AddListener(() => ChangeBulletData(buttonIndex));
+            bullets.Add((blt.bulletIcon, blt.bulletGradeBase, blt.damage));
         }
-        for (int i = 0; i < bullet.Count; i++)
+        for (int i = 0; i < bullets.Count; i++)
         {
-            var bul = bullet[i];
+            var bullet = bullets[i];
             var index = i;
             var obj = Instantiate(_prefabBtn, _prefabParent);
-            obj.GetComponent<Image>().sprite = bul.gradeBase; 
+            obj.GetComponent<Image>().sprite = bullet.gradeBase; 
             var childObj = obj.transform.GetChild(0);
-            childObj.GetComponent<Image>().sprite = bul.icon;
+            childObj.GetComponent<Image>().sprite = bullet.icon;
             obj.onClick.AddListener(() => ChangeBulletData(index));
         }
     }
@@ -53,6 +47,8 @@ public class SpawnButtonManager : MonoBehaviour
             var btn = _prefabParent.GetChild(i);
             var isSelected = i == buttonIndex;
             btn.Find("img_selected").gameObject.SetActive(isSelected);
+            SelectedIndex = buttonIndex;
+            print(SelectedIndex);
         }
     }
 
@@ -63,24 +59,24 @@ public class SpawnButtonManager : MonoBehaviour
     }
     public void Remove()
     {
-        for (int i = 0; i < _prefabParent.childCount; i++)
+        if (_bulletData.Count > 0)
         {
-            var childObj = _prefabParent.GetChild(i);
-            Destroy(childObj.gameObject);
+            if (SelectedIndex > 0)
+            {
+                _bulletData.RemoveAt(SelectedIndex);
+                var childObject = _prefabParent.GetChild(SelectedIndex).gameObject;
+                Destroy(childObject);
+                ChangeBulletData(0);
+            }
         }
-    }
-    
-}
-class PrefabButton
-{
-    private Image img_icon { get; }
-    private int ButtonIndex { get; }
-    private Button btn_bullet { get; }
-    private Image img_selected { get; }
-    public PrefabButton(int buttonIndex) 
-    {
-        ButtonIndex = buttonIndex;
-        img_icon = GameObject.Find("").GetComponent<Image>();
-        btn_bullet = GameObject.Find("").GetComponent<Button>();
+        if(_bulletData.Count == 0)
+        {
+            for(int i =0; i  < _prefabParent.childCount; i++)
+            {
+                var childObje = _prefabParent.GetChild(i).gameObject;
+                Destroy(childObje);
+                _turretData.bulletData = null;
+            }
+        }
     }
 }

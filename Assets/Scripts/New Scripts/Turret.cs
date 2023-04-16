@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -43,28 +43,33 @@ public class Turret : MonoBehaviour
     }
     public void Shoot()
     {
-        if(canShoot)
+        if (turretData.bulletData != null)
         {
-            canShoot = false;
-            currentDelay = turretData.reloadDelay;
-            OnCountDown?.Invoke(canShoot);
-            foreach( var barrel in turretBarrels )
+            if (canShoot)
             {
-                GameObject bullet = Instantiate(turretData.bulletPrefab);
-                bullet.transform.position = barrel.position;
-                bullet.transform.localRotation = barrel.rotation;
-                bullet.GetComponent<Bullet>().Initialize(turretData.bulletData);
-                foreach (var collider in tankColliders )
+                canShoot = false;
+                currentDelay = turretData.reloadDelay;
+                OnCountDown?.Invoke(canShoot);
+                foreach (var barrel in turretBarrels)
                 {
-                    Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), collider);
+                    GameObject bullet = Instantiate(turretData.bulletPrefab);
+                    bullet.transform.position = barrel.position;
+                    bullet.transform.localRotation = barrel.rotation;
+                    bullet.GetComponent<Bullet>().Initialize(turretData.bulletData);
+                    foreach (var collider in tankColliders)
+                    {
+                        Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), collider);
+                    }
                 }
+                OnShoot?.Invoke();
+                OnReloading?.Invoke(currentDelay);
             }
-            OnShoot?.Invoke();
-            OnReloading?.Invoke(currentDelay);
+            else
+            {
+                OnCantShoot?.Invoke();
+            }
         }
         else
-        {
-            OnCantShoot?.Invoke();
-        }
+            print("炮弹库存为0");
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LootBag : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class LootBag : MonoBehaviour
         {
             GameObject lootGO = Instantiate(_droppedLootPrefab, transform.position, Quaternion.identity);
             lootGO.GetComponent<SpriteRenderer>().sprite = droppedItem.lootSprite;
-
+            //lootGO.GetComponent<LootInfo>().SetLootInfo();
             float dropforce = 2f;
             Vector2 dropDirection = Vector2.up;
             lootGO.GetComponent<Rigidbody2D>().AddForce(dropDirection * dropforce, ForceMode2D.Impulse);

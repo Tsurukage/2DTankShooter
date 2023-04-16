@@ -3,9 +3,11 @@ using UnityEngine;
 public class DestroyUtl : MonoBehaviour
 {
     private SimpleGame _game;
+    private SpawnButtonManager _spawnButtonManager;
     private void Start()
     {
         _game = FindObjectOfType<SimpleGame>();
+        _spawnButtonManager = FindObjectOfType<SpawnButtonManager>();
     }
     public void DestroyHelper()
     {
@@ -18,5 +20,9 @@ public class DestroyUtl : MonoBehaviour
     public void UpdateShootingCount()
     {
         _game.UpdateShootingCount();
+    }
+    public void RemoveBullet()
+    {
+        _spawnButtonManager.Remove();
     }
 }
