@@ -576,7 +576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reflections: 3
-  maxLength: 4
+  maxLength: 10
   layerMask:
     serializedVersion: 2
     m_Bits: 384

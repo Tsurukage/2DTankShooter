@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 8434228569781330200}
   - component: {fileID: 8434228569781330203}
   m_Layer: 8
-  m_Name: ObstacleItem
+  m_Name: IronObstacle
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

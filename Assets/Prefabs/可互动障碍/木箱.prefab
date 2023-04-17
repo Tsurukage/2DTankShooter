@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 8434228569781330203}
   - component: {fileID: 3358594582895970663}
   m_Layer: 8
-  m_Name: ObstacleItem
+  m_Name: WoodenObstacle
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

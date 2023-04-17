@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -32,6 +33,7 @@ public class Bullet : MonoBehaviour
         if(conquaredDistance >= bulletData.maxDistance || bulletOutOfbound)
         {
             DisableObject();
+            OnHit?.Invoke();
         }
     }
     private void DisableObject()
@@ -43,35 +45,62 @@ public class Bullet : MonoBehaviour
     {
         bulletOutOfbound = true;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collider)
     {
         OnHit?.Invoke();
-        if (bulletData.splashRange > 0)
+        var bulletType = bulletData.bulletType;
+        var damage = bulletData.damage;
+        switch (bulletType)
         {
-            var hitColliders = Physics2D.OverlapCircleAll(transform.position, bulletData.splashRange);
-            foreach (var hitCollider in hitColliders)
-            {
-                var enemy = hitCollider.GetComponent<Damagable>();
-                if (enemy != null)
+            case BulletType.SingleHit:
+                var damagable = collider.GetComponent<Damagable>();
+                if (damagable != null)
+                    damagable.Hit(damage);
+                DisableObject();
+                break;
+            case BulletType.Explosion:
+                if (bulletData.splashRange > 0)
                 {
-                    var closestPoint = hitCollider.ClosestPoint(transform.position);
-                    var disance = Vector2.Distance(closestPoint, transform.position);
-                    var damagePercentage = Mathf.InverseLerp(bulletData.splashRange, 0, disance);
-                    enemy.Hit((int)(bulletData.damage * damagePercentage));
+                    var hitColliders = Physics2D.OverlapCircleAll(transform.position, bulletData.splashRange);
+                    foreach (var hitCollider in hitColliders)
+                    {
+                        var childDamagable = hitCollider.GetComponent<Damagable>();
+                        if (childDamagable != null)
+                        {
+                            var closestPoint = hitCollider.ClosestPoint(transform.position);
+                            var disance = Vector2.Distance(closestPoint, transform.position);
+                            var damagePercentage = Mathf.InverseLerp(bulletData.splashRange, 0, disance);
+                            childDamagable.Hit((int)(damage * damagePercentage));
+                        }
+                    }
+                    DisableObject();
                 }
-            }
-
+                break;
+            case BulletType.Penetrate:
+                var penDamagable = collider.GetComponent<Damagable>();
+                if (penDamagable != null)
+                    penDamagable.Hit(damage);
+                break;
+            case BulletType.ReflectBullet:
+                var trigger = GetComponent<Collider2D>();
+                if (collider.tag != "Obstacle")
+                {
+                    trigger.isTrigger = true;
+                    var reflDamagable = collider.GetComponent<Damagable>();
+                    if(reflDamagable != null)
+                    {
+                        reflDamagable.Hit(damage);
+                    }
+                    DisableObject();
+                }
+                else
+                    trigger.isTrigger = false;
+                break;
+            default:
+                break;
         }
-        else
-        {
-            var damagable = collision.GetComponent<Damagable>();
-            if (damagable != null)
-            {
-                damagable.Hit(bulletData.damage);
-            }
-        }
-        DisableObject();
     }
+
     private void OnDrawGizmos()
     {
         if(bulletData != null)

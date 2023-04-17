@@ -21,6 +21,8 @@ public class SimpleGame : MonoBehaviour
         OnTankUpdate?.Invoke(tankCount.ToString());
         OnShootingUpdate?.Invoke(shootingCount.ToString());
         SpawnCurrentLevel();
+        _gameOverPanel.gameObject.SetActive(false);
+        _stageClearPanel.gameObject.SetActive(false);
     }
     private void SpawnCurrentLevel()
     {
@@ -50,14 +52,12 @@ public class SimpleGame : MonoBehaviour
         if (tankCount == 0)
         {
             Debug.Log("Stage Complete");
-            var gL = Instantiate(_stageClearPanel, _canvas);
-            gL.gameObject.SetActive(true);
+            _stageClearPanel.gameObject.SetActive(true);
         }
         else if (tankCount > 0 && shootingCount == 0)
         {
             Debug.Log("Game Over!");
-            var gL = Instantiate(_gameOverPanel, _canvas);
-            gL.gameObject.SetActive(true);
+            _gameOverPanel.gameObject.SetActive(true);
         }
     }
 }
