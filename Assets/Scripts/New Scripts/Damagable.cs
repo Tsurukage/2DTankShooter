@@ -49,7 +49,7 @@ public class Damagable : MonoBehaviour
     }
     IEnumerator Dead()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2f);
         OnDead?.Invoke();
     }
 }
