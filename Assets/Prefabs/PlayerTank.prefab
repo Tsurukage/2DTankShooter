@@ -580,7 +580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reflections: 3
-  maxLength: 10
+  maxLength: 4
   layerMask:
     serializedVersion: 2
     m_Bits: 384
@@ -961,6 +961,10 @@ PrefabInstance:
     - target: {fileID: 1252571334833816, guid: efea009c0c15a28419d3b4f8cabaa2c7, type: 3}
       propertyPath: m_Name
       value: Casting
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252571334833816, guid: efea009c0c15a28419d3b4f8cabaa2c7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4980011503067782, guid: efea009c0c15a28419d3b4f8cabaa2c7, type: 3}
       propertyPath: m_RootOrder
