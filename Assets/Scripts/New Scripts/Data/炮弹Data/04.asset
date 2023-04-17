@@ -15,11 +15,9 @@ MonoBehaviour:
   bulletName: "\u706B\u795E\u2160\u53F7"
   speed: 10
   damage: 100
-  hitCount: 0
   maxDistance: 20
   bulletSprite: {fileID: 21300000, guid: 1ea096cb371d5d542bc3bf6eb2c3e395, type: 3}
   bulletIcon: {fileID: 21300000, guid: dedd543f51dd3db4fb29b15880c86325, type: 3}
   bulletGradeBase: {fileID: 21300000, guid: a660f2a32cc32b546a347330db045595, type: 3}
-  splashRange: 2
+  splashRange: 3
   bulletType: 1
-  lastVelocity: {x: 0, y: 0}
