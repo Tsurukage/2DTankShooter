@@ -18,10 +18,12 @@ public class SpawnButtonManager : MonoBehaviour
         _game = FindObjectOfType<SimpleGame>();
         Spawn();
         if (_bulletData.Count > 0)
-            ChangeBulletData(0);
+            ChangeBulletData(SelectedIndex);
     }
     public void Spawn()
     {
+        ClearChild();
+        ChangeBulletData(0);
         var bullets = new List<(Sprite icon, Sprite gradeBase ,int index)>();
         for (int i = 0; i < _bulletData.Count; i++)
         {
@@ -78,5 +80,18 @@ public class SpawnButtonManager : MonoBehaviour
                 _turretData.bulletData = null;
             }
         }
+        Spawn();
     }
+    void ClearChild()
+    {
+        if (_prefabParent.childCount > 0)
+        {
+            for (int i = 0; i < _prefabParent.childCount; i++)
+            {
+                var childObj = _prefabParent.GetChild(i).gameObject;
+                Destroy(childObj);
+            }
+        }
+    }
+
 }
