@@ -24,18 +24,20 @@ public class SpawnButtonManager : MonoBehaviour
     {
         ClearChild();
         ChangeBulletData(0);
-        var bullets = new List<(Sprite icon, Sprite gradeBase ,int index)>();
+        var bullets = new List<(Sprite icon, Sprite gradeBase ,int index, string name)>();
         for (int i = 0; i < _bulletData.Count; i++)
         {
             var blt = _bulletData[i];
-            bullets.Add((blt.bulletIcon, blt.bulletGradeBase, blt.damage));
+            bullets.Add((blt.bulletIcon, blt.bulletGradeBase, blt.damage, blt.bulletName));
         }
         for (int i = 0; i < bullets.Count; i++)
         {
             var bullet = bullets[i];
             var index = i;
             var obj = Instantiate(_prefabBtn, _prefabParent);
-            obj.GetComponent<Image>().sprite = bullet.gradeBase; 
+            obj.GetComponent<Image>().sprite = bullet.gradeBase;
+            var text = obj.GetComponentInChildren<Text>(); //obj.transform.GetChild(2).GetComponent<Text>();
+            text.text = bullet.name;
             var childObj = obj.transform.GetChild(0);
             childObj.GetComponent<Image>().sprite = bullet.icon;
             obj.onClick.AddListener(() => ChangeBulletData(index));
