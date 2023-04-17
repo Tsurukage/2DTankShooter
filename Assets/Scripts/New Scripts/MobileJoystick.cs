@@ -12,6 +12,7 @@ public class MobileJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
 
     public event Action<Vector2> OnMove;
     public event Action OnUp;
+    public event Action OnDown;
 
     private void Awake()
     {
@@ -41,6 +42,7 @@ public class MobileJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
     public void OnPointerDown(PointerEventData eventData)
     {
         joystickTouchPos = Input.mousePosition;
+        OnDown?.Invoke();
     }
     public void SetInteraction(bool isInteractable)
     {

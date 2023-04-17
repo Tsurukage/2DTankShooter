@@ -8,6 +8,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private Turret turret;
     public UnityEvent OnShoot = new UnityEvent();
     public UnityEvent<Vector2> OnRotateTurret = new UnityEvent<Vector2>();
+    public UnityEvent OnCasting = new UnityEvent();
     // Start is called before the first frame update
 
     void Start()
@@ -17,6 +18,12 @@ public class PlayerInput : MonoBehaviour
         joystick.OnMove += Move;
         joystick.OnUp += GetShottingInput;
         turret.OnCountDown += SetInteraction;
+        joystick.OnDown += GetInputDown;
+    }
+
+    private void GetInputDown()
+    {
+        OnCasting?.Invoke();
     }
 
     private void SetInteraction(bool isInteractable)

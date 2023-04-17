@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewBulletData", menuName = "Data/BulletData")]
 public class BulletData : ScriptableObject
@@ -6,14 +6,12 @@ public class BulletData : ScriptableObject
     public string bulletName;
     public float speed = 100;
     public int damage = 5;
-    public int hitCount = 0;
     public float maxDistance = 10;
     public Sprite bulletSprite;
     public Sprite bulletIcon;
     public Sprite bulletGradeBase;
     public float splashRange = 1;
     public BulletType bulletType;
-    public Vector2 lastVelocity;
     public BulletData(string bulletName, float speed, int damage, float maxDistance, float splashRange, Sprite bulletSprite, Sprite bulletIcon, Sprite bulletGradeBase)
     {
         this.bulletName = bulletName;
@@ -28,8 +26,8 @@ public class BulletData : ScriptableObject
 }
 public enum BulletType
 {
-    SingleHit,
-    Explosion,
-    Penetrate,
-    ReflectBullet
+    SingleHit,      //单发
+    Explosion,      //爆炸
+    Penetrate,      //穿透
+    ReflectBullet   //弹射
 }
