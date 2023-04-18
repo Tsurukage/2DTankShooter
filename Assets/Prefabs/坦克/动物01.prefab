@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 8986129765170244921}
   - component: {fileID: 3319313375955575461}
   m_Layer: 0
-  m_Name: "\u52A8\u7269"
+  m_Name: "\u52A8\u726901"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -514,7 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fad8e0705670f848814ef38175ed9d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 100004, guid: e463141fb849fa84eba84b8688640df4, type: 3}
+  objectPrefab: {fileID: 7057526050772005932, guid: 0cd63d9b6e56bda4c92d812f871e53a7, type: 3}
   radius: 0
 --- !u!114 &3114246529303911151
 MonoBehaviour:
@@ -711,6 +711,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1393087183
   m_SortingOrder: 0
   m_TargetDisplay: 0
