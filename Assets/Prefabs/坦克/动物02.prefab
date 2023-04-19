@@ -528,7 +528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f44f3ebe0eec6174da6218bc4d7878f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToinstantiate: {fileID: 2324829210072079084, guid: cfc0f071615a8084ba9257e3585c8499, type: 3}
+  objectToinstantiate: {fileID: 2324829210072079084, guid: d98c300f55997e34ba9793fe8d60c7ee, type: 3}
 --- !u!114 &6807524068642881894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -711,6 +711,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1393087183
   m_SortingOrder: 0
   m_TargetDisplay: 0
