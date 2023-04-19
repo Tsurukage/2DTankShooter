@@ -38,7 +38,7 @@ public class SpawnButtonManager : MonoBehaviour
             obj.GetComponent<Image>().sprite = bullet.gradeBase;
             var text = obj.GetComponentInChildren<Text>(); //obj.transform.GetChild(2).GetComponent<Text>();
             text.text = bullet.name;
-            var childObj = obj.transform.GetChild(0);
+            var childObj = obj.transform.Find("img_bullet");
             childObj.GetComponent<Image>().sprite = bullet.icon;
             obj.onClick.AddListener(() => ChangeBulletData(index));
         }
@@ -52,7 +52,6 @@ public class SpawnButtonManager : MonoBehaviour
             var isSelected = i == buttonIndex;
             btn.Find("img_selected").gameObject.SetActive(isSelected);
             SelectedIndex = buttonIndex;
-            print(SelectedIndex);
         }
     }
 
@@ -95,5 +94,9 @@ public class SpawnButtonManager : MonoBehaviour
             }
         }
     }
-
+    public void AddToList(BulletData data)
+    {
+        _bulletData.Add(data);
+        Spawn();
+    }
 }

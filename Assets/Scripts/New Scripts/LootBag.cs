@@ -32,12 +32,17 @@ public class LootBag : MonoBehaviour
         Loot droppedItem = GetDroppedLootItem();
         if(droppedItem != null)
         {
-            GameObject lootGO = Instantiate(_droppedLootPrefab, transform.position, Quaternion.identity);
-            lootGO.GetComponent<SpriteRenderer>().sprite = droppedItem.lootSprite;
-            //lootGO.GetComponent<LootInfo>().SetLootInfo();
-            float dropforce = 2f;
-            Vector2 dropDirection = Vector2.up;
-            lootGO.GetComponent<Rigidbody2D>().AddForce(dropDirection * dropforce, ForceMode2D.Impulse);
+            GameObject lootGO = Instantiate(_droppedLootPrefab);
+            lootGO.transform.position = transform.position;
+            var lootIcon = lootGO.GetComponentInChildren<SpriteRenderer>();
+            if(lootIcon != null)
+                lootIcon.sprite = droppedItem.data.bulletIcon;
+            var lootData = lootGO.GetComponentInChildren<DropLootAddToList>();
+            if(lootData != null)
+                lootData.SetLootInfo(droppedItem.data);
+            //float dropforce = 2f;
+            //Vector2 dropDirection = Vector2.up;
+            //lootGO.GetComponent<Rigidbody2D>().AddForce(dropDirection * dropforce, ForceMode2D.Impulse);
         }
     }
 }

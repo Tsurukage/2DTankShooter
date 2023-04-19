@@ -332,7 +332,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 385847591
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -1671144188, guid: 990ee2c1a8cbe724f985e59ef9eba598, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -541,10 +541,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d555845181e55478701fa195a46694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _droppedLootPrefab: {fileID: 4125518036124707129, guid: 2fc9b21e24eeacb48839a3b1f9137df2, type: 3}
+  _droppedLootPrefab: {fileID: 2157933269341755862, guid: f7e86127c6ebf2142b188741bbffa9e3, type: 3}
   lootList:
-  - {fileID: 11400000, guid: cfc2dbca668f6c243885e7116f239dea, type: 2}
   - {fileID: 11400000, guid: 406fbc72c70af8e49b6ce321f3d7612e, type: 2}
+  - {fileID: 11400000, guid: bc164a11b69acf345a749ee77edacb85, type: 2}
 --- !u!114 &8193252663119690681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -711,7 +711,6 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1393087183
   m_SortingOrder: 0
   m_TargetDisplay: 0

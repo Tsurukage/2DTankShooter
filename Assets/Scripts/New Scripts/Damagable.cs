@@ -41,7 +41,12 @@ public class Damagable : MonoBehaviour
         DamageValue = damageppoint;
         Health -= damageppoint;
         if (health <= 0)
+        {
+            var speed = transform.GetComponent<Patrolling>();
+            if (speed != null)
+                speed.Speed = 0;
             StartCoroutine(Dead());
+        }
         else
         {
             OnHit?.Invoke();
