@@ -25,6 +25,7 @@ public class Damagable : MonoBehaviour
     }
 
     public UnityEvent OnDead;
+    public UnityEvent OnHealthEmpty;
     public UnityEvent<float> OnHealthChange;
     public UnityEvent OnHit;
 
@@ -45,6 +46,7 @@ public class Damagable : MonoBehaviour
             var speed = transform.GetComponent<Patrolling>();
             if (speed != null)
                 speed.Speed = 0;
+            OnHealthEmpty?.Invoke();
             StartCoroutine(Dead());
         }
         else

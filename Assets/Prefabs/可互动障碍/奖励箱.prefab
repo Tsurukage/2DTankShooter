@@ -85,8 +85,9 @@ GameObject:
   - component: {fileID: 8434228569781330202}
   - component: {fileID: 8434228569781330201}
   - component: {fileID: 8434228569781330200}
-  - component: {fileID: 8434228569781330203}
-  m_Layer: 9
+  - component: {fileID: 5136746937262938902}
+  - component: {fileID: 8077608096355667431}
+  m_Layer: 8
   m_Name: RewardBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,9 +148,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1495791489
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4942d41dd95daf04bbc5a858bb86eeb0, type: 3}
+  m_Sprite: {fileID: 123487857, guid: 97f0ade3eaa50ba45a9498c653ddc4b2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -177,14 +178,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.34375}
+    oldSize: {x: 0.48632812, y: 0.45703125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 0.4, y: 0.4}
   m_EdgeRadius: 0
 --- !u!50 &8434228569781330200
 Rigidbody2D:
@@ -207,7 +208,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8434228569781330203
+--- !u!114 &5136746937262938902
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,17 +217,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8434228569781330204}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92609104ee8467640b7bc9fdd95f45b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 96d614a5e5faf7341b762823d10031f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 70
-  health: 0
-  OnDead:
+  OnHit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8434228570385511520}
-        m_TargetAssemblyTypeName: DestroyUtl, Assembly-CSharp
-        m_MethodName: DestroyHelper
+      - m_Target: {fileID: 8077608096355667431}
+        m_TargetAssemblyTypeName: LootBag, Assembly-CSharp
+        m_MethodName: InstantiateLoot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -236,36 +235,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnHealthChange:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8434228571137092850}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
-        m_MethodName: set_value
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnHit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8434228569288074646}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+--- !u!114 &8077608096355667431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434228569781330204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91d555845181e55478701fa195a46694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _droppedLootPrefab: {fileID: 2157933269341755862, guid: f7e86127c6ebf2142b188741bbffa9e3, type: 3}
+  lootList:
+  - {fileID: 11400000, guid: bc164a11b69acf345a749ee77edacb85, type: 2}
+  - {fileID: 11400000, guid: cfc2dbca668f6c243885e7116f239dea, type: 2}
+  - {fileID: 11400000, guid: 406fbc72c70af8e49b6ce321f3d7612e, type: 2}
 --- !u!1 &8434228570120086103
 GameObject:
   m_ObjectHideFlags: 0
