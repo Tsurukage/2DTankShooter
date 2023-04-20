@@ -36,7 +36,7 @@ public class SpawnButtonManager : MonoBehaviour
             var index = i;
             var obj = Instantiate(_prefabBtn, _prefabParent);
             obj.GetComponent<Image>().sprite = bullet.gradeBase;
-            var text = obj.GetComponentInChildren<Text>(); //obj.transform.GetChild(2).GetComponent<Text>();
+            var text = obj.GetComponentInChildren<Text>();
             text.text = bullet.name;
             var childObj = obj.transform.Find("img_bullet");
             childObj.GetComponent<Image>().sprite = bullet.icon;
@@ -55,11 +55,6 @@ public class SpawnButtonManager : MonoBehaviour
         }
     }
 
-    public void SetButtonList()
-    {
-        Remove();
-        Spawn();
-    }
     public void Remove()
     {
         if (_bulletData.Count > 0)
@@ -69,7 +64,6 @@ public class SpawnButtonManager : MonoBehaviour
                 _bulletData.RemoveAt(SelectedIndex);
                 var childObject = _prefabParent.GetChild(SelectedIndex).gameObject;
                 Destroy(childObject);
-                ChangeBulletData(0);
             }
         }
         if(_bulletData.Count == 0)
