@@ -569,7 +569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9932443d82dc37f4688150973ab59be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageValue: {fileID: 8354365977938313074, guid: 5e0d58e812ae85e4fb63142fad14950e, type: 3}
+  _damageValue: {fileID: 1076536266769833005, guid: 8b6e3a5eb513f7442bfa07e0a793ff12, type: 3}
 --- !u!1 &7001154017030775731
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,7 +703,6 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1393087183
   m_SortingOrder: 0
   m_TargetDisplay: 0
