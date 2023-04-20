@@ -20,9 +20,12 @@ public class SpawnButtonManager : MonoBehaviour
         if (_bulletData.Count > 0)
             ChangeBulletData(SelectedIndex);
     }
+    //为了显示当前选择的炮弹
     private void Update()
     {
-        ChangeBulletData(SelectedIndex);        //为了显示当前选择的炮弹
+        if (SelectedIndex < _bulletData.Count)
+            ChangeBulletData(SelectedIndex);
+        else if (SelectedIndex >= _bulletData.Count) ChangeBulletData(SelectedIndex - 1);
     }
     public void Spawn()
     {
@@ -48,6 +51,7 @@ public class SpawnButtonManager : MonoBehaviour
     }
     private void ChangeBulletData(int buttonIndex)
     {
+
         _turretData.bulletData = _bulletData[buttonIndex];
         for (int i = 0; i < _prefabParent.childCount; i++)
         {
