@@ -556,10 +556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _droppedLootPrefab: {fileID: 2157933269341755862, guid: f7e86127c6ebf2142b188741bbffa9e3, type: 3}
-  lootList:
-  - {fileID: 11400000, guid: cfc2dbca668f6c243885e7116f239dea, type: 2}
-  - {fileID: 11400000, guid: 406fbc72c70af8e49b6ce321f3d7612e, type: 2}
-  - {fileID: 11400000, guid: bc164a11b69acf345a749ee77edacb85, type: 2}
+  lootList: []
 --- !u!114 &8193252663119690681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -706,6 +703,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1393087183
   m_SortingOrder: 0
   m_TargetDisplay: 0

@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 8986129765170244921}
   - component: {fileID: 3319313375955575461}
   m_Layer: 0
-  m_Name: "\u52A8\u726902"
+  m_Name: "\u52A8\u7269 \u91CE\u732A"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -457,6 +457,9 @@ MonoBehaviour:
           m_StringArgument: InstantiateLoot
           m_BoolArgument: 1
         m_CallState: 2
+  OnHealthEmpty:
+    m_PersistentCalls:
+      m_Calls: []
   OnHealthChange:
     m_PersistentCalls:
       m_Calls:
@@ -514,7 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fad8e0705670f848814ef38175ed9d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 100004, guid: e463141fb849fa84eba84b8688640df4, type: 3}
+  objectPrefab: {fileID: 7057526050772005932, guid: 0cd63d9b6e56bda4c92d812f871e53a7, type: 3}
   radius: 0
 --- !u!114 &3114246529303911151
 MonoBehaviour:
@@ -542,8 +545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _droppedLootPrefab: {fileID: 2157933269341755862, guid: f7e86127c6ebf2142b188741bbffa9e3, type: 3}
-  lootList:
-  - {fileID: 11400000, guid: 406fbc72c70af8e49b6ce321f3d7612e, type: 2}
+  lootList: []
 --- !u!114 &8193252663119690681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -710,6 +712,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1393087183
   m_SortingOrder: 0
   m_TargetDisplay: 0
