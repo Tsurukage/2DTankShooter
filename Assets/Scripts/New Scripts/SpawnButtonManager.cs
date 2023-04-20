@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,16 +20,19 @@ public class SpawnButtonManager : MonoBehaviour
         if (_bulletData.Count > 0)
             ChangeBulletData(SelectedIndex);
     }
+    private void Update()
+    {
+        ChangeBulletData(SelectedIndex);        //为了显示当前选择的炮弹
+    }
     public void Spawn()
     {
-        ClearChild();
-        ChangeBulletData(0);
         var bullets = new List<(Sprite icon, Sprite gradeBase ,int index, string name)>();
         for (int i = 0; i < _bulletData.Count; i++)
         {
             var blt = _bulletData[i];
             bullets.Add((blt.bulletIcon, blt.bulletGradeBase, blt.damage, blt.bulletName));
         }
+        ClearChild();
         for (int i = 0; i < bullets.Count; i++)
         {
             var bullet = bullets[i];
@@ -64,15 +67,6 @@ public class SpawnButtonManager : MonoBehaviour
                 _bulletData.RemoveAt(SelectedIndex);
                 var childObject = _prefabParent.GetChild(SelectedIndex).gameObject;
                 Destroy(childObject);
-            }
-        }
-        if(_bulletData.Count == 0)
-        {
-            for(int i =0; i  < _prefabParent.childCount; i++)
-            {
-                var childObje = _prefabParent.GetChild(i).gameObject;
-                Destroy(childObje);
-                _turretData.bulletData = null;
             }
         }
         Spawn();
