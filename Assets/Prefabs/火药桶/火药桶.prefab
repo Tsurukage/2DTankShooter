@@ -157,8 +157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fad8e0705670f848814ef38175ed9d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 100004, guid: e463141fb849fa84eba84b8688640df4, type: 3}
-  radius: 0.1
+  objectPrefab: {fileID: 8940866755710769379, guid: 06f92a138c381b241988ba4db28f3de7, type: 3}
+  radius: 0.2
 --- !u!1 &3010828328945463734
 GameObject:
   m_ObjectHideFlags: 0
