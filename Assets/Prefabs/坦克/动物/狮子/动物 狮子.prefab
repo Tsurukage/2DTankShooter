@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 8986129765170244921}
   - component: {fileID: 3319313375955575461}
   m_Layer: 0
-  m_Name: "\u52A8\u726901"
+  m_Name: "\u52A8\u7269 \u72EE\u5B50"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -334,7 +334,7 @@ SpriteRenderer:
   m_SortingLayerID: 385847591
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1671144188, guid: 990ee2c1a8cbe724f985e59ef9eba598, type: 3}
+  m_Sprite: {fileID: 689552722, guid: 757afe04383426340bfa6e420652bffc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -362,7 +362,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.65625, y: 0.53125}
+    oldSize: {x: 0.75, y: 0.625}
     newSize: {x: 0.2734375, y: 0.21484375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -457,6 +457,9 @@ MonoBehaviour:
           m_StringArgument: InstantiateLoot
           m_BoolArgument: 1
         m_CallState: 2
+  OnHealthEmpty:
+    m_PersistentCalls:
+      m_Calls: []
   OnHealthChange:
     m_PersistentCalls:
       m_Calls:
@@ -514,7 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fad8e0705670f848814ef38175ed9d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 7057526050772005932, guid: 0cd63d9b6e56bda4c92d812f871e53a7, type: 3}
+  objectPrefab: {fileID: 100004, guid: e463141fb849fa84eba84b8688640df4, type: 3}
   radius: 0
 --- !u!114 &3114246529303911151
 MonoBehaviour:
@@ -542,9 +545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _droppedLootPrefab: {fileID: 2157933269341755862, guid: f7e86127c6ebf2142b188741bbffa9e3, type: 3}
-  lootList:
-  - {fileID: 11400000, guid: 406fbc72c70af8e49b6ce321f3d7612e, type: 2}
-  - {fileID: 11400000, guid: bc164a11b69acf345a749ee77edacb85, type: 2}
+  lootList: []
 --- !u!114 &8193252663119690681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -711,6 +712,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1393087183
   m_SortingOrder: 0
   m_TargetDisplay: 0
