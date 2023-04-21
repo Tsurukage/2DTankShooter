@@ -56,7 +56,7 @@ public class Bullet : MonoBehaviour
                 var damagable = collider.GetComponent<Damagable>();
                 if (damagable != null)
                     damagable.Hit(damage);
-                DisableObject();
+                bulletOutOfbound = true;
                 break;
             case BulletType.Explosion:
                 if (bulletData.splashRange > 0)
