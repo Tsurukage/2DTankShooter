@@ -962,7 +962,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385361980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -7, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11283,6 +11283,7 @@ GameObject:
   - component: {fileID: 1383706185}
   - component: {fileID: 1383706184}
   - component: {fileID: 1383706186}
+  - component: {fileID: 1383706187}
   m_Layer: 5
   m_Name: Joystick
   m_TagString: Untagged
@@ -11362,6 +11363,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragMovementDistance: 50
   dragOffsetDistance: 100
+  OnPressedDown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1383706187}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: changeColor
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPressedUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1383706187}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: returnColor
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!95 &1383706187
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383706182}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 22109696c4d9e5641a77ad533fa519f0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1457373810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12459,9 +12510,7 @@ MonoBehaviour:
   _turretData: {fileID: 11400000, guid: cfe6e93d9d4201346b0158ff32f5ecef, type: 2}
   _bulletData:
   - {fileID: 11400000, guid: 9f6b6541e6d54a7458028d06c10c4a87, type: 2}
-  - {fileID: 11400000, guid: 33d2a148dd90a3b4ab1c1346f0d0f3fc, type: 2}
   - {fileID: 11400000, guid: d8d78a70c7175b449a8c69f1de2bb649, type: 2}
-  - {fileID: 11400000, guid: 578b1092a2f6b704098bdc793e08543c, type: 2}
   _prefabParent: {fileID: 588323750}
   _scrollRect: {fileID: 0}
 --- !u!1001 &2041311708
@@ -12656,6 +12705,10 @@ PrefabInstance:
       propertyPath: _canvas
       value: 
       objectReference: {fileID: 515824284}
+    - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
+      propertyPath: shootingCount
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
       propertyPath: _gameOverPanel
       value: 

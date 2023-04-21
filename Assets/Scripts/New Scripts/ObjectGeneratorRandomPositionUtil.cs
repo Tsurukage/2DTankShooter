@@ -20,10 +20,11 @@ public class ObjectGeneratorRandomPositionUtil : MonoBehaviour
 
     public void CreteObject()
     {
-        Vector2 position = GetRandomPosition();
+        //Vector2 position = GetRandomPosition();
         GameObject impactObject = GetObject();
-        impactObject.transform.position = position;
+        impactObject.transform.position = transform.position;
         impactObject.transform.rotation = Random2DRotation();
+        impactObject.transform.localScale = new Vector3(radius, radius, radius);
     }
 
     protected virtual GameObject GetObject()

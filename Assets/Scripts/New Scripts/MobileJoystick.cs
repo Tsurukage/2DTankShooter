@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 public class MobileJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
@@ -13,6 +14,9 @@ public class MobileJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
     public event Action<Vector2> OnMove;
     public event Action OnUp;
     public event Action OnDown;
+
+    public UnityEvent OnPressedDown = new UnityEvent();
+    public UnityEvent OnPressedUp = new UnityEvent();
 
     private void Awake()
     {
@@ -35,12 +39,14 @@ public class MobileJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
     }
     public void OnPointerUp(PointerEventData eventData)
     {
+        OnPressedUp?.Invoke();
         joyStickTransform.anchoredPosition = Vector2.zero;
         OnUp?.Invoke();
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        OnPressedDown?.Invoke();
         joystickTouchPos = Input.mousePosition;
         OnDown?.Invoke();
     }

@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 100004, guid: e463141fb849fa84eba84b8688640df4, type: 3}
-  radius: 0.2
+  radius: 1
 --- !u!114 &3114246529303911151
 MonoBehaviour:
   m_ObjectHideFlags: 0

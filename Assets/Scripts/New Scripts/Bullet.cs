@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class Bullet : MonoBehaviour
 {
     public BulletData bulletData;
-
+    private float splashRange;
     private SpriteRenderer bulletSprite;
     private Vector2 startPosition;
     private float conquaredDistance = 0;
@@ -14,6 +14,7 @@ public class Bullet : MonoBehaviour
 
     public UnityEvent OnHit = new UnityEvent();
     public UnityEvent OnDestroy = new UnityEvent();
+    public UnityEvent OnExplosionRange = new UnityEvent();
 
     private void Awake()
     {
@@ -26,6 +27,13 @@ public class Bullet : MonoBehaviour
         startPosition = transform.position;
         rb2d.velocity = transform.up * this.bulletData.speed;
         bulletSprite.sprite = this.bulletData.bulletSprite;
+
+        splashRange = bulletData.splashRange;
+        var explosion = GetComponentInChildren<InstantiateExplosionSplash>();
+        if(explosion != null )
+        {
+            explosion.Radius = splashRange;
+        }
     }
     private void Update()
     {
@@ -59,6 +67,7 @@ public class Bullet : MonoBehaviour
                 bulletOutOfbound = true;
                 break;
             case BulletType.Explosion:
+                OnExplosionRange?.Invoke();
                 if (bulletData.splashRange > 0)
                 {
                     var hitColliders = Physics2D.OverlapCircleAll(transform.position, bulletData.splashRange);
