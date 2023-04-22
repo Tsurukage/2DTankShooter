@@ -36,7 +36,8 @@ public class Bullet : MonoBehaviour
             explosion.Radius = splashRange;
         }
         _trailLineObj = bulletData.bulletTrail;
-        Instantiate(_trailLineObj, transform);
+        if (_trailLineObj != null)
+            Instantiate(_trailLineObj, transform);
     }
     private void Update()
     {
