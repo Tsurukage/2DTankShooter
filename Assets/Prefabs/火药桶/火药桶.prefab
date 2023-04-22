@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3010828327976200361}
   - component: {fileID: 3010828327976200360}
   - component: {fileID: 3010828327976200372}
+  - component: {fileID: 7333031865668917721}
   m_Layer: 8
   m_Name: "\u6876"
   m_TagString: Explosive
@@ -145,6 +146,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7333031865668917721}
+        m_TargetAssemblyTypeName: InstantiateExplosionSplash, Assembly-CSharp
+        m_MethodName: set_Radius
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1.5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7333031865668917721}
+        m_TargetAssemblyTypeName: InstantiateExplosionSplash, Assembly-CSharp
+        m_MethodName: InstanteSplash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3010828327976200372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +184,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 8940866755710769379, guid: 06f92a138c381b241988ba4db28f3de7, type: 3}
   radius: 0.2
+--- !u!114 &7333031865668917721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3010828327976200362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2521e3a4b9e3f27408c16ba5a4d47897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _explosionSplashPrefab: {fileID: 902904981315632895, guid: a48137e44e77c2744ac0df817f2b7e7c, type: 3}
 --- !u!1 &3010828328945463734
 GameObject:
   m_ObjectHideFlags: 0
