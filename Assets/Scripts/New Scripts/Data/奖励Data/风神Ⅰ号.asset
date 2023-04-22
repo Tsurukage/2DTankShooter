@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: "\u98CE\u795E\u2160\u53F7"
   m_EditorClassIdentifier: 
   lootName: "\u98CE\u795E\u2160\u53F7"
-  dropChance: 100
+  dropChance: 300
   data: {fileID: 11400000, guid: 33d2a148dd90a3b4ab1c1346f0d0f3fc, type: 2}

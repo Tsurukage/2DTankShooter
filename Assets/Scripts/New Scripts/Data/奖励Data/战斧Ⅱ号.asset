@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 927c5abc23081af4886d7c3ff1b09950, type: 3}
-  m_Name: "\u96F7\u795E\u2160\u53F7"
+  m_Name: "\u6218\u65A7\u2161\u53F7"
   m_EditorClassIdentifier: 
-  lootName: "\u96F7\u795E\u2160\u53F7"
-  dropChance: 90
-  data: {fileID: 11400000, guid: d8d78a70c7175b449a8c69f1de2bb649, type: 2}
+  lootName: "\u6218\u65A7\u2161\u53F7"
+  dropChance: 300
+  data: {fileID: 11400000, guid: 18421312cbfd2a444aaf63fbba1d5969, type: 2}
