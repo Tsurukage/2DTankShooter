@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class Bullet : MonoBehaviour
 {
     public BulletData bulletData;
+    private GameObject _trailLineObj;
     private float splashRange;
     private SpriteRenderer bulletSprite;
     private Vector2 startPosition;
@@ -34,6 +35,8 @@ public class Bullet : MonoBehaviour
         {
             explosion.Radius = splashRange;
         }
+        _trailLineObj = bulletData.bulletTrail;
+        Instantiate(_trailLineObj, transform);
     }
     private void Update()
     {

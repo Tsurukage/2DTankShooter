@@ -19,5 +19,6 @@ MonoBehaviour:
   bulletSprite: {fileID: 21300000, guid: ccd677b9c8d055341b91f9a48d4e7135, type: 3}
   bulletIcon: {fileID: 21300000, guid: d7f4d9b040cc95d4087e37c18c62cdb4, type: 3}
   bulletGradeBase: {fileID: 21300000, guid: 5c338a36f2a9b6247a05271d043fda07, type: 3}
+  bulletTrail: {fileID: 5195730231380689795, guid: 6f5cac3a976aaa64084fedebb9de053d, type: 3}
   splashRange: 0
   bulletType: 0

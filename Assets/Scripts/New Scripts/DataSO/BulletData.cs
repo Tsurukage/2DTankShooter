@@ -10,6 +10,7 @@ public class BulletData : ScriptableObject
     public Sprite bulletSprite;
     public Sprite bulletIcon;
     public Sprite bulletGradeBase;
+    public GameObject bulletTrail;
     public float splashRange = 1;
     public BulletType bulletType;
     public BulletData(string bulletName, float speed, int damage, float maxDistance, float splashRange, Sprite bulletSprite, Sprite bulletIcon, Sprite bulletGradeBase)
