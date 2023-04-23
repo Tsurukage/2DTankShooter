@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2521e3a4b9e3f27408c16ba5a4d47897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosionSplashPrefab: {fileID: 902904981315632895, guid: a48137e44e77c2744ac0df817f2b7e7c, type: 3}
+  _explosionSplashPrefab: {fileID: 100004, guid: e463141fb849fa84eba84b8688640df4, type: 3}
 --- !u!1 &3010828328945463734
 GameObject:
   m_ObjectHideFlags: 0
