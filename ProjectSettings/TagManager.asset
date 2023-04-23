@@ -9,6 +9,8 @@ TagManager:
   - Obstacle
   - Explosive
   - Hittable
+  - FxTemporaire
+  - Animal
   layers:
   - Default
   - TransparentFX

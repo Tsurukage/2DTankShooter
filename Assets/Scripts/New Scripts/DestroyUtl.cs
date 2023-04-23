@@ -25,4 +25,8 @@ public class DestroyUtl : MonoBehaviour
     {
         _spawnButtonManager.Remove();
     }
+    public void OnAnimalHitFail()
+    {
+        _game.OnAnimaHit();
+    }
 }

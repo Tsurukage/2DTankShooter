@@ -68,6 +68,7 @@ public class Bullet : MonoBehaviour
                 var damagable = collider.GetComponent<Damagable>();
                 if (damagable != null)
                     damagable.Hit(damage);
+                CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));
                 bulletOutOfbound = true;
                 break;
             case BulletType.Explosion:
@@ -92,7 +93,10 @@ public class Bullet : MonoBehaviour
             case BulletType.Penetrate:
                 var penDamagable = collider.GetComponent<Damagable>();
                 if (penDamagable != null)
+                {
+                    CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));
                     penDamagable.Hit(damage);
+                }
                 break;
             case BulletType.ReflectBullet:
                 var trigger = GetComponent<Collider2D>();
@@ -104,6 +108,7 @@ public class Bullet : MonoBehaviour
                     {
                         reflDamagable.Hit(damage);
                     }
+                    CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));
                     DisableObject();
                 }
                 else

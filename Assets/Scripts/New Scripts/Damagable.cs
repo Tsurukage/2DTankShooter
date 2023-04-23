@@ -58,5 +58,6 @@ public class Damagable : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         OnDead?.Invoke();
+        CameraEffects.ShakeOnce(1f, 10f, Vector3.one);
     }
 }

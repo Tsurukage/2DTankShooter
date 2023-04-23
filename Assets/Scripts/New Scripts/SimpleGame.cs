@@ -60,6 +60,10 @@ public class SimpleGame : MonoBehaviour
             _gameOverPanel.gameObject.SetActive(true);
         }
     }
+    public void OnAnimaHit()
+    {
+        _gameOverPanel.gameObject.SetActive(true);
+    }
 }
 [Serializable]
 public class EnemyComp
