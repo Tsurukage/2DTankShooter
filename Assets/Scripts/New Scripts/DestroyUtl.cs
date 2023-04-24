@@ -29,4 +29,9 @@ public class DestroyUtl : MonoBehaviour
     {
         _game.OnAnimaHit();
     }
+    public void TankDestroyEffect()
+    {
+        CameraEffects.ShakeOnce(1f, 10f, Vector3.one);
+        DestroyFlash.OnDestroyFlashEffect(0.9f);
+    }
 }
