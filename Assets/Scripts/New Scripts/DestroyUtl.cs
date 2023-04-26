@@ -27,7 +27,7 @@ public class DestroyUtl : MonoBehaviour
     }
     public void OnAnimalHitFail()
     {
-        _game.OnAnimaHit();
+        _game.UpdateAnimalChanceCount();
     }
     public void TankDestroyEffect()
     {

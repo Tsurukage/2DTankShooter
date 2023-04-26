@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,11 +11,11 @@ public class SimpleGame : MonoBehaviour
     public Transform _stageClearPanel, _gameOverPanel;
     //--For UI
     private Top_UI_Manager _manager;
-    
-    [SerializeField] private int shootingCount = 3;
-    public int badgeCount = 0;
-
+    //--For game condition
     [SerializeField] private int tankCount;
+    [SerializeField] private int shootingCount = 3;
+    [SerializeField] private int badgeCount = 0;
+    [SerializeField] private int animalCount = 3;
 
     // Start is called before the first frame update
     void Awake()
@@ -25,6 +25,7 @@ public class SimpleGame : MonoBehaviour
         _manager.SetTankCount(tankCount);
         _manager.SetShootCount(shootingCount);
         _manager.SetBadgeCount(badgeCount);
+        _manager.SetAnimalCount(animalCount);
         
         SpawnCurrentLevel();
         _gameOverPanel.gameObject.SetActive(false);
@@ -59,6 +60,12 @@ public class SimpleGame : MonoBehaviour
         badgeCount += amount;
         _manager.SetBadgeCount(badgeCount);
     }
+    public void UpdateAnimalChanceCount()
+    {
+        animalCount--;
+        _manager.SetAnimalCount(animalCount);
+        CheckGame();
+    }
     public void CheckGame()
     {
         if (tankCount == 0)
@@ -71,10 +78,11 @@ public class SimpleGame : MonoBehaviour
             Debug.Log("Game Over!");
             _gameOverPanel.gameObject.SetActive(true);
         }
-    }
-    public void OnAnimaHit()
-    {
-        _gameOverPanel.gameObject.SetActive(true);
+        else if(animalCount == 0)
+        {
+            Debug.Log("不要滥杀动物！");
+            _gameOverPanel.gameObject.SetActive(true);
+        }
     }
 }
 [Serializable]
