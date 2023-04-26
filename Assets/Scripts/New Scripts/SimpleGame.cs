@@ -8,7 +8,7 @@ public class SimpleGame : MonoBehaviour
 {
     [SerializeField] List<EnemyComp> _enemyComp;
     [SerializeField] private GameObject _tankPrefab;
-    public Transform _stageClearPanel, _gameOverPanel;
+    public Transform _stageClearPanel, _gameOverPanel, _animalGOPanel;
     //--For UI
     private Top_UI_Manager _manager;
     //--For game condition
@@ -81,7 +81,7 @@ public class SimpleGame : MonoBehaviour
         else if(animalCount == 0)
         {
             Debug.Log("不要滥杀动物！");
-            _gameOverPanel.gameObject.SetActive(true);
+            _animalGOPanel.gameObject.SetActive(true);
         }
     }
 }

@@ -30,5 +30,8 @@ public enum BulletType
     SingleHit,      //单发
     Explosion,      //爆炸
     Penetrate,      //穿透
-    ReflectBullet   //弹射
+    ReflectBullet,  //弹射
+    StopTank,       //定住坦克
+    SlowTank,       //减速坦克
+    TankOnly        //坦克而已
 }

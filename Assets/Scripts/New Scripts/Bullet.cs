@@ -104,7 +104,7 @@ public class Bullet : MonoBehaviour
                 {
                     trigger.isTrigger = true;
                     var reflDamagable = collider.GetComponent<Damagable>();
-                    if(reflDamagable != null)
+                    if (reflDamagable != null)
                     {
                         reflDamagable.Hit(damage);
                     }
@@ -113,6 +113,46 @@ public class Bullet : MonoBehaviour
                 }
                 else
                     trigger.isTrigger = false;
+                break;
+            case BulletType.StopTank:
+                if (collider.tag == "Enemy")
+                {
+                    var speed = collider.GetComponent<Patrolling>();
+                    if (speed != null)
+                    {
+                        speed.Speed = 0;
+                    }
+                    DisableObject();
+                }
+                else
+                {
+                    var stbullet = collider.GetComponent<Damagable>();
+                    if (stbullet != null)
+                        stbullet.Hit(damage);
+                    CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));
+                    bulletOutOfbound = true;
+                }
+                break;
+            case BulletType.SlowTank:
+                if (collider.tag == "Enemy")
+                {
+                    var slow = collider.GetComponent<Patrolling>();
+                    if (slow != null)
+                    {
+                        slow.Speed = (slow.Speed / 2);
+                    }
+                    DisableObject();
+                }
+                else
+                {
+                    var sltbullet = collider.GetComponent<Damagable>();
+                    if (sltbullet != null)
+                        sltbullet.Hit(damage);
+                    CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));
+                    bulletOutOfbound = true;
+                }
+                break;
+            case BulletType.TankOnly:
                 break;
             default:
                 break;

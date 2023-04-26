@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 6807524068642881894}
   - component: {fileID: 8193252663119690681}
   - component: {fileID: 9144209803699580152}
+  - component: {fileID: 7527513357434112347}
   m_Layer: 7
   m_Name: Animal
   m_TagString: Animal
@@ -332,7 +333,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1495791489
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 469429504, guid: fd797d8410d8cbc4eb10b1118ba2c847, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -443,6 +444,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: InstantiateLoot
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 7527513357434112347}
+        m_TargetAssemblyTypeName: AnimalBadgeReduce, Assembly-CSharp
+        m_MethodName: DecreaseBadge
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
   OnHealthEmpty:
@@ -591,6 +604,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7527513357434112347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6938841390574633065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a395fd060894d8c40bfaefec8e168c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _reducedValue: -1
 --- !u!1 &7001154017030775731
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,7 +750,6 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1393087183
   m_SortingOrder: 0
   m_TargetDisplay: 0
