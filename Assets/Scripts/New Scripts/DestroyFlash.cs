@@ -29,7 +29,7 @@ public class DestroyFlash : MonoBehaviour
     {
         if(alphaValue > 0)
         {
-            alphaValue -= 0.005f;
+            alphaValue -= 0.007f;
             var color = _flashImage.color;
             color.a = alphaValue;
             _flashImage.color = color;

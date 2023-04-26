@@ -7,19 +7,25 @@ using UnityEngine.UI;
 public class SimpleGame : MonoBehaviour
 {
     [SerializeField] List<EnemyComp> _enemyComp;
-    [SerializeField] private int shootingCount = 3;
-    [SerializeField] private int tankCount;
     [SerializeField] private GameObject _tankPrefab;
-    public Transform _canvas, _stageClearPanel, _gameOverPanel;
+    public Transform _stageClearPanel, _gameOverPanel;
+    //--For UI
+    private Top_UI_Manager _manager;
+    
+    [SerializeField] private int shootingCount = 3;
+    public int badgeCount = 0;
 
-    public UnityEvent<string> OnTankUpdate = new UnityEvent<string>();
-    public UnityEvent<string> OnShootingUpdate = new UnityEvent<string>();
+    [SerializeField] private int tankCount;
+
     // Start is called before the first frame update
     void Awake()
     {
+        _manager = FindObjectOfType<Top_UI_Manager>();
         tankCount = _enemyComp.Count;
-        OnTankUpdate?.Invoke(tankCount.ToString());
-        OnShootingUpdate?.Invoke(shootingCount.ToString());
+        _manager.SetTankCount(tankCount);
+        _manager.SetShootCount(shootingCount);
+        _manager.SetBadgeCount(badgeCount);
+        
         SpawnCurrentLevel();
         _gameOverPanel.gameObject.SetActive(false);
         _stageClearPanel.gameObject.SetActive(false);
@@ -33,19 +39,25 @@ public class SimpleGame : MonoBehaviour
             enemyGO.GetComponentInChildren<SpriteRenderer>().sprite = enemyComp._enemySO.enemySprite;
             enemyGO.GetComponentInChildren<Patrolling>().Speed = enemyComp._enemySO.enemySpeed;
             enemyGO.GetComponentInChildren<Damagable>().Health = enemyComp._enemySO.maxHealth;
+            enemyGO.GetComponentInChildren<TankBadgeDrop>()._enemySO = enemyComp._enemySO;
         }
     }
     public void UpdateTankCount()
     {
         tankCount--;
-        OnTankUpdate?.Invoke(tankCount.ToString());
+        _manager.SetTankCount(tankCount);
         CheckGame();
     }
     public void UpdateShootingCount()
     {
         shootingCount--;
-        OnShootingUpdate?.Invoke(shootingCount.ToString());
+        _manager.SetShootCount(shootingCount);
         CheckGame();
+    }
+    public void UpdateBadgeCount(int amount)
+    {
+        badgeCount += amount;
+        _manager.SetBadgeCount(badgeCount);
     }
     public void CheckGame()
     {

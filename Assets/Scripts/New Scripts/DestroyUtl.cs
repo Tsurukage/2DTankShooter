@@ -32,6 +32,6 @@ public class DestroyUtl : MonoBehaviour
     public void TankDestroyEffect()
     {
         CameraEffects.ShakeOnce(1f, 10f, Vector3.one);
-        DestroyFlash.OnDestroyFlashEffect(0.9f);
+        DestroyFlash.OnDestroyFlashEffect(0.8f);
     }
 }

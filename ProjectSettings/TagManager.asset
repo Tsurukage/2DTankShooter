@@ -57,6 +57,9 @@ TagManager:
   - name: Prop_Wall
     uniqueID: 385847591
     locked: 0
+  - name: Enemy
+    uniqueID: 606125255
+    locked: 0
   - name: Prop_Obstacle
     uniqueID: 1858843535
     locked: 0
@@ -74,9 +77,6 @@ TagManager:
     locked: 0
   - name: SpecialEffect
     uniqueID: 650075355
-    locked: 0
-  - name: Enemy
-    uniqueID: 606125255
     locked: 0
   - name: UI
     uniqueID: 2901880113

@@ -16,3 +16,4 @@ MonoBehaviour:
   enemyName: "\u5E38\u89C4\u5766\u514B2"
   enemySpeed: 0.15
   maxHealth: 120
+  badgeDrop: 2
