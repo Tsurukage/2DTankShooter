@@ -8,7 +8,7 @@ public class SimpleGame : MonoBehaviour
 {
     [SerializeField] List<EnemyComp> _enemyComp;
     [SerializeField] private GameObject _tankPrefab;
-    public Transform _stageClearPanel, _gameOverPanel, _animalGOPanel;
+    //public Transform _stageClearPanel, _gameOverPanel, _animalGOPanel;
     //--For UI
     private Top_UI_Manager _manager;
     //--For game condition
@@ -28,8 +28,8 @@ public class SimpleGame : MonoBehaviour
         _manager.SetAnimalCount(animalCount);
         
         SpawnCurrentLevel();
-        _gameOverPanel.gameObject.SetActive(false);
-        _stageClearPanel.gameObject.SetActive(false);
+        //_gameOverPanel.gameObject.SetActive(false);
+        //_stageClearPanel.gameObject.SetActive(false);
     }
     private void SpawnCurrentLevel()
     {
@@ -71,17 +71,19 @@ public class SimpleGame : MonoBehaviour
         if (tankCount == 0)
         {
             Debug.Log("Stage Complete");
-            _stageClearPanel.gameObject.SetActive(true);
+            //_stageClearPanel.gameObject.SetActive(true);
+            GameManager.Instance.UpdateGameState(GameState.StageClearUI);
         }
         else if (tankCount > 0 && shootingCount == 0)
         {
             Debug.Log("Game Over!");
-            _gameOverPanel.gameObject.SetActive(true);
+            //_gameOverPanel.gameObject.SetActive(true);
+            GameManager.Instance.UpdateGameState(GameState.StageFailUI);
         }
         else if(animalCount == 0)
         {
             Debug.Log("不要滥杀动物！");
-            _animalGOPanel.gameObject.SetActive(true);
+            GameManager.Instance.UpdateGameState(GameState.StageFailUI);
         }
     }
 }

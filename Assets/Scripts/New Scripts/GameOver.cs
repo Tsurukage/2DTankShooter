@@ -10,10 +10,8 @@ public class GameOver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _nextStage = GameObject.Find("btn_retry").GetComponent<Button>();
         _nextStage.onClick.AddListener(ResetScene);
-        _home = GameObject.Find("btn_ads").GetComponent<Button>();
-        _home.onClick.AddListener(BackToHome);
+        //_home.onClick.AddListener(BackToHome);
     }
 
     private void BackToHome()
