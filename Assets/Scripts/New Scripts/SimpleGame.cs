@@ -40,7 +40,7 @@ public class SimpleGame : MonoBehaviour
             enemyGO.GetComponentInChildren<SpriteRenderer>().sprite = enemyComp._enemySO.enemySprite;
             enemyGO.GetComponentInChildren<Patrolling>().Speed = enemyComp._enemySO.enemySpeed;
             enemyGO.GetComponentInChildren<Damagable>().Health = enemyComp._enemySO.maxHealth;
-            enemyGO.GetComponentInChildren<TankBadgeDrop>()._enemySO = enemyComp._enemySO;
+            enemyGO.GetComponentInChildren<TankBadgeDrop>().SetTankData(enemyComp._enemySO);
         }
     }
     public void UpdateTankCount()
