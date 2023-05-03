@@ -109,7 +109,7 @@ RectTransform:
   - {fileID: 7479457086757835049}
   - {fileID: 9078452988174611631}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 903295267967465242}
   - component: {fileID: 2576126762645164844}
   m_Layer: 0
-  m_Name: blue_star
+  m_Name: red_star
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.25694844, g: 0.16313636, b: 0.8867924, a: 1}
+  m_Color: {r: 0.8962264, g: 0.13007191, b: 0.07186722, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
