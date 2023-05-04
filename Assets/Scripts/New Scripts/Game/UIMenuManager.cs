@@ -9,32 +9,17 @@ public class UIMenuManager : MonoBehaviour
     [SerializeField] private GameObject _stageChancePanel;
     [SerializeField] private GameObject _stageClearPanel;
     [SerializeField] private GameObject _stageFailPanel;
-    private void Awake()
-    {
-        GameManager.OnStateChange += GMOnGameStateChanged;
-    }
+    [SerializeField] private Transform _uiCanvas;
 
-    void OnDestroy()
-    {
-        GameManager.OnStateChange -= GMOnGameStateChanged;
-    }
-    private void GMOnGameStateChanged(GameState state)
-    {
-        _stagePreparePanel.SetActive(state == GameState.StagePrepareUI);
-        _stageChancePanel.SetActive(state == GameState.StageChancesUI);
-        _stageClearPanel.SetActive(state == GameState.StageClearUI);
-        _stageFailPanel.SetActive(state == GameState.StageFailUI);
-    }
-
-    // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        var startPanel = Instantiate(_stagePreparePanel, _uiCanvas);
+        startPanel.SetActive(true);
+        var chancePanel = Instantiate(_stageChancePanel, _uiCanvas);
+        chancePanel.SetActive(false);
+        var clearPanel = Instantiate(_stageClearPanel, _uiCanvas);
+        clearPanel.SetActive(false);
+        var failPanel = Instantiate(_stageFailPanel, _uiCanvas);
+        failPanel.SetActive(false);
     }
 }

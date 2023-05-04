@@ -153,6 +153,15 @@ public class Bullet : MonoBehaviour
                 }
                 break;
             case BulletType.TankOnly:
+                if (collider.tag == "Enemy")
+                {
+                    var slow = collider.GetComponent<Patrolling>();
+                    if (slow != null)
+                    {
+                        slow.Speed = (slow.Speed / 2);
+                    }
+                    DisableObject();
+                }
                 break;
             default:
                 break;
