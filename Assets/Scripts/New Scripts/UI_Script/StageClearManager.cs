@@ -16,7 +16,17 @@ public class StageClearManager : MonoBehaviour
     void Awake()
     {
         instance = this;
+        GameManager.OnStateChange += OnSetActive;
     }
+    void OnDestroy()
+    {
+        GameManager.OnStateChange -= OnSetActive;
+    }
+    private void OnSetActive(GameState state)
+    {
+        gameObject.SetActive(state == GameState.StageClearUI);
+    }
+
     void Start()
     {
         if (_nextStage != null)

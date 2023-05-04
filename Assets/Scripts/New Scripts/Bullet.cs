@@ -59,6 +59,7 @@ public class Bullet : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
+        CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));
         OnHit?.Invoke();
         var bulletType = bulletData.bulletType;
         var damage = bulletData.damage;
@@ -68,7 +69,6 @@ public class Bullet : MonoBehaviour
                 var damagable = collider.GetComponent<Damagable>();
                 if (damagable != null)
                     damagable.Hit(damage);
-                CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));
                 bulletOutOfbound = true;
                 break;
             case BulletType.Explosion:
