@@ -9,7 +9,8 @@ public class RewardBox : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        StartCoroutine(SpawnLoot());
+        if(collider.tag == "Player")
+            StartCoroutine(SpawnLoot());
     }
     IEnumerator SpawnLoot()
     {

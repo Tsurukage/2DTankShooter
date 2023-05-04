@@ -18,7 +18,7 @@ public class DropLootAddToList : MonoBehaviour
     {
         print("Add to Button List");
         StartCoroutine(SpawnBullet());
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
     IEnumerator SpawnBullet()
     {

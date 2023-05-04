@@ -9,7 +9,7 @@ public class TankBadgeDrop : MonoBehaviour
     [SerializeField] private GameObject rankIcon;
     [SerializeField] private Transform _starHolder;
     List<TankRankBadge> _badges = new List<TankRankBadge>();
-    int blueConvertValue = 4;
+    int redConvertValue = 4;
     private void Start()
     {
         DrawRankIcon(_enemySO.badgeDrop);
@@ -27,11 +27,11 @@ public class TankBadgeDrop : MonoBehaviour
     public void DrawRankIcon(int arg)
     {
         ClearHeart();
-        var blueStar = arg / blueConvertValue;
-        var yelloStar = arg % blueConvertValue;
-        for(var i = 0; i < blueStar; i++ )
+        var redStar = arg / redConvertValue;
+        var yelloStar = arg % redConvertValue;
+        for(var i = 0; i < redStar; i++ )
         {
-            CreateBlueBadge();
+            CreateredBadge();
         }
         for(var i = 0; i < yelloStar; i++ )
         {
@@ -46,11 +46,11 @@ public class TankBadgeDrop : MonoBehaviour
         yellowStar.SetYellowStar();
     }
 
-    public void CreateBlueBadge()
+    public void CreateredBadge()
     {
         GameObject newBadge = Instantiate(rankIcon, _starHolder);
-        var blueStar = newBadge.GetComponent<TankRankBadge>();
-        blueStar.SetBlueStar();
+        var redStar = newBadge.GetComponent<TankRankBadge>();
+        redStar.SetRedStar();
         TankRankBadge rankBadge = newBadge.GetComponent<TankRankBadge>();
         _badges.Add(rankBadge);
     }

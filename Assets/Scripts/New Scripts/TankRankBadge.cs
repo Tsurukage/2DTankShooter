@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class TankRankBadge : MonoBehaviour
 {
-    [SerializeField] private GameObject _blueStar;
+    [SerializeField] private GameObject _redStar;
     [SerializeField] private GameObject _yellowStar;
 
     
-    public void SetBlueStar()
+    public void SetRedStar()
     {
-        _blueStar.SetActive(true);
+        _redStar.SetActive(true);
     }
     public void SetYellowStar()
     {
