@@ -109,7 +109,7 @@ RectTransform:
   - {fileID: 7479457086757835049}
   - {fileID: 9078452988174611631}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede3486c61ed8be4dbcb44d840bee9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blueStar: {fileID: 7330521651499017943}
+  _redStar: {fileID: 7330521651499017943}
   _yellowStar: {fileID: 702190928158168807}
 --- !u!1 &7330521651499017943
 GameObject:
