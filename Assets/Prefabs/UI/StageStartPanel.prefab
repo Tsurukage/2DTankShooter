@@ -603,7 +603,7 @@ RectTransform:
   - {fileID: 1904730260858039163}
   - {fileID: 1904730262083386853}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -660,7 +660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ec1fcb97617fa4a8490e622a956ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _time: 9
+  _time: 1
   _timerText: {fileID: 1904730261007576394}
 --- !u!114 &8409098005512721879
 MonoBehaviour:
