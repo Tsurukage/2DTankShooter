@@ -11,11 +11,9 @@ public class SpawnButtonManager : MonoBehaviour
     [SerializeField] private Transform _prefabParent;
 
     [SerializeField] private ScrollRect _scrollRect;
-    private SimpleGame _game;
     private int SelectedIndex { get; set; }
     private void Start()
     {
-        _game = FindObjectOfType<SimpleGame>();
         Spawn();
         if (_bulletData.Count > 0)
             ChangeBulletData(SelectedIndex);

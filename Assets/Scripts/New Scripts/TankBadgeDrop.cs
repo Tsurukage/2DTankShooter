@@ -20,8 +20,7 @@ public class TankBadgeDrop : MonoBehaviour
     }
     public void SetBadgeDrop()
     {
-        var manager = FindObjectOfType<SimpleGame>();
-        manager.UpdateBadgeCount(_enemySO.badgeDrop);
+        SimpleGame.Instance.UpdateBadgeCount(_enemySO.badgeDrop);
     }
 
     public void DrawRankIcon(int arg)

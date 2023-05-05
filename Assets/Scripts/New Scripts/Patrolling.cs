@@ -43,4 +43,9 @@ public class Patrolling : MonoBehaviour
                 moveRight = true;
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Obstacle")
+            moveRight = !moveRight;
+    }
 }

@@ -8,7 +8,6 @@ public class AnimalBadgeReduce : MonoBehaviour
 
     public void DecreaseBadge()
     {
-        var manager = FindObjectOfType<SimpleGame>();
-        manager.UpdateBadgeCount(_reducedValue);
+        SimpleGame.Instance.UpdateBadgeCount(_reducedValue);
     }
 }

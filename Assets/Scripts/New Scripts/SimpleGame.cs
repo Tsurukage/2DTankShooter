@@ -6,30 +6,32 @@ using UnityEngine.UI;
 
 public class SimpleGame : MonoBehaviour
 {
+    public static SimpleGame Instance;
+
     [SerializeField] List<EnemyComp> _enemyComp;
     [SerializeField] private GameObject _tankPrefab;
-    //public Transform _stageClearPanel, _gameOverPanel, _animalGOPanel;
-    //--For UI
-    private Top_UI_Manager _manager;
     //--For game condition
     [SerializeField] private int tankCount;
     [SerializeField] private int shootingCount = 3;
     [SerializeField] private int badgeCount = 0;
     [SerializeField] private int animalCount = 3;
+    private int InitAnimalCount;
 
+    public static event Action<int, int, int, int> Top_UI;
+    public static event Action<bool> StarOne;
+    public static event Action<bool> StarTwo;
+    public static event Action<bool> StarThree;
     // Start is called before the first frame update
     void Awake()
     {
-        _manager = FindObjectOfType<Top_UI_Manager>();
+        Instance = this;
+    }
+    void Start()
+    {
         tankCount = _enemyComp.Count;
-        _manager.SetTankCount(tankCount);
-        _manager.SetShootCount(shootingCount);
-        _manager.SetBadgeCount(badgeCount);
-        _manager.SetAnimalCount(animalCount);
-        
+        Top_UI?.Invoke(tankCount, shootingCount, badgeCount, animalCount);
+        InitAnimalCount = animalCount;
         SpawnCurrentLevel();
-        //_gameOverPanel.gameObject.SetActive(false);
-        //_stageClearPanel.gameObject.SetActive(false);
     }
     private void SpawnCurrentLevel()
     {
@@ -46,25 +48,29 @@ public class SimpleGame : MonoBehaviour
     public void UpdateTankCount()
     {
         tankCount--;
-        _manager.SetTankCount(tankCount);
+        UpdateCount();
         CheckGame();
     }
     public void UpdateShootingCount()
     {
         shootingCount--;
-        _manager.SetShootCount(shootingCount);
+        UpdateCount();
         CheckGame();
     }
     public void UpdateBadgeCount(int amount)
     {
         badgeCount += amount;
-        _manager.SetBadgeCount(badgeCount);
+        UpdateCount();
     }
     public void UpdateAnimalChanceCount()
     {
         animalCount--;
-        _manager.SetAnimalCount(animalCount);
+        UpdateCount();
         CheckGame();
+    }
+    public void UpdateCount()
+    {
+        Top_UI?.Invoke(tankCount, shootingCount, badgeCount, animalCount);
     }
     public void CheckGame()
     {
@@ -85,6 +91,9 @@ public class SimpleGame : MonoBehaviour
             Debug.Log("不要滥杀动物！");
             GameManager.Instance.UpdateGameState(GameState.StageFailUI);
         }
+        StarOne?.Invoke(tankCount == 0);
+        StarTwo?.Invoke(shootingCount > 0);
+        StarThree?.Invoke(animalCount == InitAnimalCount);
     }
 }
 [Serializable]

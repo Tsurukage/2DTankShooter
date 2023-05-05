@@ -2,11 +2,9 @@ using UnityEngine;
 
 public class DestroyUtl : MonoBehaviour
 {
-    private SimpleGame _game;
     private SpawnButtonManager _spawnButtonManager;
     private void Start()
     {
-        _game = FindObjectOfType<SimpleGame>();
         _spawnButtonManager = FindObjectOfType<SpawnButtonManager>();
     }
     public void DestroyHelper()
@@ -15,11 +13,11 @@ public class DestroyUtl : MonoBehaviour
     }
     public void UpdateTankCount()
     {
-        _game.UpdateTankCount();
+        SimpleGame.Instance.UpdateTankCount();
     }
     public void UpdateShootingCount()
     {
-        _game.UpdateShootingCount();
+        SimpleGame.Instance.UpdateShootingCount();
     }
     public void RemoveBullet()
     {
@@ -27,7 +25,7 @@ public class DestroyUtl : MonoBehaviour
     }
     public void OnAnimalHitFail()
     {
-        _game.UpdateAnimalChanceCount();
+        SimpleGame.Instance.UpdateAnimalChanceCount();
     }
     public void TankDestroyEffect()
     {

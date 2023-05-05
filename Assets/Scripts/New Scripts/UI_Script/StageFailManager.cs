@@ -19,6 +19,9 @@ public class StageFailManager : MonoBehaviour
     private void OnSetActive(GameState state)
     {
         gameObject.SetActive(state == GameState.StageFailUI);
+        transform.localScale = Vector3.zero;
+        if(state == GameState.StageFailUI)
+            StartCoroutine(SetDelay());
     }
 
     // Start is called before the first frame update
@@ -32,10 +35,10 @@ public class StageFailManager : MonoBehaviour
     {
         GameManager.Instance.NextStage();
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    IEnumerator SetDelay()
     {
-        
+        yield return new WaitForSeconds(3f);
+        transform.localScale = Vector3.one;
     }
 }
