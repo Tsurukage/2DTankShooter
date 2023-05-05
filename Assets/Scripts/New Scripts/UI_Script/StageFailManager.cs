@@ -16,7 +16,7 @@ public class StageFailManager : MonoBehaviour
         GameManager.OnStateChange -= OnSetActive;
     }
 
-    private void OnSetActive(GameState state)
+    public void OnSetActive(GameState state)
     {
         gameObject.SetActive(state == GameState.StageFailUI);
         transform.localScale = Vector3.zero;

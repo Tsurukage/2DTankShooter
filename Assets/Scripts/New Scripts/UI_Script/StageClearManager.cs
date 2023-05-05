@@ -36,7 +36,7 @@ public class StageClearManager : MonoBehaviour
         SimpleGame.StarTwo -= ActiveStarTwo;
         SimpleGame.StarThree -= ActiveStarThree;
     }
-    private void OnSetActive(GameState state)
+    public void OnSetActive(GameState state)
     {
         gameObject.SetActive(state == GameState.StageClearUI);
         transform.localScale = Vector3.zero;

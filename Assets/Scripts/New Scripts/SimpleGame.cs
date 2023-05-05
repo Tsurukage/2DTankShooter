@@ -10,22 +10,35 @@ public class SimpleGame : MonoBehaviour
 
     [SerializeField] List<EnemyComp> _enemyComp;
     [SerializeField] private GameObject _tankPrefab;
+    [SerializeField] private string _stageName;
+    public string Stage_Name
+    {
+        get { return _stageName; }
+        set { _stageName = value; }
+    }
+    [SerializeField] private int countDown = 0;
+    public int CountDown
+    {
+        get { return countDown; }
+        set { countDown = value; }
+    }
     //--For game condition
     [SerializeField] private int tankCount;
     [SerializeField] private int shootingCount = 3;
     [SerializeField] private int badgeCount = 0;
     [SerializeField] private int animalCount = 3;
+    
     private int InitAnimalCount;
 
     public static event Action<int, int, int, int> Top_UI;
     public static event Action<bool> StarOne;
     public static event Action<bool> StarTwo;
     public static event Action<bool> StarThree;
-    // Start is called before the first frame update
     void Awake()
     {
         Instance = this;
     }
+
     void Start()
     {
         tankCount = _enemyComp.Count;
@@ -77,13 +90,11 @@ public class SimpleGame : MonoBehaviour
         if (tankCount == 0)
         {
             Debug.Log("Stage Complete");
-            //_stageClearPanel.gameObject.SetActive(true);
             GameManager.Instance.UpdateGameState(GameState.StageClearUI);
         }
         else if (tankCount > 0 && shootingCount == 0)
         {
             Debug.Log("Game Over!");
-            //_gameOverPanel.gameObject.SetActive(true);
             GameManager.Instance.UpdateGameState(GameState.StageFailUI);
         }
         else if(animalCount == 0)

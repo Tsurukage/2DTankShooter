@@ -6,10 +6,9 @@ using UnityEngine.UI;
 
 public class StagePrepareManager : MonoBehaviour
 {
-    [SerializeField] private float _time = 9;
+    [SerializeField] private Text _stageName;
     [SerializeField] private Text _timerText;
-    // Update is called once per frame
-
+    private float _time = 9;
     void Awake()
     {
         GameManager.OnStateChange += OnSetActive;
@@ -18,7 +17,7 @@ public class StagePrepareManager : MonoBehaviour
     {
         GameManager.OnStateChange -= OnSetActive;
     }
-    private void OnSetActive(GameState state)
+    public void OnSetActive(GameState state)
     {
         gameObject.SetActive(state == GameState.StagePrepareUI);
     }
@@ -26,6 +25,8 @@ public class StagePrepareManager : MonoBehaviour
     private void Start()
     {
         _timerText = GameObject.Find("text_cd").GetComponent<Text>();
+        _stageName.text = SimpleGame.Instance.Stage_Name;
+        _time = SimpleGame.Instance.CountDown;
         _timerText.text = _time.ToString();
     }
     void Update()

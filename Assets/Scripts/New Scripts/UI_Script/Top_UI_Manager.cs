@@ -12,6 +12,10 @@ public class Top_UI_Manager : MonoBehaviour
     {
         SimpleGame.Top_UI += SetTankCount;
     }
+    void OnDestroy()
+    {
+        SimpleGame.Top_UI -= SetTankCount;
+    }
     public void SetTankCount(int tank, int shoot, int badge, int animal)
     {
         if (_tankCountUi != null)
