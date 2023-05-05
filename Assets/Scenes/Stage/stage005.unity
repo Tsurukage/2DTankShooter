@@ -1516,7 +1516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ec1fcb97617fa4a8490e622a956ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _time: 9
+  _stageName: {fileID: 0}
   _timerText: {fileID: 1145070068}
 --- !u!1001 &174164267
 PrefabInstance:
@@ -18243,6 +18243,14 @@ PrefabInstance:
       propertyPath: _canvas
       value: 
       objectReference: {fileID: 515824284}
+    - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
+      propertyPath: countDown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
+      propertyPath: _stageName
+      value: "\u519C\u573A\u9886\u4E3B"
+      objectReference: {fileID: 0}
     - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
       propertyPath: shootingCount
       value: 3
