@@ -725,6 +725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nextStage: {fileID: 9032309240634081307}
+  _mainMenu: {fileID: 9032309240673186017}
 --- !u!1 &9032309241599185048
 GameObject:
   m_ObjectHideFlags: 0

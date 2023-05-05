@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class StageFailManager : MonoBehaviour
 {
     [SerializeField] private Button _nextStage;
+    [SerializeField] private Button _mainMenu;
     void Awake()
     {
         GameManager.OnStateChange += OnSetActive;
@@ -29,13 +30,12 @@ public class StageFailManager : MonoBehaviour
     {
         if (_nextStage != null)
             _nextStage.onClick.AddListener(GetNextLevel);
+        if (_mainMenu != null)
+            _mainMenu.onClick.AddListener(BackToMainMenu);
     }
 
-    private void GetNextLevel()
-    {
-        GameManager.Instance.NextStage();
-    }
-    
+    private void BackToMainMenu() => GameManager.Instance.HomeScene();
+    private void GetNextLevel() => GameManager.Instance.NextStage();
     IEnumerator SetDelay()
     {
         yield return new WaitForSeconds(3f);

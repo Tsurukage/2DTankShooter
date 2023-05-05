@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -36,7 +37,12 @@ public class GameManager : MonoBehaviour
     }
     public void NextStage()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        int randomIndex = Random.Range(1, 7);
+        SceneManager.LoadScene(randomIndex);
+    }
+    public void HomeScene()
+    {
+        SceneManager.LoadScene(0);
     }
 }
 public enum GameState

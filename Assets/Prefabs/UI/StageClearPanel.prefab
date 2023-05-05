@@ -310,6 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nextStage: {fileID: 1986693572580420621}
+  _mainMenu: {fileID: 2895764266407933182}
   _filledStars_I: {fileID: 2895764266967158287}
   _filledStars_II: {fileID: 2895764268303518344}
   _filledStars_III: {fileID: 2895764267258115514}

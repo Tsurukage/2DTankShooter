@@ -660,7 +660,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ec1fcb97617fa4a8490e622a956ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _time: 5
   _stageName: {fileID: 1904730260346104199}
   _timerText: {fileID: 1904730261007576394}
 --- !u!114 &8409098005512721879
@@ -678,6 +677,10 @@ MonoBehaviour:
   _droppedLootPrefab: {fileID: 2157933269341755862, guid: f7e86127c6ebf2142b188741bbffa9e3, type: 3}
   lootList:
   - {fileID: 11400000, guid: e5079eb28e4e78e47b6b4483b92edab8, type: 2}
+  - {fileID: 11400000, guid: cfc2dbca668f6c243885e7116f239dea, type: 2}
+  - {fileID: 11400000, guid: bc164a11b69acf345a749ee77edacb85, type: 2}
+  - {fileID: 11400000, guid: 55a840e5c6b7df84e93f0b50743d32d3, type: 2}
+  - {fileID: 11400000, guid: 406fbc72c70af8e49b6ce321f3d7612e, type: 2}
 --- !u!1 &1904730262083386852
 GameObject:
   m_ObjectHideFlags: 0

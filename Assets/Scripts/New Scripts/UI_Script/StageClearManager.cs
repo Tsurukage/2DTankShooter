@@ -9,6 +9,7 @@ public class StageClearManager : MonoBehaviour
 {
     public static StageClearManager instance;
     [SerializeField] private Button _nextStage;
+    [SerializeField] private Button _mainMenu;
     [SerializeField] private GameObject _filledStars_I;
     [SerializeField] private GameObject _filledStars_II;
     [SerializeField] private GameObject _filledStars_III;
@@ -48,8 +49,10 @@ public class StageClearManager : MonoBehaviour
     {
         if (_nextStage != null)
             _nextStage.onClick.AddListener(GetNextLevel);
+        if(_mainMenu !=null)
+            _mainMenu.onClick.AddListener(BackToMainMenu);
     }
-
+    private void BackToMainMenu() => GameManager.Instance.HomeScene();
     private void GetNextLevel() => GameManager.Instance.NextStage();
     public void ActiveStarOne(bool fullied) => _filledStars_I.SetActive(fullied);
     public void ActiveStarTwo(bool fullied) => _filledStars_II.SetActive(fullied);
