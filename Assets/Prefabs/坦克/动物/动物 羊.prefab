@@ -616,7 +616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a395fd060894d8c40bfaefec8e168c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _reducedValue: -3
+  _reducedValue: -2
 --- !u!1 &7001154017030775731
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,6 +750,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1393087183
   m_SortingOrder: 0
   m_TargetDisplay: 0
