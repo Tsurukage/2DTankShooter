@@ -8,6 +8,7 @@ public class StagePrepareManager : MonoBehaviour
 {
     [SerializeField] private Text _stageName;
     [SerializeField] private Text _timerText;
+    [SerializeField] private Button _adsButton;
     private float _time = 9;
     void Awake()
     {
@@ -28,7 +29,17 @@ public class StagePrepareManager : MonoBehaviour
         _stageName.text = SimpleGame.Instance.Stage_Name;
         _time = SimpleGame.Instance.CountDown;
         _timerText.text = _time.ToString();
+        _adsButton.onClick.AddListener(OnClickAction);
     }
+
+    private void OnClickAction()
+    {
+        var loot = GetComponent<LootBag>();
+        loot.InstantiateLoot();
+        InteractionSoundManager.Instance.OnClickSound();
+        _adsButton.interactable = false;
+    }
+
     void Update()
     {
         if(_time > 0)

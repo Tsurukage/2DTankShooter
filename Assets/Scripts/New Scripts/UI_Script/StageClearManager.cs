@@ -52,8 +52,18 @@ public class StageClearManager : MonoBehaviour
         if(_mainMenu !=null)
             _mainMenu.onClick.AddListener(BackToMainMenu);
     }
-    private void BackToMainMenu() => GameManager.Instance.HomeScene();
-    private void GetNextLevel() => GameManager.Instance.NextStage();
+    private void BackToMainMenu()
+    {
+        InteractionSoundManager.Instance.OnClickSound();
+        GameManager.Instance.HomeScene();
+        //StartCoroutine(BackHomeDelay());
+    }
+    private void GetNextLevel()
+    {
+        InteractionSoundManager.Instance.OnClickSound();
+        GameManager.Instance.NextStage();
+        //StartCoroutine(NextSceneDelay());
+    }
     public void ActiveStarOne(bool fullied) => _filledStars_I.SetActive(fullied);
     public void ActiveStarTwo(bool fullied) => _filledStars_II.SetActive(fullied);
     public void ActiveStarThree(bool fullied) => _filledStars_III.SetActive(fullied);

@@ -34,8 +34,18 @@ public class StageFailManager : MonoBehaviour
             _mainMenu.onClick.AddListener(BackToMainMenu);
     }
 
-    private void BackToMainMenu() => GameManager.Instance.HomeScene();
-    private void GetNextLevel() => GameManager.Instance.NextStage();
+    private void BackToMainMenu()
+    {
+        InteractionSoundManager.Instance.OnClickSound();
+        GameManager.Instance.HomeScene();
+        //StartCoroutine(BackHomeDelay());
+    }
+    private void GetNextLevel()
+    {
+        InteractionSoundManager.Instance.OnClickSound();
+        GameManager.Instance.NextStage();
+        //StartCoroutine(NextSceneDelay());
+    }
     IEnumerator SetDelay()
     {
         yield return new WaitForSeconds(3f);

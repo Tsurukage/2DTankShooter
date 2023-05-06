@@ -45,11 +45,17 @@ public class SpawnButtonManager : MonoBehaviour
             var childObj = obj.transform.Find("img_bullet");
             childObj.GetComponent<Image>().sprite = bullet.icon;
             obj.onClick.AddListener(() => ChangeBulletData(index));
+            obj.onClick.AddListener(PlaySoundEffect);
         }
     }
+
+    private void PlaySoundEffect()
+    {
+        InteractionSoundManager.Instance.OnClickSound();
+    }
+
     private void ChangeBulletData(int buttonIndex)
     {
-
         _turretData.bulletData = _bulletData[buttonIndex];
         for (int i = 0; i < _prefabParent.childCount; i++)
         {
