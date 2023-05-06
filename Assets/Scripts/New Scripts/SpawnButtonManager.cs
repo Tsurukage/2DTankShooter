@@ -51,7 +51,7 @@ public class SpawnButtonManager : MonoBehaviour
 
     private void PlaySoundEffect()
     {
-        InteractionSoundManager.Instance.OnClickSound();
+        SoundEffectManager.Instance.OnClickSound();
     }
 
     private void ChangeBulletData(int buttonIndex)

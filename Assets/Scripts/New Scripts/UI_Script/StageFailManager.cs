@@ -21,7 +21,7 @@ public class StageFailManager : MonoBehaviour
     {
         gameObject.SetActive(state == GameState.StageFailUI);
         transform.localScale = Vector3.zero;
-        if(state == GameState.StageFailUI)
+        if (state == GameState.StageFailUI)
             StartCoroutine(SetDelay());
     }
 
@@ -36,13 +36,13 @@ public class StageFailManager : MonoBehaviour
 
     private void BackToMainMenu()
     {
-        InteractionSoundManager.Instance.OnClickSound();
+        SoundEffectManager.Instance.OnClickSound();
         GameManager.Instance.HomeScene();
         //StartCoroutine(BackHomeDelay());
     }
     private void GetNextLevel()
     {
-        InteractionSoundManager.Instance.OnClickSound();
+        SoundEffectManager.Instance.OnClickSound();
         GameManager.Instance.NextStage();
         //StartCoroutine(NextSceneDelay());
     }
@@ -50,5 +50,6 @@ public class StageFailManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         transform.localScale = Vector3.one;
+        SoundEffectManager.Instance.OnFailSound();
     }
 }

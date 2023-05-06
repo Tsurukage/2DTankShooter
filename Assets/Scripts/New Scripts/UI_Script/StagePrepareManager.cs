@@ -36,7 +36,7 @@ public class StagePrepareManager : MonoBehaviour
     {
         var loot = GetComponent<LootBag>();
         loot.InstantiateLoot();
-        InteractionSoundManager.Instance.OnClickSound();
+        SoundEffectManager.Instance.OnClickSound();
         _adsButton.interactable = false;
     }
 

@@ -54,13 +54,13 @@ public class StageClearManager : MonoBehaviour
     }
     private void BackToMainMenu()
     {
-        InteractionSoundManager.Instance.OnClickSound();
+        SoundEffectManager.Instance.OnClickSound();
         GameManager.Instance.HomeScene();
         //StartCoroutine(BackHomeDelay());
     }
     private void GetNextLevel()
     {
-        InteractionSoundManager.Instance.OnClickSound();
+        SoundEffectManager.Instance.OnClickSound();
         GameManager.Instance.NextStage();
         //StartCoroutine(NextSceneDelay());
     }
@@ -72,5 +72,6 @@ public class StageClearManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         transform.localScale = Vector3.one;
+        SoundEffectManager.Instance.OnVictorySound();
     }
 }
