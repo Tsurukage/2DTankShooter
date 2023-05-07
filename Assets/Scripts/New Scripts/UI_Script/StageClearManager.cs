@@ -70,7 +70,7 @@ public class StageClearManager : MonoBehaviour
 
     IEnumerator SetDealy()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
         transform.localScale = Vector3.one;
         SoundEffectManager.Instance.OnVictorySound();
     }

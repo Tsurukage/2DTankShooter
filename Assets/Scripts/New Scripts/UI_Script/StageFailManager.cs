@@ -48,7 +48,7 @@ public class StageFailManager : MonoBehaviour
     }
     IEnumerator SetDelay()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
         transform.localScale = Vector3.one;
         SoundEffectManager.Instance.OnFailSound();
     }

@@ -25,10 +25,10 @@ public class SoundEffectManager : MonoBehaviour
     }
     public void OnVictorySound()
     {
-        _soundeffect.PlayOneShot(_victory_se, 0.8f);
+        _soundeffect.PlayOneShot(_victory_se, 0.3f);
     }
     public void OnFailSound()
     {
-        _soundeffect.PlayOneShot(_fail_se, 0.8f);
+        _soundeffect.PlayOneShot(_fail_se, 0.3f);
     }
 }
