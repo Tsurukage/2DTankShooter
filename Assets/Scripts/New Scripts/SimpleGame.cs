@@ -89,6 +89,7 @@ public class SimpleGame : MonoBehaviour
     {
         if (tankCount == 0)
         {
+            GameManager.Instance.HandleStageClear(false);
             Debug.Log("Stage Complete");
             GameManager.Instance.UpdateGameState(GameState.StageClearUI);
         }

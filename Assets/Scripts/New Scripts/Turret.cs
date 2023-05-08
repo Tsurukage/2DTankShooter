@@ -13,7 +13,7 @@ public class Turret : MonoBehaviour
     private float currentDelay = 0;
     
     public UnityEvent OnShoot, OnCantShoot;
-    public UnityEvent<float> OnReloading;
+    //public UnityEvent<float> OnReloading;
 
     public event Action<bool> OnCountDown;
     private void Awake()
@@ -22,18 +22,23 @@ public class Turret : MonoBehaviour
     }
     private void Start()
     {
-        OnReloading?.Invoke(currentDelay);
+        //OnReloading?.Invoke(currentDelay);
     }
     private void Update()
     {
-        if (canShoot == false)
+        if (GameManager.Instance.State == GameState.StageInProgress)
         {
-            currentDelay -= Time.deltaTime;
-            OnReloading?.Invoke(currentDelay);
-            if(currentDelay <= 0)
+            if (canShoot == false)
             {
-                canShoot = true;
-                OnCountDown?.Invoke(canShoot);
+                GameManager.Instance.HandleStageClear(false);
+                currentDelay -= Time.deltaTime;
+                //OnReloading?.Invoke(currentDelay);
+                if (currentDelay <= 0)
+                {
+                    canShoot = true;
+                    GameManager.Instance.HandleStageClear(true);
+                    //OnCountDown?.Invoke(canShoot);
+                }
             }
         }
     }
@@ -62,7 +67,7 @@ public class Turret : MonoBehaviour
                     }
                 }
                 OnShoot?.Invoke();
-                OnReloading?.Invoke(currentDelay);
+                //OnReloading?.Invoke(currentDelay);
             }
             else
             {

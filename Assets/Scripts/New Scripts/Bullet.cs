@@ -45,6 +45,7 @@ public class Bullet : MonoBehaviour
         if(conquaredDistance >= bulletData.maxDistance || bulletOutOfbound)
         {
             DisableObject();
+            ToogleDarkness.Instance.ToggleToLight();
             OnHit?.Invoke();
         }
     }

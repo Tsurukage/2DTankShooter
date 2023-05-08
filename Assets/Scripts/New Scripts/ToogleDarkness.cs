@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class ToogleDarkness : MonoBehaviour
 {
+    public static ToogleDarkness Instance;
     public Material _material;
     bool isPressed;
     float alphaValue = 1;
+    void Awake()
+    {
+        Instance = this;
+    }
     public void ToggleToDark()
     {
         isPressed = true;
-        alphaValue = 1;
     }
     public void ToggleToLight()
     {
@@ -28,8 +32,12 @@ public class ToogleDarkness : MonoBehaviour
         }
         else
         {
-            alphaValue = 1;
-            //alphaValue -= 0.01f;            if (alphaValue < 0) { }
+            //alphaValue = 1;
+            alphaValue += 0.01f;            
+            if (alphaValue > 1) 
+            { 
+                alphaValue = 1;
+            }
         }
         var mat = _material.color;
         mat = new Color(alphaValue, alphaValue, alphaValue);

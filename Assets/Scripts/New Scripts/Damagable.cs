@@ -53,6 +53,7 @@ public class Damagable : MonoBehaviour
         {
             OnHit?.Invoke();
         }
+        ToogleDarkness.Instance.ToggleToLight();
     }
     IEnumerator Dead()
     {

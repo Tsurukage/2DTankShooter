@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    private MobileJoystick joystick;
     public GameState State;
 
     public static event Action<GameState> OnStateChange;
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         UpdateGameState(GameState.StagePrepareUI);
+        joystick = FindObjectOfType<MobileJoystick>();
     }
     public void UpdateGameState(GameState gameState)
     {
@@ -35,6 +37,13 @@ public class GameManager : MonoBehaviour
         }
         OnStateChange?.Invoke(gameState);
     }
+
+    public void HandleStageClear(bool active)
+    {
+        if (joystick != null)
+            joystick.SetInteraction(active);
+    }
+
     public void NextStage()
     {
         int randomIndex = Random.Range(1, 7);

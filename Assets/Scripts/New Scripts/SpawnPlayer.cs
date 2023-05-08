@@ -8,7 +8,7 @@ public class SpawnPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Vector2 pos = new Vector2(0, -7.5f);
+        Vector2 pos = new Vector2(0, -5.5f);
         SpawnPlayerPrefab(pos);
     }
 

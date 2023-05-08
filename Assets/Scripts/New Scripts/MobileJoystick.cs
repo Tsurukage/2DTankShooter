@@ -49,6 +49,7 @@ public class MobileJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
         OnPressedDown?.Invoke();
         joystickTouchPos = Input.mousePosition;
         OnDown?.Invoke();
+        ToogleDarkness.Instance.ToggleToDark();
     }
     public void SetInteraction(bool isInteractable)
     {

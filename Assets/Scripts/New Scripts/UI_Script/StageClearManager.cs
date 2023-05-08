@@ -54,15 +54,15 @@ public class StageClearManager : MonoBehaviour
     }
     private void BackToMainMenu()
     {
-        SoundEffectManager.Instance.OnClickSound();
+        if(SoundEffectManager.Instance != null)
+            SoundEffectManager.Instance.OnClickSound();
         GameManager.Instance.HomeScene();
-        //StartCoroutine(BackHomeDelay());
     }
     private void GetNextLevel()
     {
-        SoundEffectManager.Instance.OnClickSound();
+        if (SoundEffectManager.Instance != null)
+            SoundEffectManager.Instance.OnClickSound();
         GameManager.Instance.NextStage();
-        //StartCoroutine(NextSceneDelay());
     }
     public void ActiveStarOne(bool fullied) => _filledStars_I.SetActive(fullied);
     public void ActiveStarTwo(bool fullied) => _filledStars_II.SetActive(fullied);
@@ -72,6 +72,7 @@ public class StageClearManager : MonoBehaviour
     {
         yield return new WaitForSeconds(4f);
         transform.localScale = Vector3.one;
-        SoundEffectManager.Instance.OnVictorySound();
+        if (SoundEffectManager.Instance != null)
+            SoundEffectManager.Instance.OnVictorySound();
     }
 }

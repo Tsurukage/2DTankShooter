@@ -36,15 +36,15 @@ public class StageFailManager : MonoBehaviour
 
     private void BackToMainMenu()
     {
-        SoundEffectManager.Instance.OnClickSound();
+        if (SoundEffectManager.Instance != null)
+            SoundEffectManager.Instance.OnClickSound();
         GameManager.Instance.HomeScene();
-        //StartCoroutine(BackHomeDelay());
     }
     private void GetNextLevel()
     {
-        SoundEffectManager.Instance.OnClickSound();
+        if (SoundEffectManager.Instance != null)
+            SoundEffectManager.Instance.OnClickSound();
         GameManager.Instance.NextStage();
-        //StartCoroutine(NextSceneDelay());
     }
     IEnumerator SetDelay()
     {
