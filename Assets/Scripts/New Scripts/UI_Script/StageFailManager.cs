@@ -50,6 +50,7 @@ public class StageFailManager : MonoBehaviour
     {
         yield return new WaitForSeconds(4f);
         transform.localScale = Vector3.one;
-        SoundEffectManager.Instance.OnFailSound();
+        if (SoundEffectManager.Instance != null)
+            SoundEffectManager.Instance.OnFailSound();
     }
 }

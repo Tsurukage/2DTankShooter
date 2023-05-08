@@ -29,6 +29,7 @@ public class SimpleGame : MonoBehaviour
     [SerializeField] private int animalCount = 3;
     
     private int InitAnimalCount;
+    private bool chanceUsed = false;
 
     public static event Action<int, int, int, int> Top_UI;
     public static event Action<bool> StarOne;
@@ -45,6 +46,7 @@ public class SimpleGame : MonoBehaviour
         Top_UI?.Invoke(tankCount, shootingCount, badgeCount, animalCount);
         InitAnimalCount = animalCount;
         SpawnCurrentLevel();
+        chanceUsed = false;
     }
     private void SpawnCurrentLevel()
     {
@@ -95,8 +97,15 @@ public class SimpleGame : MonoBehaviour
         }
         else if (tankCount > 0 && shootingCount == 0)
         {
-            Debug.Log("Game Over!");
-            GameManager.Instance.UpdateGameState(GameState.StageFailUI);
+            if (!chanceUsed)
+            {
+                GameManager.Instance.UpdateGameState(GameState.StageChancesUI);
+            }
+            else
+            {
+                GameManager.Instance.UpdateGameState(GameState.StageFailUI);
+                Debug.Log("Game Over!");
+            }
         }
         else if(animalCount == 0)
         {
@@ -106,6 +115,15 @@ public class SimpleGame : MonoBehaviour
         StarOne?.Invoke(tankCount == 0);
         StarTwo?.Invoke(shootingCount > 0);
         StarThree?.Invoke(animalCount == InitAnimalCount);
+    }
+    public void SetBool()
+    {
+        chanceUsed = true;
+    }
+    public void IncreaseShootingCount(int count)
+    {
+        shootingCount += count;
+        Top_UI?.Invoke(tankCount, shootingCount, badgeCount, animalCount);
     }
 }
 [Serializable]

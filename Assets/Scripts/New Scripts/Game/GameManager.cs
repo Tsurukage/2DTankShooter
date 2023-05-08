@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
 
     public void NextStage()
     {
-        int randomIndex = Random.Range(1, 7);
+        int randomIndex = Random.Range(1, 13);
         SceneManager.LoadScene(randomIndex);
     }
     public void HomeScene()

@@ -16,12 +16,15 @@ public class UIMenuManager : MonoBehaviour
         var startPanel = Instantiate(_stagePreparePanel, _uiCanvas);
         var panelStart = startPanel.GetComponent<StagePrepareManager>();
         panelStart.OnSetActive(GameManager.Instance.State);
+
         var chancePanel = Instantiate(_stageChancePanel, _uiCanvas);
         var panelChance = chancePanel.GetComponent<StageChanceManager>();
-        chancePanel.SetActive(false);
+        panelChance.OnSetActive(GameManager.Instance.State);
+
         var clearPanel = Instantiate(_stageClearPanel, _uiCanvas);
         var panelClear = clearPanel.GetComponent<StageClearManager>();
         panelClear.OnSetActive(GameManager.Instance.State);
+
         var failPanel = Instantiate(_stageFailPanel, _uiCanvas);
         var panelFail = failPanel.GetComponent<StageFailManager>();
         panelFail.OnSetActive(GameManager.Instance.State);
