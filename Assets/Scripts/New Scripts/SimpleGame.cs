@@ -93,24 +93,24 @@ public class SimpleGame : MonoBehaviour
         {
             GameManager.Instance.HandleStageClear(false);
             Debug.Log("Stage Complete");
-            GameManager.Instance.UpdateGameState(GameState.StageClearUI);
+            GameManager.Instance.UpdateGameState(GameState.StageClearUI, 4);
         }
         else if (tankCount > 0 && shootingCount == 0)
         {
             if (!chanceUsed)
             {
-                GameManager.Instance.UpdateGameState(GameState.StageChancesUI);
+                GameManager.Instance.UpdateGameState(GameState.StageChancesUI, 1);
             }
             else
             {
-                GameManager.Instance.UpdateGameState(GameState.StageFailUI);
+                GameManager.Instance.UpdateGameState(GameState.StageFailUI, 4);
                 Debug.Log("Game Over!");
             }
         }
         else if(animalCount == 0)
         {
             Debug.Log("不要滥杀动物！");
-            GameManager.Instance.UpdateGameState(GameState.StageFailUI);
+            GameManager.Instance.UpdateGameState(GameState.StageFailUI, 4);
         }
         StarOne?.Invoke(tankCount == 0);
         StarTwo?.Invoke(shootingCount > 0);

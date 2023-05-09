@@ -18,7 +18,7 @@ public class StagePrepareManager : MonoBehaviour
     {
         GameManager.OnStateChange -= OnSetActive;
     }
-    public void OnSetActive(GameState state)
+    public void OnSetActive(GameState state, float delay = 0)
     {
         gameObject.SetActive(state == GameState.StagePrepareUI);
     }

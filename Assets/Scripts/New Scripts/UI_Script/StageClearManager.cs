@@ -37,12 +37,12 @@ public class StageClearManager : MonoBehaviour
         SimpleGame.StarTwo -= ActiveStarTwo;
         SimpleGame.StarThree -= ActiveStarThree;
     }
-    public void OnSetActive(GameState state)
+    public void OnSetActive(GameState state, float delay = 0)
     {
         gameObject.SetActive(state == GameState.StageClearUI);
         transform.localScale = Vector3.zero;
         if (state == GameState.StageClearUI)
-            StartCoroutine(SetDealy());
+            StartCoroutine(SetDealy(delay));
     }
 
     void Start()
@@ -68,9 +68,9 @@ public class StageClearManager : MonoBehaviour
     public void ActiveStarTwo(bool fullied) => _filledStars_II.SetActive(fullied);
     public void ActiveStarThree(bool fullied) => _filledStars_III.SetActive(fullied);
 
-    IEnumerator SetDealy()
+    IEnumerator SetDealy(float delay)
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(delay);
         transform.localScale = Vector3.one;
         if (SoundEffectManager.Instance != null)
             SoundEffectManager.Instance.OnVictorySound();

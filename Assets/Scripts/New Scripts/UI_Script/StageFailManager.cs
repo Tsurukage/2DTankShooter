@@ -17,12 +17,12 @@ public class StageFailManager : MonoBehaviour
         GameManager.OnStateChange -= OnSetActive;
     }
 
-    public void OnSetActive(GameState state)
+    public void OnSetActive(GameState state, float delay = 0)
     {
         gameObject.SetActive(state == GameState.StageFailUI);
         transform.localScale = Vector3.zero;
         if (state == GameState.StageFailUI)
-            StartCoroutine(SetDelay());
+            StartCoroutine(SetDelay(delay));
     }
 
     // Start is called before the first frame update
@@ -46,9 +46,9 @@ public class StageFailManager : MonoBehaviour
             SoundEffectManager.Instance.OnClickSound();
         GameManager.Instance.NextStage();
     }
-    IEnumerator SetDelay()
+    IEnumerator SetDelay(float delay)
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(delay);
         transform.localScale = Vector3.one;
         if (SoundEffectManager.Instance != null)
             SoundEffectManager.Instance.OnFailSound();

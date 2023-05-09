@@ -19,16 +19,16 @@ public class StageChanceManager : MonoBehaviour
     {
         GameManager.OnStateChange -= OnSetActive;
     }
-    public void OnSetActive(GameState state)
+    public void OnSetActive(GameState state, float delay = 0)
     {
         gameObject.SetActive(state == GameState.StageChancesUI);
         transform.localScale = Vector3.zero;
         if (state == GameState.StageChancesUI)
-            StartCoroutine(SetDelay());
+            StartCoroutine(SetDelay(delay));
     }
-    IEnumerator SetDelay()
+    IEnumerator SetDelay(float delay)
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(delay);
         starTimer = true;
         transform.localScale = Vector3.one;
     }
@@ -45,7 +45,7 @@ public class StageChanceManager : MonoBehaviour
         SimpleGame.Instance.SetBool();
         btn_ads.interactable = false;
         clicked = true;
-        SimpleGame.Instance.IncreaseShootingCount(2);
+        SimpleGame.Instance.IncreaseShootingCount(1);
     }
 
     void Update()

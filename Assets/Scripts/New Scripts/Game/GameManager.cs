@@ -9,14 +9,14 @@ public class GameManager : MonoBehaviour
     private MobileJoystick joystick;
     public GameState State;
 
-    public static event Action<GameState> OnStateChange;
+    public static event Action<GameState, float> OnStateChange;
     private void Awake() => Instance = this;
     private void Start()
     {
         UpdateGameState(GameState.StagePrepareUI);
         joystick = FindObjectOfType<MobileJoystick>();
     }
-    public void UpdateGameState(GameState gameState)
+    public void UpdateGameState(GameState gameState, float delay = 0)
     {
         State = gameState;
 
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException(nameof(gameState), gameState, null);
         }
-        OnStateChange?.Invoke(gameState);
+        OnStateChange?.Invoke(gameState, delay);
     }
 
     public void HandleStageClear(bool active)
