@@ -87,8 +87,9 @@ GameObject:
   - component: {fileID: 8434228569781330201}
   - component: {fileID: 8434228569781330200}
   - component: {fileID: 8434228569781330203}
+  - component: {fileID: 3358594582895970663}
   m_Layer: 8
-  m_Name: IronObstacle
+  m_Name: WoodenObstacle
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +151,7 @@ SpriteRenderer:
   m_SortingLayerID: -1495791489
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1179497290, guid: ef1cfcef76082f5479c738eeab35ffd6, type: 3}
+  m_Sprite: {fileID: 3708207, guid: ef1cfcef76082f5479c738eeab35ffd6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -185,7 +186,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.45, y: 0.45}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!50 &8434228569781330200
 Rigidbody2D:
@@ -220,7 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92609104ee8467640b7bc9fdd95f45b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 120
+  MaxHealth: 50
   health: 0
   OnDead:
     m_PersistentCalls:
@@ -270,6 +271,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &3358594582895970663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434228569781330204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb1edc42347b48f4482cc9373c9cf68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _splashRange: 0
+  _bombBarrelDamage: 0
+  OnExplode:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8434228570120086103
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,7 +375,7 @@ GameObject:
   - component: {fileID: 8434228570385511521}
   - component: {fileID: 8434228570385511520}
   m_Layer: 0
-  m_Name: "\u94C1\u7BB1"
+  m_Name: "\u6728\u7BB1 red"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
