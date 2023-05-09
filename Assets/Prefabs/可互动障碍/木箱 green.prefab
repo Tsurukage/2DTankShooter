@@ -57,6 +57,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1393087183
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -148,9 +149,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1495791489
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1989206285, guid: ef1cfcef76082f5479c738eeab35ffd6, type: 3}
+  m_Sprite: {fileID: 110018345, guid: ef1cfcef76082f5479c738eeab35ffd6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -374,7 +375,7 @@ GameObject:
   - component: {fileID: 8434228570385511521}
   - component: {fileID: 8434228570385511520}
   m_Layer: 0
-  m_Name: "\u6728\u7BB1"
+  m_Name: "\u6728\u7BB1 green"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
