@@ -9,6 +9,7 @@ public class StageChanceManager : MonoBehaviour
     private float value_time = 0;
     [SerializeField] private Text text_timer;
     [SerializeField] private Button btn_ads;
+    [SerializeField] private Button btn_diamond;
     bool clicked = false;
     bool starTimer = false;
     void Awake()
@@ -37,15 +38,21 @@ public class StageChanceManager : MonoBehaviour
         value_time = SimpleGame.Instance.CountDown;
         text_timer.text = value_time.ToString("00");
         btn_ads.onClick.AddListener(OnClickAction);
+        btn_diamond.onClick.AddListener(OnClickAction);
         starTimer = false;
     }
 
     private void OnClickAction()
     {
         SimpleGame.Instance.SetBool();
-        btn_ads.interactable = false;
         clicked = true;
+        SetInteraction(!clicked);
         SimpleGame.Instance.IncreaseShootingCount(1);
+    }
+    private void SetInteraction(bool interactable)
+    {
+        btn_ads.interactable= interactable;
+        btn_diamond.interactable = interactable;
     }
 
     void Update()

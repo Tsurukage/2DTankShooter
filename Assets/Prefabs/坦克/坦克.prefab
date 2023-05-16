@@ -612,9 +612,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 8369425982053129453}
-        m_TargetAssemblyTypeName: TankBadgeDrop, Assembly-CSharp
-        m_MethodName: SetBadgeDrop
+  OnHealthEmpty:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3319313375955575461}
+        m_TargetAssemblyTypeName: DestroyUtl, Assembly-CSharp
+        m_MethodName: UpdateTankCount
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -622,14 +625,11 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
-  OnHealthEmpty:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3319313375955575461}
-        m_TargetAssemblyTypeName: DestroyUtl, Assembly-CSharp
-        m_MethodName: UpdateTankCount
+      - m_Target: {fileID: 8369425982053129453}
+        m_TargetAssemblyTypeName: TankBadgeDrop, Assembly-CSharp
+        m_MethodName: SetBadgeDrop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -750,6 +750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f686f3f88ea2654d88f6da3871ccb07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemySO: {fileID: 0}
   rankIcon: {fileID: 6596240716046249386, guid: e48fdc775f0b32943b37a1db150bcbfe, type: 3}
   _starHolder: {fileID: 4762186951964952769}
 --- !u!1 &7001154017030775731

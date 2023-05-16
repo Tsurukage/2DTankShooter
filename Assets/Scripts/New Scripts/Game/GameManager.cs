@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     private MobileJoystick joystick;
     public GameState State;
+    private int randomIndex;
 
     public static event Action<GameState, float> OnStateChange;
     private void Awake() => Instance = this;
@@ -46,7 +47,29 @@ public class GameManager : MonoBehaviour
 
     public void NextStage()
     {
-        int randomIndex = Random.Range(1, 13);
+        Player player = new Player();
+        switch (player.Rank)
+        {
+            case Rank.Bronze:
+                break;
+            case Rank.Silver:
+                break;
+            case Rank.Gold:
+                break;
+            case Rank.Platinum:
+                break;
+            case Rank.Diamond:
+                break;
+            case Rank.Master:
+                break;
+            case Rank.Grandmaster:
+                break;
+            case Rank.Legend:
+                break;
+            case Rank.Mythic:
+                break;
+        }
+        randomIndex = Random.Range(1, 17);
         SceneManager.LoadScene(randomIndex);
     }
     public void HomeScene()

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerInputController : MonoBehaviour
 {
     public float rotateSpeed = 100, bulletSpeed = 100;
     private Transform handPos;

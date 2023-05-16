@@ -10,11 +10,11 @@ public class MovementJoystick : MonoBehaviour
     private Vector2 joystickTouchPos;
     private Vector2 joystickOriPos;
     private float joystickRadius;
-    private PlayerController playerController;
+    private PlayerInputController playerController;
 
     void Start()
     {
-        playerController = FindObjectOfType<PlayerController>();
+        playerController = FindObjectOfType<PlayerInputController>();
         joystickOriPos = joystickBG.transform.position;
         joystickRadius = joystickBG.GetComponent<RectTransform>().sizeDelta.y / 4;
     }

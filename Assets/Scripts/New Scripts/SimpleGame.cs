@@ -30,6 +30,8 @@ public class SimpleGame : MonoBehaviour
     
     private int InitAnimalCount;
     private bool chanceUsed = false;
+    private static int winStreak = 0;
+    private static int loseStreak = 0;
 
     public static event Action<int, int, int, int> Top_UI;
     public static event Action<bool> StarOne;
@@ -64,7 +66,6 @@ public class SimpleGame : MonoBehaviour
     {
         tankCount--;
         UpdateCount();
-        CheckGame();
     }
     public void UpdateShootingCount()
     {
@@ -72,16 +73,15 @@ public class SimpleGame : MonoBehaviour
         UpdateCount();
         CheckGame();
     }
-    public void UpdateBadgeCount(int amount)
-    {
-        badgeCount += amount;
-        UpdateCount();
-    }
     public void UpdateAnimalChanceCount()
     {
         animalCount--;
         UpdateCount();
-        CheckGame();
+    }
+    public void UpdateBadgeCount(int amount)
+    {
+        badgeCount += amount;
+        UpdateCount();
     }
     public void UpdateCount()
     {
@@ -91,24 +91,38 @@ public class SimpleGame : MonoBehaviour
     {
         if (tankCount == 0)
         {
+            winStreak++;
+            CheckStreak();
             GameManager.Instance.HandleStageClear(false);
             Debug.Log("Stage Complete");
             GameManager.Instance.UpdateGameState(GameState.StageClearUI, 4);
+            FinalBadge(badgeCount);
+            print(badgeCount);
         }
-        else if (tankCount > 0 && shootingCount == 0)
+        else if (shootingCount == 0)
         {
-            if (!chanceUsed)
+            if (tankCount > 0)
             {
-                GameManager.Instance.UpdateGameState(GameState.StageChancesUI, 1);
-            }
-            else
-            {
-                GameManager.Instance.UpdateGameState(GameState.StageFailUI, 4);
-                Debug.Log("Game Over!");
+                if (!chanceUsed)
+                {
+                    GameManager.Instance.UpdateGameState(GameState.StageChancesUI, 1);
+                }
+                else
+                {
+                    loseStreak++;
+                    CheckStreak();
+                    FinalBadge(badgeCount);
+                    GameManager.Instance.UpdateGameState(GameState.StageFailUI, 4);
+                    Debug.Log("Game Over!");
+                }
             }
         }
-        else if(animalCount == 0)
+        else if (animalCount == 0)
         {
+            loseStreak++;
+            CheckStreak();
+            print(badgeCount);
+            FinalBadge(badgeCount);
             Debug.Log("不要滥杀动物！");
             GameManager.Instance.UpdateGameState(GameState.StageFailUI, 4);
         }
@@ -120,10 +134,36 @@ public class SimpleGame : MonoBehaviour
     {
         chanceUsed = true;
     }
+    private void CheckStreak()
+    {
+        print($"{winStreak}, {loseStreak}");
+        if (winStreak == 3 && loseStreak == 0)
+        {
+            Player player = new Player();
+            player.SetRank(1);
+            winStreak = 0;
+        }
+        if(winStreak > 0 && loseStreak > 0)
+        {
+            winStreak = 0;
+            loseStreak = 0;
+        }
+        if(loseStreak == 3 && winStreak == 0)
+        {
+            Player player = new Player();
+            player.SetRank(-1);
+            loseStreak = 0;
+        }
+    }
     public void IncreaseShootingCount(int count)
     {
         shootingCount += count;
         Top_UI?.Invoke(tankCount, shootingCount, badgeCount, animalCount);
+    }
+    public void FinalBadge(int value)
+    {
+        Player player = new Player();
+        player.AddBadge(value);
     }
 }
 [Serializable]

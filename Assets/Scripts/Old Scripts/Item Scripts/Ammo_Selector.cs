@@ -13,12 +13,12 @@ public class Ammo_Selector : MonoBehaviour          //UI view
     public float impactField;
     public AmmoType ammoType;
 
-    private PlayerController playerController;
+    private PlayerInputController playerController;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerController = FindObjectOfType<PlayerController>();
+        playerController = FindObjectOfType<PlayerInputController>();
         for (int i = 0; i < launcherMode.Length; i++)
         {
             Button btn = launcherMode[i];
