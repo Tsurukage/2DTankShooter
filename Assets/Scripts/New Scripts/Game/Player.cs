@@ -19,7 +19,7 @@ public class Player : IPlayer
     public int Diamond { get; set; }
     public Rank Rank { get; set; }
 
-    internal Player(string uid, string name, string nationality, int badge, int diamond, Rank rank)
+    internal Player(string uid = "", string name = "", string nationality = "", int badge = 0, int diamond = 0, Rank rank = 0)
     {
         Uid = uid;
         Name = name;

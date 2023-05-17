@@ -42,7 +42,10 @@ public class StageClearManager : MonoBehaviour
         gameObject.SetActive(state == GameState.StageClearUI);
         transform.localScale = Vector3.zero;
         if (state == GameState.StageClearUI)
+        {
+            SimpleGame.Instance.CheckStreak(win: 1);
             StartCoroutine(SetDealy(delay));
+        }
     }
 
     void Start()

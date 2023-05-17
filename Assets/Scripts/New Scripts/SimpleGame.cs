@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class SimpleGame : MonoBehaviour
 {
     public static SimpleGame Instance;
-
+    public Player Player = new Player();
     [SerializeField] List<EnemyComp> _enemyComp;
     [SerializeField] private GameObject _tankPrefab;
     [SerializeField] private string _stageName;
@@ -91,15 +91,13 @@ public class SimpleGame : MonoBehaviour
     {
         if (tankCount == 0)
         {
-            winStreak++;
-            CheckStreak();
             GameManager.Instance.HandleStageClear(false);
             Debug.Log("Stage Complete");
             GameManager.Instance.UpdateGameState(GameState.StageClearUI, 4);
             FinalBadge(badgeCount);
             print(badgeCount);
         }
-        else if (shootingCount == 0)
+        if (shootingCount == 0)
         {
             if (tankCount > 0)
             {
@@ -109,18 +107,16 @@ public class SimpleGame : MonoBehaviour
                 }
                 else
                 {
-                    loseStreak++;
-                    CheckStreak();
+                    GameManager.Instance.HandleStageClear(false);
                     FinalBadge(badgeCount);
                     GameManager.Instance.UpdateGameState(GameState.StageFailUI, 4);
                     Debug.Log("Game Over!");
                 }
             }
         }
-        else if (animalCount == 0)
+        if (animalCount == 0)
         {
-            loseStreak++;
-            CheckStreak();
+            GameManager.Instance.HandleStageClear(false);
             print(badgeCount);
             FinalBadge(badgeCount);
             Debug.Log("不要滥杀动物！");
@@ -134,13 +130,15 @@ public class SimpleGame : MonoBehaviour
     {
         chanceUsed = true;
     }
-    private void CheckStreak()
+    public void CheckStreak(int win = 0, int lose = 0)
     {
+        winStreak += win;
+        loseStreak += lose;
         print($"{winStreak}, {loseStreak}");
         if (winStreak == 3 && loseStreak == 0)
         {
-            Player player = new Player();
-            player.SetRank(1);
+            Player.SetRank(1);
+            print(Player.Rank);
             winStreak = 0;
         }
         if(winStreak > 0 && loseStreak > 0)
@@ -150,8 +148,7 @@ public class SimpleGame : MonoBehaviour
         }
         if(loseStreak == 3 && winStreak == 0)
         {
-            Player player = new Player();
-            player.SetRank(-1);
+            Player.SetRank(-1);
             loseStreak = 0;
         }
     }
@@ -162,8 +159,7 @@ public class SimpleGame : MonoBehaviour
     }
     public void FinalBadge(int value)
     {
-        Player player = new Player();
-        player.AddBadge(value);
+        Player.AddBadge(value);
     }
 }
 [Serializable]

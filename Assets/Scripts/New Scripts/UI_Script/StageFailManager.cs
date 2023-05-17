@@ -22,7 +22,10 @@ public class StageFailManager : MonoBehaviour
         gameObject.SetActive(state == GameState.StageFailUI);
         transform.localScale = Vector3.zero;
         if (state == GameState.StageFailUI)
+        {
+            SimpleGame.Instance.CheckStreak(lose: 1);
             StartCoroutine(SetDelay(delay));
+        }
     }
 
     // Start is called before the first frame update
