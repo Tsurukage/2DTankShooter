@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +19,16 @@ public class Player : IPlayer
     public int Diamond { get; set; }
     public Rank Rank { get; set; }
 
+    internal Player(string uid, string name, string nationality, int badge, int diamond, Rank rank)
+    {
+        Uid = uid;
+        Name = name;
+        Nationality = nationality;
+        Badge = badge;
+        Diamond = diamond;
+        Rank = rank;
+    }
+
     public void AddBadge(int badge)
     {
         Badge = PlayerPrefs.GetInt("badge");
@@ -34,11 +45,10 @@ public class Player : IPlayer
     }
     public void SetRank(int rank)
     {
-        PlayerPrefs.GetInt("rank");
+        Rank = (Rank)PlayerPrefs.GetInt("rank");
         Rank += rank;
         if (Rank < Rank.Bronze) Rank = Rank.Bronze;
         if (Rank > Rank.Mythic) Rank = Rank.Mythic;
-        Rank = (Rank)rank;
         PlayerPrefs.SetInt("rank", (int)Rank);
     }
 }

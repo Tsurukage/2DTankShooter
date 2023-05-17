@@ -19,8 +19,6 @@ public class PlayerUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player player = new Player();
-        player.SetDiamond(100);
         var badge = PlayerPrefs.GetInt("badge");
         SetPlayerBadge(badge);
         if(ResetPlayerPref != null)

@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -47,30 +46,8 @@ public class GameManager : MonoBehaviour
 
     public void NextStage()
     {
-        Player player = new Player();
-        switch (player.Rank)
-        {
-            case Rank.Bronze:
-                break;
-            case Rank.Silver:
-                break;
-            case Rank.Gold:
-                break;
-            case Rank.Platinum:
-                break;
-            case Rank.Diamond:
-                break;
-            case Rank.Master:
-                break;
-            case Rank.Grandmaster:
-                break;
-            case Rank.Legend:
-                break;
-            case Rank.Mythic:
-                break;
-        }
-        randomIndex = Random.Range(1, 17);
-        SceneManager.LoadScene(randomIndex);
+        var rank = PlayerPrefs.GetInt("rank");
+        SceneAssetsManager.Instance.LoadScene((Rank)rank);
     }
     public void HomeScene()
     {
