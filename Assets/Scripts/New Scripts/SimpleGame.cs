@@ -1,13 +1,12 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
 
 public class SimpleGame : MonoBehaviour
 {
     public static SimpleGame Instance;
-    public Player Player = new Player();
+    private Player Player = new Player();
     [SerializeField] List<EnemyComp> _enemyComp;
     [SerializeField] private GameObject _tankPrefab;
     [SerializeField] private string _stageName;

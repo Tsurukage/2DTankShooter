@@ -5,51 +5,54 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public interface IPlayer
+namespace Models
 {
-    Rank Rank { get; }
-    int Badge { get; }
-}
-public class Player : IPlayer
-{
-    public string Uid { get; set; }
-    public string Name { get; set; }
-    public string Nationality { get; set; }
-    public int Badge { get; set; }
-    public int Diamond { get; set; }
-    public Rank Rank { get; set; }
+    public interface IPlayer
+    {
+        Rank Rank { get; }
+        int Badge { get; }
+    }
+    public class Player : IPlayer
+    {
+        public string Uid { get; set; }
+        public string Name { get; set; }
+        public string Nationality { get; set; }
+        public int Badge { get; set; }
+        public int Diamond { get; set; }
+        public Rank Rank { get; set; }
 
-    internal Player(string uid = "", string name = "", string nationality = "", int badge = 0, int diamond = 0, Rank rank = 0)
-    {
-        Uid = uid;
-        Name = name;
-        Nationality = nationality;
-        Badge = badge;
-        Diamond = diamond;
-        Rank = rank;
-    }
+        internal Player(string uid = "", string name = "", string nationality = "", int badge = 0, int diamond = 0, Rank rank = 0)
+        {
+            Uid = uid;
+            Name = name;
+            Nationality = nationality;
+            Badge = badge;
+            Diamond = diamond;
+            Rank = rank;
+        }
 
-    public void AddBadge(int badge)
-    {
-        Badge = PlayerPrefs.GetInt("badge");
-        Badge += badge;
-        PlayerPrefs.SetInt("badge", Badge);
-    }
-    public void SetDiamond(int diamond)
-    {
-        Diamond = diamond;
-    }
-    public void AddDiamond(int diamond)
-    {
-        Diamond += diamond;
-    }
-    public void SetRank(int rank)
-    {
-        Rank = (Rank)PlayerPrefs.GetInt("rank");
-        Rank += rank;
-        if (Rank < Rank.Bronze) Rank = Rank.Bronze;
-        if (Rank > Rank.Mythic) Rank = Rank.Mythic;
-        PlayerPrefs.SetInt("rank", (int)Rank);
+        public void AddBadge(int badge)
+        {
+            Badge = PlayerPrefs.GetInt("badge");
+            Badge += badge;
+            PlayerPrefs.SetInt("badge", Badge);
+        }
+        public void SetDiamond(int diamond)
+        {
+            Diamond = diamond;
+        }
+        public void AddDiamond(int diamond)
+        {
+            Diamond += diamond;
+        }
+        public void SetRank(int rank)
+        {
+            Rank = (Rank)PlayerPrefs.GetInt("rank");
+            Rank += rank;
+            if (Rank < Rank.Bronze) Rank = Rank.Bronze;
+            if (Rank > Rank.Mythic) Rank = Rank.Mythic;
+            PlayerPrefs.SetInt("rank", (int)Rank);
+        }
     }
 }
 public enum Rank
