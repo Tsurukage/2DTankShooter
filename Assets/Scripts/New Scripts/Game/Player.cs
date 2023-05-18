@@ -31,17 +31,22 @@ namespace Models
             //Badge = PlayerPrefs.GetInt("badge");
             var last = Badge;
             Badge += badge;
+            Debug.Log($"Badge [{badge}] added to [{last}], total: {Badge}");
             //PlayerPrefs.SetInt("badge", Badge);
         }
         public void AddDiamond(int diamond)
         {
+            var last = Diamond;
             Diamond += diamond;
+            Debug.Log($"Badge [{diamond}] added to [{last}], total: {Diamond}");
         }
         public void SetRank(int rank)
         {
+            var last = (int)Rank;
             Rank += rank;
             if (Rank < Rank.Bronze) Rank = Rank.Bronze;
             if (Rank > Rank.Mythic) Rank = Rank.Mythic;
+            Debug.Log($"Player up level from [{(Rank)last}] to [{Rank}]");
         }
     }
 }

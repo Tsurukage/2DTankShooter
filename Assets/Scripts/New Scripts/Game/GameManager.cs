@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public static GameWorld World { get; private set; }
     private MobileJoystick joystick;
     public GameState State;
 
@@ -15,8 +14,6 @@ public class GameManager : MonoBehaviour
     private void Awake() => Instance = this;
     private void Start()
     {
-        World = new GameWorld();
-        World.SetPlayer(new Player("uid3991", "îLêÂ", "Malaysia", 0, 60, 8));
         UpdateGameState(GameState.StagePrepareUI);
         joystick = FindObjectOfType<MobileJoystick>();
     }
@@ -50,8 +47,8 @@ public class GameManager : MonoBehaviour
 
     public void NextStage()
     {
-        var rank = PlayerPrefs.GetInt("rank");
-        SceneAssetsManager.Instance.LoadScene((Rank)rank);
+        var player = Game.World.Player;
+        SceneAssetsManager.Instance.LoadScene(player.Rank);
     }
     public void HomeScene()
     {

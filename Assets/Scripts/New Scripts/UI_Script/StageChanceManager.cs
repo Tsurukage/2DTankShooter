@@ -43,8 +43,9 @@ public class StageChanceManager : MonoBehaviour
 
     private void OnDiamondClickAction()
     {
+        SoundEffectManager.Instance.OnClickSound();
         SimpleGame.Instance.SetBool();
-        var player = GameManager.World.Player;
+        var player = Game.World.Player;
         var diamond = player.Diamond;
         if (diamond > 0)
         {
@@ -58,6 +59,7 @@ public class StageChanceManager : MonoBehaviour
 
     private void OnAdsClickAction()
     {
+        SoundEffectManager.Instance.OnClickSound();
         SimpleGame.Instance.SetBool();
         clicked = true;
         SetInteraction(!clicked);

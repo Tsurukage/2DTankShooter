@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class PlayerUIManager : MonoBehaviour
 {
-    private Player Player => GameManager.World.Player;
+    private Player Player => Game.World.Player;
     [SerializeField] private Text name_player;
     [SerializeField] private Image img_player;
     [SerializeField] private Image img_playerRank;

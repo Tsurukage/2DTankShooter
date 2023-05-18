@@ -22,11 +22,6 @@ public class SceneAssetsManager : MonoBehaviour
         else
             Destroy(gameObject);
     }
-    void Start()
-    {
-        var list = tier_bronze.Count;
-        print(list);
-    }
     public void LoadScene(Rank rank)
     {
         List<string> possibleScene = new List<string>();

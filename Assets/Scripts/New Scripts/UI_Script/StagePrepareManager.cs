@@ -1,14 +1,17 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Models;
+using System;
 
 public class StagePrepareManager : MonoBehaviour
 {
+    private Player Player => Game.World.Player;
+    [SerializeField] private Image img_rank;
     [SerializeField] private Text _stageName;
     [SerializeField] private Text _timerText;
     [SerializeField] private Button _adsButton;
+    [SerializeField] private Button _diamondButton;
+    [SerializeField] private Sprite[] sprite_rank;
     private float _time = 9;
     void Awake()
     {
@@ -25,19 +28,42 @@ public class StagePrepareManager : MonoBehaviour
 
     private void Start()
     {
+        img_rank.sprite = sprite_rank[(int)Player.Rank];
         _timerText = GameObject.Find("text_cd").GetComponent<Text>();
         _stageName.text = SimpleGame.Instance.Stage_Name;
         _time = SimpleGame.Instance.CountDown;
         _timerText.text = _time.ToString();
-        _adsButton.onClick.AddListener(OnClickAction);
+        _adsButton.onClick.AddListener(OnAdsClickAction);
+        _diamondButton.onClick.AddListener(OnDiamondClickAction);
     }
 
-    private void OnClickAction()
+    private void OnDiamondClickAction()
+    {
+        var player = Game.World.Player;
+        var diamond = player.Diamond;
+        if (diamond > 0)
+        {
+            player.AddDiamond(-1);
+            var loot = GetComponent<LootBag>();
+            loot.InstantiateLoot();
+            SoundEffectManager.Instance.OnClickSound();
+            SetInteraction(false);
+        }
+        else
+            print("Player has no diamond");
+    }
+
+    private void OnAdsClickAction()
     {
         var loot = GetComponent<LootBag>();
         loot.InstantiateLoot();
         SoundEffectManager.Instance.OnClickSound();
-        _adsButton.interactable = false;
+        SetInteraction(false);
+    }
+    private void SetInteraction(bool interactable)
+    {
+        _adsButton.interactable = interactable;
+        _diamondButton.interactable = interactable;
     }
 
     void Update()

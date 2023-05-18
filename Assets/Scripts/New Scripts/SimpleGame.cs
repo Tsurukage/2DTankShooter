@@ -6,7 +6,7 @@ using UnityEngine;
 public class SimpleGame : MonoBehaviour
 {
     public static SimpleGame Instance;
-    private Player Player => GameManager.World.Player;
+    private Player Player => Game.World.Player;
     [SerializeField] List<EnemyComp> _enemyComp;
     [SerializeField] private GameObject _tankPrefab;
     [SerializeField] private string _stageName;
