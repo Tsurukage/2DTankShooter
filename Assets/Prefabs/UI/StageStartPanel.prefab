@@ -34,7 +34,7 @@ RectTransform:
   - {fileID: 1152673843468525789}
   - {fileID: 3840370790937825756}
   m_Father: {fileID: 1904730262036742148}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.35, y: 0.23600002}
   m_AnchorMax: {x: 0.65, y: 0.286}
@@ -727,7 +727,7 @@ RectTransform:
   - {fileID: 1904730262083386853}
   - {fileID: 8701897656651135313}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -784,9 +784,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ec1fcb97617fa4a8490e622a956ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  img_rank: {fileID: 1904730260913240014}
   _stageName: {fileID: 1904730260346104199}
   _timerText: {fileID: 1904730261007576394}
   _adsButton: {fileID: 1904730262083386850}
+  _diamondButton: {fileID: 6981407415510528459}
+  sprite_rank:
+  - {fileID: 21300000, guid: 20be758b590ef184f879445f7816364c, type: 3}
+  - {fileID: 21300000, guid: fbce945f809f93e4485b224fb13a8f66, type: 3}
+  - {fileID: 21300000, guid: 4e55aa33a1c3dfe4883be91c5d1b46d5, type: 3}
+  - {fileID: 21300000, guid: 979dc33f6800d4b4499012c0a6a06444, type: 3}
+  - {fileID: 21300000, guid: 87b4a51df9a2a96458397e9ed17e5830, type: 3}
+  - {fileID: 21300000, guid: c2be64ccf1e0ca140b41684abad5c212, type: 3}
+  - {fileID: 21300000, guid: 6e03e732b2412a348a8d77a1373a26f1, type: 3}
+  - {fileID: 21300000, guid: 50f58c0ea75e00047aefbac85c7a53dd, type: 3}
+  - {fileID: 21300000, guid: 275ac7bf41012ba45af993b6058b7fee, type: 3}
 --- !u!114 &8409098005512721879
 MonoBehaviour:
   m_ObjectHideFlags: 0
