@@ -477,7 +477,6 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
     m_TransformParent: {fileID: 2016005709}
     m_Modifications:
     - target: {fileID: 2854092050511861261, guid: e1b133797dfc7604dae8b4c57f2bd52e, type: 3}
@@ -529,7 +528,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e1b133797dfc7604dae8b4c57f2bd52e, type: 3}
 --- !u!1 &68914750
 GameObject:
@@ -3491,7 +3489,6 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
     m_TransformParent: {fileID: 2016005709}
     m_Modifications:
     - target: {fileID: 2854092050511861261, guid: e1b133797dfc7604dae8b4c57f2bd52e, type: 3}
@@ -3543,7 +3540,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e1b133797dfc7604dae8b4c57f2bd52e, type: 3}
 --- !u!1 &494417537
 GameObject:
@@ -6325,7 +6321,6 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
     m_TransformParent: {fileID: 2016005709}
     m_Modifications:
     - target: {fileID: 2854092050511861261, guid: 5fd2d09dfcc730a4c830081a96c93942, type: 3}
@@ -6377,7 +6372,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fd2d09dfcc730a4c830081a96c93942, type: 3}
 --- !u!1 &1004238860
 GameObject:
@@ -8080,7 +8074,6 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -8115,7 +8108,6 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
     m_TransformParent: {fileID: 2016005709}
     m_Modifications:
     - target: {fileID: 2854092050511861261, guid: 5fd2d09dfcc730a4c830081a96c93942, type: 3}
@@ -8167,7 +8159,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fd2d09dfcc730a4c830081a96c93942, type: 3}
 --- !u!1 &1313539410
 GameObject:
@@ -8560,7 +8551,6 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1355027471672956405, guid: aed2e31caa8a0894b8a8e2bb055577f6, type: 3}
@@ -8616,7 +8606,6 @@ PrefabInstance:
       value: bgm
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: aed2e31caa8a0894b8a8e2bb055577f6, type: 3}
 --- !u!1 &1432045885
 GameObject:
@@ -9862,40 +9851,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tier_bronze:
-  - {fileID: 102900000, guid: 263a8ee902b8bdb4fa84e37484754bbc, type: 3}
-  - {fileID: 102900000, guid: 8dfd22169f6b57b458c5fd6cd5406b93, type: 3}
-  - {fileID: 102900000, guid: 0d0a46941388d0d4389c770e569d14c1, type: 3}
-  - {fileID: 102900000, guid: 7aeff4e1e828fa942b7afd1aa1d5d0bb, type: 3}
+  - stage001
+  - stage002
+  - stage003
+  - stage004
   tier_silver:
-  - {fileID: 102900000, guid: 708d09807041fa44ab23939f1827c5b9, type: 3}
-  - {fileID: 102900000, guid: a59f09e6994d61648b36ef977d9a5633, type: 3}
-  - {fileID: 102900000, guid: 86ac04c7dd473244ab42f39cc96274e7, type: 3}
-  - {fileID: 102900000, guid: 97b1b23ad2a811a4fa7fdcce6318f774, type: 3}
+  - stage005
+  - stage006
+  - stage007
+  - stage008
   tier_gold:
-  - {fileID: 102900000, guid: ec5aeb4c4ffaaa74baac0fe0f6a57f6b, type: 3}
-  - {fileID: 102900000, guid: 433d3d8322d57924fb52e2ae359c1693, type: 3}
-  - {fileID: 102900000, guid: 88d31816a7b3cb84f835880b23aa96f7, type: 3}
-  - {fileID: 102900000, guid: cdb0065906325754f945d25428e0cd65, type: 3}
+  - stage009
+  - stage010
+  - stage011
+  - stage012
   tier_platinum:
-  - {fileID: 102900000, guid: 21b88f28289afe94eb64feff74deaf5c, type: 3}
-  - {fileID: 102900000, guid: c5d8ec94a9a882d498cbe194c2ab8ce8, type: 3}
-  - {fileID: 102900000, guid: eda8598221239024684c02e03c5cb290, type: 3}
+  - stage013
+  - stage014
+  - stage015
   tier_diamond:
-  - {fileID: 102900000, guid: 11d37991e270d204891647b505baa7e2, type: 3}
-  - {fileID: 102900000, guid: da5f3facd0c56ae4aabe8c7e9f42fb47, type: 3}
-  - {fileID: 102900000, guid: e3efd1c196f8b8149886b53d61f34f1d, type: 3}
+  - stage016
+  - stage017
+  - stage018
   tier_master:
-  - {fileID: 102900000, guid: 46f53854a2f680342ae5c60bc6e1c1b6, type: 3}
-  - {fileID: 102900000, guid: 7623ec968fd241d48ba1d494ee2176f4, type: 3}
+  - stage019
+  - stage020
   tier_grandmaster:
-  - {fileID: 102900000, guid: 46f53854a2f680342ae5c60bc6e1c1b6, type: 3}
-  - {fileID: 102900000, guid: 7623ec968fd241d48ba1d494ee2176f4, type: 3}
+  - stage019
+  - stage020
   tier_legend:
-  - {fileID: 102900000, guid: 46f53854a2f680342ae5c60bc6e1c1b6, type: 3}
-  - {fileID: 102900000, guid: 7623ec968fd241d48ba1d494ee2176f4, type: 3}
+  - stage019
+  - stage020
   tier_mythic:
-  - {fileID: 102900000, guid: 46f53854a2f680342ae5c60bc6e1c1b6, type: 3}
-  - {fileID: 102900000, guid: 7623ec968fd241d48ba1d494ee2176f4, type: 3}
+  - stage019
+  - stage020
 --- !u!4 &1623144922
 Transform:
   m_ObjectHideFlags: 0
@@ -12556,7 +12545,6 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
     m_TransformParent: {fileID: 2016005709}
     m_Modifications:
     - target: {fileID: 2854092050511861261, guid: 5fd2d09dfcc730a4c830081a96c93942, type: 3}
@@ -12608,7 +12596,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fd2d09dfcc730a4c830081a96c93942, type: 3}
 --- !u!1 &2133075484
 GameObject:

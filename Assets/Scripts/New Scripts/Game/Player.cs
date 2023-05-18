@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Models
 {
@@ -21,25 +16,22 @@ namespace Models
         public int Diamond { get; set; }
         public Rank Rank { get; set; }
 
-        internal Player(string uid = "", string name = "", string nationality = "", int badge = 0, int diamond = 0, Rank rank = 0)
+        internal Player(string uid = null, string name = null, string nationality = null, int badge = 0, int diamond = 0, int rank = 0)
         {
             Uid = uid;
             Name = name;
             Nationality = nationality;
             Badge = badge;
             Diamond = diamond;
-            Rank = rank;
+            Rank = (Rank)rank;
         }
-
-        public void AddBadge(int badge)
+        internal void AddBadge(int badge)
         {
-            Badge = PlayerPrefs.GetInt("badge");
+            if (badge == 0) return;
+            //Badge = PlayerPrefs.GetInt("badge");
+            var last = Badge;
             Badge += badge;
-            PlayerPrefs.SetInt("badge", Badge);
-        }
-        public void SetDiamond(int diamond)
-        {
-            Diamond = diamond;
+            //PlayerPrefs.SetInt("badge", Badge);
         }
         public void AddDiamond(int diamond)
         {
@@ -47,11 +39,9 @@ namespace Models
         }
         public void SetRank(int rank)
         {
-            Rank = (Rank)PlayerPrefs.GetInt("rank");
             Rank += rank;
             if (Rank < Rank.Bronze) Rank = Rank.Bronze;
             if (Rank > Rank.Mythic) Rank = Rank.Mythic;
-            PlayerPrefs.SetInt("rank", (int)Rank);
         }
     }
 }

@@ -44,7 +44,7 @@ public class StageChanceManager : MonoBehaviour
     private void OnDiamondClickAction()
     {
         SimpleGame.Instance.SetBool();
-        var player = new Player();
+        var player = GameManager.World.Player;
         var diamond = player.Diamond;
         if (diamond > 0)
         {
