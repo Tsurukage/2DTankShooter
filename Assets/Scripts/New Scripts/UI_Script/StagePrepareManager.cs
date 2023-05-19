@@ -12,7 +12,7 @@ public class StagePrepareManager : MonoBehaviour
     [SerializeField] private Button _adsButton;
     [SerializeField] private Button _diamondButton;
     [SerializeField] private Sprite[] sprite_rank;
-    private float _time = 9;
+    private float _time = 3;        //Previously set to 9
     void Awake()
     {
         GameManager.OnStateChange += OnSetActive;
@@ -28,7 +28,9 @@ public class StagePrepareManager : MonoBehaviour
 
     private void Start()
     {
-        img_rank.sprite = sprite_rank[(int)Player.Rank];
+        var game = FindObjectOfType<Game>();
+        if(game != null)
+            img_rank.sprite = sprite_rank[(int)Player.Rank];
         _timerText = GameObject.Find("text_cd").GetComponent<Text>();
         _stageName.text = SimpleGame.Instance.Stage_Name;
         _time = SimpleGame.Instance.CountDown;
