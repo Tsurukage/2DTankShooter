@@ -7164,7 +7164,7 @@ PrefabInstance:
     - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
       propertyPath: _enemyComp.Array.data[0]._enemySO
       value: 
-      objectReference: {fileID: 11400000, guid: aabfa496f5fe94b439b8bae1a64748f3, type: 2}
+      objectReference: {fileID: 11400000, guid: 94b25472ecc41514196745b96d4a40e7, type: 2}
     - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
       propertyPath: _enemyComp.Array.data[1]._enemySO
       value: 
@@ -7183,7 +7183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
       propertyPath: _enemyComp.Array.data[0].position.y
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
       propertyPath: _enemyComp.Array.data[1].position.y

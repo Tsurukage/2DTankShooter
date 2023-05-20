@@ -1332,6 +1332,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: background
       objectReference: {fileID: 0}
+    - target: {fileID: 1008357381604932406, guid: 2704ed3e26e39a34a9f9347a77e043c9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7332088
+      objectReference: {fileID: 0}
+    - target: {fileID: 1008357381604932406, guid: 2704ed3e26e39a34a9f9347a77e043c9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8011136
+      objectReference: {fileID: 0}
+    - target: {fileID: 1008357381604932406, guid: 2704ed3e26e39a34a9f9347a77e043c9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0103
+      objectReference: {fileID: 0}
+    - target: {fileID: 1008357381604932406, guid: 2704ed3e26e39a34a9f9347a77e043c9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0938
+      objectReference: {fileID: 0}
     - target: {fileID: 1586858616442972948, guid: 2704ed3e26e39a34a9f9347a77e043c9, type: 3}
       propertyPath: m_Sprite
       value: 

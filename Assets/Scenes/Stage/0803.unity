@@ -7514,15 +7514,15 @@ PrefabInstance:
     - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
       propertyPath: _enemyComp.Array.data[0]._enemySO
       value: 
-      objectReference: {fileID: 11400000, guid: 49b54ad182769964c9b74614ceb431f7, type: 2}
+      objectReference: {fileID: 11400000, guid: e65befee2b941cf49bf92408514056e4, type: 2}
     - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
       propertyPath: _enemyComp.Array.data[1]._enemySO
       value: 
-      objectReference: {fileID: 11400000, guid: 49b54ad182769964c9b74614ceb431f7, type: 2}
+      objectReference: {fileID: 11400000, guid: 174b239503b9cda45a83a16a2076c43b, type: 2}
     - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
       propertyPath: _enemyComp.Array.data[2]._enemySO
       value: 
-      objectReference: {fileID: 11400000, guid: eed09ab9987846d469afec0f50008f86, type: 2}
+      objectReference: {fileID: 11400000, guid: ee64fd0249144cc48ae3490288b205b8, type: 2}
     - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
       propertyPath: _enemyComp.Array.data[3]._enemySO
       value: 
