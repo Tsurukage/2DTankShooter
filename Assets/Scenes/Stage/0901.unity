@@ -338,74 +338,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8434228570385511521, guid: 4dcfba0d8a787a047a305ce467fa404b, type: 3}
   m_PrefabInstance: {fileID: 80298704}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &89793477
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 2
-    m_TransformParent: {fileID: 1948680673}
-    m_Modifications:
-    - target: {fileID: 8434228570385511521, guid: 919aa8c81101e2a41b7426897115dffc, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434228570385511521, guid: 919aa8c81101e2a41b7426897115dffc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434228570385511521, guid: 919aa8c81101e2a41b7426897115dffc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -4.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434228570385511521, guid: 919aa8c81101e2a41b7426897115dffc, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434228570385511521, guid: 919aa8c81101e2a41b7426897115dffc, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434228570385511521, guid: 919aa8c81101e2a41b7426897115dffc, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434228570385511521, guid: 919aa8c81101e2a41b7426897115dffc, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434228570385511521, guid: 919aa8c81101e2a41b7426897115dffc, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434228570385511521, guid: 919aa8c81101e2a41b7426897115dffc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434228570385511521, guid: 919aa8c81101e2a41b7426897115dffc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434228570385511521, guid: 919aa8c81101e2a41b7426897115dffc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434228570385511523, guid: 919aa8c81101e2a41b7426897115dffc, type: 3}
-      propertyPath: m_Name
-      value: "\u5956\u52B1\u7BB1 (2)"
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434228570385511523, guid: 919aa8c81101e2a41b7426897115dffc, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_AddedGameObjects: []
-  m_SourcePrefab: {fileID: 100100000, guid: 919aa8c81101e2a41b7426897115dffc, type: 3}
---- !u!4 &89793478 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8434228570385511521, guid: 919aa8c81101e2a41b7426897115dffc, type: 3}
-  m_PrefabInstance: {fileID: 89793477}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &91267576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8361,7 +8293,6 @@ Transform:
   - {fileID: 1988883339}
   - {fileID: 344192641}
   - {fileID: 1256150022}
-  - {fileID: 89793478}
   - {fileID: 58023333}
   - {fileID: 1989457005}
   - {fileID: 1589908847}
@@ -8382,11 +8313,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3010828328945463732, guid: 3c438157b67b6484e88a92c077ac784c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.82
+      value: 2.72
       objectReference: {fileID: 0}
     - target: {fileID: 3010828328945463732, guid: 3c438157b67b6484e88a92c077ac784c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.78
+      value: -5.19
       objectReference: {fileID: 0}
     - target: {fileID: 3010828328945463732, guid: 3c438157b67b6484e88a92c077ac784c, type: 3}
       propertyPath: m_LocalPosition.z
