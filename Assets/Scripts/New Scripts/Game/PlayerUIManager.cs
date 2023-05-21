@@ -36,9 +36,7 @@ public class PlayerUIManager : MonoBehaviour
     }
     private void ResetPlayerPrefs()
     {
-        PlayerPrefs.DeleteKey("badge");
-        var badge = PlayerPrefs.GetInt("badge");
-        SetPlayerBadge(badge);
+        print("no playerpref using here");
     }
 
     public void SetName(string name) => name_player.text = name;
