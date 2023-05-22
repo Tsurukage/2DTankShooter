@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    private MobileJoystick joystick;
     public GameState State;
 
     public static event Action<GameState, float> OnStateChange;
@@ -24,7 +23,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         UpdateGameState(State);
-        joystick = FindObjectOfType<MobileJoystick>();
     }
     public void UpdateGameState(GameState gameState, float delay = 0)
     {
@@ -52,8 +50,7 @@ public class GameManager : MonoBehaviour
 
     public void HandleStageClear(bool active)
     {
-        if (joystick != null)
-            joystick.SetInteraction(active);
+            MobileJoystick.Instance.SetInteraction(active);
     }
 
     public void NextStage()

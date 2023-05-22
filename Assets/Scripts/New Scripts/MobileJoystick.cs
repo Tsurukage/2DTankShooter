@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class MobileJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
+    public static MobileJoystick Instance;
     private RectTransform joyStickTransform;
     [SerializeField] private int dragMovementDistance = 50;
     [SerializeField] private int dragOffsetDistance = 100;
@@ -20,6 +21,7 @@ public class MobileJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
 
     private void Awake()
     {
+        Instance = this;
         joyStickTransform = (RectTransform)transform;
     }
     public void OnDrag(PointerEventData eventData)
