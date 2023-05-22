@@ -57,39 +57,10 @@ MonoBehaviour:
   - _name: "\u5E38\u89C4\u5766\u514B4"
     _enemySO: {fileID: 11400000, guid: 8758783f76ad17b43aeb96d624da2e4a, type: 2}
     position: {x: 2, y: -1}
-  shootingCount: 5
-  tankCount: 0
   _tankPrefab: {fileID: 2854092050511861261, guid: 9f0a8e55e998ec440abca7e9f167c126, type: 3}
-  _canvas: {fileID: 0}
-  _stageClearPanel: {fileID: 0}
-  _gameOverPanel: {fileID: 0}
-  OnTankUpdate:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnShootingUpdate:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _stageName: 
+  countDown: 0
+  tankCount: 0
+  shootingCount: 5
+  badgeCount: 0
+  animalCount: 3

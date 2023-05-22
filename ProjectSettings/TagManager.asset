@@ -11,6 +11,8 @@ TagManager:
   - Hittable
   - FxTemporaire
   - Animal
+  - BGM
+  - SFX
   layers:
   - Default
   - TransparentFX

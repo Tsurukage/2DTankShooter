@@ -10,6 +10,7 @@ public class SimpleGame : MonoBehaviour
     [SerializeField] List<EnemyComp> _enemyComp;
     [SerializeField] private GameObject _tankPrefab;
     [SerializeField] private string _stageName;
+    [SerializeField] private AudioClip _audioClip;
     public string Stage_Name
     {
         get { return _stageName; }
@@ -48,6 +49,7 @@ public class SimpleGame : MonoBehaviour
         InitAnimalCount = animalCount;
         SpawnCurrentLevel();
         chanceUsed = false;
+        BackgroundMusicManager.Instance.SetBgm(_audioClip);
     }
     private void SpawnCurrentLevel()
     {

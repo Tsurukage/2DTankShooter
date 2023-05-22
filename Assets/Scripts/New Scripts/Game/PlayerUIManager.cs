@@ -19,12 +19,8 @@ public class PlayerUIManager : MonoBehaviour
     void Start()
     {
         SetPlayer();
-        //var badge = PlayerPrefs.GetInt("badge");
-        //SetPlayerBadge(badge);
         if (ResetPlayerPref != null)
             ResetPlayerPref.onClick.AddListener(ResetPlayerPrefs);
-        //var rank = PlayerPrefs.GetInt("rank");
-        //SetPlayerRank(rank);
     }
    
     public void SetPlayer()

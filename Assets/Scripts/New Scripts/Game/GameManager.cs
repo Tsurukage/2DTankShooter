@@ -11,10 +11,19 @@ public class GameManager : MonoBehaviour
     public GameState State;
 
     public static event Action<GameState, float> OnStateChange;
-    private void Awake() => Instance = this;
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+            Destroy(gameObject);
+    }
     private void Start()
     {
-        UpdateGameState(GameState.StagePrepareUI);
+        UpdateGameState(State);
         joystick = FindObjectOfType<MobileJoystick>();
     }
     public void UpdateGameState(GameState gameState, float delay = 0)
@@ -23,6 +32,8 @@ public class GameManager : MonoBehaviour
 
         switch (gameState)
         {
+            case GameState.InMainMenu:
+                break;
             case GameState.StagePrepareUI:
                 break;
             case GameState.StageInProgress:
@@ -47,17 +58,23 @@ public class GameManager : MonoBehaviour
 
     public void NextStage()
     {
+        UpdateGameState(GameState.StagePrepareUI);
         var player = Game.World.Player;
         SceneAssetsManager.Instance.LoadScene(player.Rank);
     }
     public void HomeScene()
     {
         SceneManager.LoadScene(0);
+        UpdateGameState(GameState.InMainMenu);
     }
-    
+    public void ExitApplication()
+    {
+        Application.Quit();
+    }
 }
 public enum GameState
 {
+    InMainMenu,
     StagePrepareUI,
     StageInProgress,
     StageChancesUI,

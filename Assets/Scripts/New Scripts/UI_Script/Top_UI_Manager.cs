@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,9 @@ public class Top_UI_Manager : MonoBehaviour
     [SerializeField] private Transform _shootCountUi;
     [SerializeField] private Transform _badgeCountUi;
     [SerializeField] private Transform _animalCountUi;
+    [SerializeField] private Button btn_setting;
 
+    public static event Action OnClick;
     void Awake()
     {
         SimpleGame.Top_UI += SetTankCount;
@@ -15,6 +18,17 @@ public class Top_UI_Manager : MonoBehaviour
     void OnDestroy()
     {
         SimpleGame.Top_UI -= SetTankCount;
+    }
+    void Start()
+    {
+        if (btn_setting != null)
+            btn_setting.onClick.AddListener(SetSettingActive);
+    }
+
+    public void SetSettingActive()
+    {
+        OnClick?.Invoke();
+        SoundEffectManager.Instance.OnClickSound();
     }
     public void SetTankCount(int tank, int shoot, int badge, int animal)
     {

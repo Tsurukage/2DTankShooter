@@ -3997,6 +3997,7 @@ MonoBehaviour:
   _shootCountUi: {fileID: 9128293474417153068}
   _badgeCountUi: {fileID: 9128293475109931999}
   _animalCountUi: {fileID: 9128293475438508678}
+  btn_setting: {fileID: 6074147651286598808}
 --- !u!1 &9128293475299635930
 GameObject:
   m_ObjectHideFlags: 0
