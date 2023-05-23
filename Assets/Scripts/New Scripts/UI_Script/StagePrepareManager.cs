@@ -43,24 +43,24 @@ public class StagePrepareManager : MonoBehaviour
         _time = SimpleGame.Instance.CountDown;
         _timerText.text = _time.ToString();
         _adsButton.onClick.AddListener(OnAdsClickAction);
-        _diamondButton.onClick.AddListener(OnDiamondClickAction);
+        //_diamondButton.onClick.AddListener(OnDiamondClickAction);
     }
 
-    private void OnDiamondClickAction()
-    {
-        var player = Game.World.Player;
-        var diamond = player.Diamond;
-        if (diamond > 0)
-        {
-            player.AddDiamond(-1);
-            var loot = GetComponent<LootBag>();
-            loot.InstantiateLoot();
-            SoundEffectManager.Instance.OnClickSound();
-            SetInteraction(false);
-        }
-        else
-            print("Player has no diamond");
-    }
+    //private void OnDiamondClickAction()
+    //{
+        //var player = Game.World.Player;
+        //var diamond = player.Diamond;
+        //if (diamond > 0)
+        //{
+            //player.AddDiamond(-1);
+            //var loot = GetComponent<LootBag>();
+            //loot.InstantiateLoot();
+            //SoundEffectManager.Instance.OnClickSound();
+            //SetInteraction(false);
+        //}
+        //else
+            //print("Player has no diamond");
+    //}
 
     private void OnAdsClickAction()
     {

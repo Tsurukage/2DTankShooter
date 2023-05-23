@@ -1,12 +1,13 @@
-using Models;
-using System.Collections;
-using System.Collections.Generic;
+Ôªøusing Models;
+using System;
+using System.IO;
 using UnityEngine;
 
 public class Game : MonoBehaviour
 {
     public static Game Instance;
     public static GameWorld World { get; private set; }
+    [SerializeField] TextAsset playerDataTA;
 
     void Awake()
     {
@@ -18,13 +19,19 @@ public class Game : MonoBehaviour
     }
     void Start()
     {
-        World = new GameWorld();
-        World.SetPlayer(new Player("uid3991", "äﬂâ∆1çÜ", "Malaysia", 0, 60, 0));
-    }
+        string[] data = playerDataTA.text.Split(",");
+        Player player = new Player();
+        player.Uid = data[0];
+        player.Name = data[1];
+        player.Nationality = data[2];
+        player.Badge = Convert.ToInt32(data[3]);
+        player.Rank = (Rank)Convert.ToInt32(data[4]);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        World = new GameWorld();
+        World.SetPlayer(player);
+        if (playerDataTA != null)
+        {
+        }
+        print(player.Rank);
     }
 }

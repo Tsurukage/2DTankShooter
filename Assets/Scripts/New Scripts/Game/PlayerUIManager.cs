@@ -30,7 +30,7 @@ public class PlayerUIManager : MonoBehaviour
         SetName(Player.Name);
         SetPlayerBadge(Player.Badge);
         SetPlayerRank((int)Player.Rank);
-        SetPlayerDiamond(Player.Diamond);
+        //SetPlayerDiamond(Player.Diamond);
     }
     private void ResetPlayerPrefs()
     {

@@ -37,25 +37,25 @@ public class StageChanceManager : MonoBehaviour
         value_time = SimpleGame.Instance.CountDown;
         text_timer.text = value_time.ToString("00");
         btn_ads.onClick.AddListener(OnAdsClickAction);
-        btn_diamond.onClick.AddListener(OnDiamondClickAction);
+        //btn_diamond.onClick.AddListener(OnDiamondClickAction);
         starTimer = false;
     }
 
-    private void OnDiamondClickAction()
-    {
-        SoundEffectManager.Instance.OnClickSound();
-        SimpleGame.Instance.SetBool();
-        var player = Game.World.Player;
-        var diamond = player.Diamond;
-        if (diamond > 0)
-        {
-            player.AddDiamond(-1);
-            SetInteraction(false);
-            clicked = true;
-        }
-        else
-            print("Player has no diamond");
-    }
+    //private void OnDiamondClickAction()
+    //{
+    //    SoundEffectManager.Instance.OnClickSound();
+    //    SimpleGame.Instance.SetBool();
+    //    var player = Game.World.Player;
+    //    var diamond = player.Diamond;
+    //    if (diamond > 0)
+    //    {
+    //        player.AddDiamond(-1);
+    //        SetInteraction(false);
+    //        clicked = true;
+    //    }
+    //    else
+    //        print("Player has no diamond");
+    //}
 
     private void OnAdsClickAction()
     {
