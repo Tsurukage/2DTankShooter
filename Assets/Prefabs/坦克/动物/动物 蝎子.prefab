@@ -451,7 +451,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3114246529303911151}
         m_TargetAssemblyTypeName: InstantiateUtil, Assembly-CSharp
-        m_MethodName: SendSFX
+        m_MethodName: SendSecondSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

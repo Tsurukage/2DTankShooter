@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
 
     private AudioSource bgmAudioSource;
-    private AudioSource sfxAudioSource;
+    private AudioSource[] sfxAudioSource;
 
     private float bgmVolume = 0.5f;
     private float sfxVolume = 0.5f;
@@ -38,7 +38,7 @@ public class AudioManager : MonoBehaviour
         GameObject[] sfxObjs = GameObject.FindGameObjectsWithTag("SFX");
         foreach(GameObject sfxmobj in sfxObjs)
         {
-            sfxAudioSource = sfxmobj.GetComponent<AudioSource>();
+            sfxAudioSource = sfxmobj.GetComponents<AudioSource>();
         }
         isBgmEnabled = PlayerPrefs.GetInt(BGMPrefsKey, 1) == 1;
         isSfxEnabled = PlayerPrefs.GetInt(SFXPrefsKey, 1) == 1;
@@ -48,7 +48,10 @@ public class AudioManager : MonoBehaviour
     private void ApplyAudioSettings()
     {
         bgmAudioSource.volume = bgmVolume * (isBgmEnabled ? 1 : 0);
-        sfxAudioSource.volume = sfxVolume * (isSfxEnabled ? 1 : 0);
+        for(int i =0; i < sfxAudioSource.Length; i++)
+        {
+            sfxAudioSource[i].volume = sfxVolume * (isSfxEnabled ? 1 : 0);
+        }
     }
 
     public void ToggleBGM()

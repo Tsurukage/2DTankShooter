@@ -728,7 +728,7 @@ RectTransform:
   - {fileID: 1904730262083386853}
   - {fileID: 8701897656651135313}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -786,6 +786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   img_rank: {fileID: 1904730260913240014}
+  text_rank: {fileID: 6189950191219332214}
   _stageName: {fileID: 1904730260346104199}
   _timerText: {fileID: 1904730261007576394}
   _adsButton: {fileID: 1904730262083386850}
@@ -800,6 +801,16 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6e03e732b2412a348a8d77a1373a26f1, type: 3}
   - {fileID: 21300000, guid: 50f58c0ea75e00047aefbac85c7a53dd, type: 3}
   - {fileID: 21300000, guid: 275ac7bf41012ba45af993b6058b7fee, type: 3}
+  string_rank:
+  - "\u9752\u94DCI"
+  - "\u9752\u94DCII"
+  - "\u9752\u94DCIII"
+  - "\u767D\u94F6I"
+  - "\u767D\u94F6II"
+  - "\u767D\u94F6III"
+  - "\u9EC4\u91D1I"
+  - "\u9EC4\u91D1II"
+  - "\u9EC4\u91D1III"
 --- !u!114 &8409098005512721879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1035,7 +1046,7 @@ GameObject:
   - component: {fileID: 6189950191219332214}
   - component: {fileID: 8830131316550391902}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: text_rank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1054,7 +1065,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1904730260913240017}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}

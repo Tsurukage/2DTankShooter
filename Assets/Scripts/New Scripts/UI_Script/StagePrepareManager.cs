@@ -7,11 +7,14 @@ public class StagePrepareManager : MonoBehaviour
 {
     private Player Player => Game.World.Player;
     [SerializeField] private Image img_rank;
+    [SerializeField] private Text text_rank;
     [SerializeField] private Text _stageName;
     [SerializeField] private Text _timerText;
     [SerializeField] private Button _adsButton;
     [SerializeField] private Button _diamondButton;
+
     [SerializeField] private Sprite[] sprite_rank;
+    [SerializeField] private string[] string_rank;
     private float _time = 3;        //Previously set to 9
     void Awake()
     {
@@ -30,7 +33,11 @@ public class StagePrepareManager : MonoBehaviour
     {
         var game = FindObjectOfType<Game>();
         if(game != null)
-            img_rank.sprite = sprite_rank[(int)Player.Rank];
+        {
+            var rank = (int)Player.Rank;
+            img_rank.sprite = sprite_rank[rank];
+            text_rank.text = string_rank[rank];
+        }
         _timerText = GameObject.Find("text_cd").GetComponent<Text>();
         _stageName.text = SimpleGame.Instance.Stage_Name;
         _time = SimpleGame.Instance.CountDown;

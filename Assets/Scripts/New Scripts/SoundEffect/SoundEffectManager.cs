@@ -7,6 +7,7 @@ public class SoundEffectManager : MonoBehaviour
 {
     public static SoundEffectManager Instance;
     public AudioSource _soundeffect;
+    public AudioSource _soundeffect2;
     public AudioClip _click_se;
     public AudioClip _victory_se;
     public AudioClip _fail_se;
@@ -42,5 +43,11 @@ public class SoundEffectManager : MonoBehaviour
     internal void StopSFX()
     {
         _soundeffect.volume = 0f;
+    }
+
+    internal void SetSecondSFX(AudioClip clip)
+    {
+        _soundeffect2.clip = clip;
+        _soundeffect2.Play();
     }
 }
