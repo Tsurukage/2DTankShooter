@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5954856813701504409}
   m_Layer: 0
   m_Name: "\u97F3\u6548_\u91CE\u732A\u6B7B\u4EA1"
-  m_TagString: Untagged
+  m_TagString: SFX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

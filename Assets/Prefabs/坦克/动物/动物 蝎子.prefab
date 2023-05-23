@@ -451,7 +451,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3114246529303911151}
         m_TargetAssemblyTypeName: InstantiateUtil, Assembly-CSharp
-        m_MethodName: InstantiateObject
+        m_MethodName: SendSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -557,6 +557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToinstantiate: {fileID: 2324829210072079084, guid: e4afb4ccff1cc204ca3bacf3a7bdd8fe, type: 3}
+  clip: {fileID: 8300000, guid: 87a56d42824a6b5408e48ae4b5ee5841, type: 3}
 --- !u!114 &6807524068642881894
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,9 +5,19 @@ using UnityEngine;
 public class InstantiateUtil : MonoBehaviour
 {
     public GameObject objectToinstantiate;
+    public AudioClip clip;
 
     public void InstantiateObject()
     {
-        Instantiate(objectToinstantiate);
+        if (objectToinstantiate != null)
+            Instantiate(objectToinstantiate);
+    }
+    public void SendSFX()
+    {
+        SoundEffectManager.Instance.SetSFX(clip);
+    }
+    public void StopSFX()
+    {
+        SoundEffectManager.Instance.StopSFX();
     }
 }

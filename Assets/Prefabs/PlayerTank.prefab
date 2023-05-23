@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 4304419465394240533}
   - component: {fileID: 4304419465394240530}
   - component: {fileID: 4304419465394240528}
+  - component: {fileID: 2498739068156005271}
   m_Layer: 0
   m_Name: TankTurret
   m_TagString: Untagged
@@ -240,9 +241,9 @@ MonoBehaviour:
   OnShoot:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6104291628533617927}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
+      - m_Target: {fileID: 2498739068156005271}
+        m_TargetAssemblyTypeName: InstantiateUtil, Assembly-CSharp
+        m_MethodName: SendSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -279,6 +280,20 @@ MonoBehaviour:
   OnCantShoot:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2498739068156005271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4304419465394240532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f44f3ebe0eec6174da6218bc4d7878f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToinstantiate: {fileID: 0}
+  clip: {fileID: 8300000, guid: 4be19d28b22405a4e805651428096933, type: 3}
 --- !u!1 &4304419465830744268
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,6 +304,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4304419465830744269}
   - component: {fileID: 4304419465830744266}
+  - component: {fileID: 6651816540205827066}
   m_Layer: 0
   m_Name: PlayerTank
   m_TagString: Untagged
@@ -352,18 +368,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2463569693609223006}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Stop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   OnRotateTurret:
     m_PersistentCalls:
       m_Calls:
@@ -382,9 +386,9 @@ MonoBehaviour:
   OnCasting:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2463569693609223006}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
+      - m_Target: {fileID: 6651816540205827066}
+        m_TargetAssemblyTypeName: InstantiateUtil, Assembly-CSharp
+        m_MethodName: SendSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -406,6 +410,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &6651816540205827066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4304419465830744268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f44f3ebe0eec6174da6218bc4d7878f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToinstantiate: {fileID: 0}
+  clip: {fileID: 8300000, guid: 7cda25f6dbe9c8f4090bb669694fc5d0, type: 3}
 --- !u!1 &4304419466365708054
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,5 +31,16 @@ public class SoundEffectManager : MonoBehaviour
     public void OnFailSound()
     {
         _soundeffect.PlayOneShot(_fail_se, 0.3f);
+    }
+
+    internal void SetSFX(AudioClip clip)
+    {
+        _soundeffect.clip = clip;
+        _soundeffect.Play();
+    }
+
+    internal void StopSFX()
+    {
+        _soundeffect.volume = 0f;
     }
 }

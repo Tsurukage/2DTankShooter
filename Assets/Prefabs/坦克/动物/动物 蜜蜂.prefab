@@ -451,7 +451,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3114246529303911151}
         m_TargetAssemblyTypeName: InstantiateUtil, Assembly-CSharp
-        m_MethodName: InstantiateObject
+        m_MethodName: SendSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -557,6 +557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToinstantiate: {fileID: 2324829210072079084, guid: f2a2db93d66e34042acaab1f23a02600, type: 3}
+  clip: {fileID: 8300000, guid: b2936f4637f055b4e98d43adbf294c3b, type: 3}
 --- !u!114 &6807524068642881894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -750,7 +751,6 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1393087183
   m_SortingOrder: 0
   m_TargetDisplay: 0
