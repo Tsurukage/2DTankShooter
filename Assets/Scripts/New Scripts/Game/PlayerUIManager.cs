@@ -34,7 +34,9 @@ public class PlayerUIManager : MonoBehaviour
     }
     private void ResetPlayerPrefs()
     {
-        print("no playerpref using here");
+        var clear = FindObjectOfType<SaveManager>();
+        print(clear);
+        clear.Clear();
     }
 
     public void SetName(string name) => name_player.text = name;

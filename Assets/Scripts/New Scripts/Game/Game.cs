@@ -1,13 +1,12 @@
 using Models;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Game : MonoBehaviour
 {
     public static Game Instance;
+    [SerializeField]private SaveManager saveMgr;
     public static GameWorld World { get; private set; }
-
+    public static SaveManager SaveManager { get; private set; }
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -19,12 +18,22 @@ public class Game : MonoBehaviour
     void Start()
     {
         World = new GameWorld();
-        World.SetPlayer(new Player("uid3991", "äﬂâ∆1çÜ", "Malaysia", 0, 60, 0));
+        SaveManager = saveMgr;
+        Load();
     }
-
-    // Update is called once per frame
-    void Update()
+    public static void Save()
     {
-        
+        SaveManager.SaveToFile(World.Player.ToSave());
+    }
+    void Load()
+    {
+        var player = SaveManager.LoadPlayer()?.ToModel();
+        if (player == null)
+        {
+            player = new Player("uid3991", "Leo", "Malaysia", 0, 60, 0);
+            World.SetPlayer(player);
+            Save();
+        }
+        World.SetPlayer(player);
     }
 }
