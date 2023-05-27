@@ -6059,7 +6059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c8f9def69d86074a9dc7c7848913600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDataTA: {fileID: 4900000, guid: 8e270e64709aa26448eb79fbb691d554, type: 3}
+  saveMgr: {fileID: 1583296002}
 --- !u!4 &869693101
 Transform:
   m_ObjectHideFlags: 0
@@ -9916,6 +9916,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1583296001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1583296003}
+  - component: {fileID: 1583296002}
+  m_Layer: 0
+  m_Name: SaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1583296002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583296001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd351a0952595d941bf711eb16317476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveFile: {fileID: 4900000, guid: ac97093effd47464e8fd2b4f263f7aa6, type: 3}
+--- !u!4 &1583296003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583296001}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1584906475
 GameObject:
   m_ObjectHideFlags: 0
@@ -10103,6 +10148,7 @@ MonoBehaviour:
   - 0101
   - 0102
   - 0103
+  - 0104
   tier_silver:
   - 0201
   - 0202
@@ -10112,6 +10158,7 @@ MonoBehaviour:
   - 0301
   - 0302
   - 0303
+  - 0304
   tier_platinum:
   - 0401
   - 0402
@@ -10119,7 +10166,7 @@ MonoBehaviour:
   tier_diamond:
   - 0501
   - 0502
-  - 0503
+  - 0504
   tier_master:
   - 0601
   - 0602
@@ -11779,7 +11826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1995736023
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12951,6 +12998,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1300393501}
     m_Modifications:
+    - target: {fileID: 410733588282432481, guid: e4fd499883adf5b4d9114d81b74c95fc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 410733589154840690, guid: e4fd499883adf5b4d9114d81b74c95fc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3590838597502769261, guid: e4fd499883adf5b4d9114d81b74c95fc, type: 3}
       propertyPath: m_Name
       value: window_playerInfo

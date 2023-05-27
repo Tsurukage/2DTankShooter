@@ -1,4 +1,5 @@
-using Unity.VisualScripting.FullSerializer;
+using System;
+using Newtonsoft.Json;
 using UnityEngine;
 
 namespace Models
@@ -8,17 +9,17 @@ namespace Models
         Rank Rank { get; }
         int Badge { get; }
     }
-    [System.Serializable]
+    [Serializable]
     public class Player : IPlayer
     {
-        public string Uid { get; set; }
+        public string Uid{ get; set; }
         public string Name { get; set; }
         public string Nationality { get; set; }
         public int Badge { get; set; }
         public Rank Rank { get; set; }
         //public int Diamond { get; set; }
 
-        internal Player(string uid = null, string name = null, string nationality = null, int badge = 0, int rank = 0)
+        internal Player(string uid, string name, string nationality, int badge, int diamond, Rank rank)
         {
             Uid = uid;
             Name = name;
@@ -26,6 +27,15 @@ namespace Models
             Badge = badge;
             //Diamond = diamond;
             Rank = (Rank)rank;
+        }
+        public Player(PlayerSave p)
+        {
+            Uid = p.Uid;
+            Name = p.Name;
+            Nationality = p.Nationality;
+            Badge = p.Badge;
+            Diamond = p.Diamond;
+            Rank = p.Rank;
         }
         internal void AddBadge(int badge)
         {
@@ -47,6 +57,10 @@ namespace Models
             if (Rank < Rank.Bronze) Rank = Rank.Bronze;
             if (Rank > Rank.Mythic) Rank = Rank.Mythic;
             Debug.Log($"Player up level from [{(Rank)last}] to [{Rank}]");
+        }
+        public PlayerSave ToSave()
+        {
+            return new PlayerSave(this);
         }
     }
 }

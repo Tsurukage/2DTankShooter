@@ -1,14 +1,12 @@
-﻿using Models;
-using System;
-using System.IO;
+using Models;
 using UnityEngine;
 
 public class Game : MonoBehaviour
 {
     public static Game Instance;
+    [SerializeField]private SaveManager saveMgr;
     public static GameWorld World { get; private set; }
-    [SerializeField] TextAsset playerDataTA;
-
+    public static SaveManager SaveManager { get; private set; }
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -28,10 +26,22 @@ public class Game : MonoBehaviour
         player.Rank = (Rank)Convert.ToInt32(data[4]);
 
         World = new GameWorld();
-        World.SetPlayer(player);
-        if (playerDataTA != null)
+        SaveManager = saveMgr;
+        Load();
+    }
+    public static void Save()
+    {
+        SaveManager.SaveToFile(World.Player.ToSave());
+    }
+    void Load()
+    {
+        var player = SaveManager.LoadPlayer()?.ToModel();
+        if (player == null)
         {
+            player = new Player("uid3991", "Leo", "Malaysia", 0, 60, 0);
+            World.SetPlayer(player);
+            Save();
         }
-        print(player.Rank);
+        World.SetPlayer(player);
     }
 }
