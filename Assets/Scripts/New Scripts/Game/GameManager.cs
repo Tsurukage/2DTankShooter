@@ -68,6 +68,10 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
+    private void OnApplicationQuit()
+    {
+        Game.Save();
+    }
 }
 public enum GameState
 {

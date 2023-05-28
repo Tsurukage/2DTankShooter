@@ -13,6 +13,7 @@ public class SaveManager : MonoBehaviour
         string json = JsonConvert.SerializeObject(p);
         File.WriteAllText(AssetDatabase.GetAssetPath(saveFile), json);
         print(json);
+        AssetDatabase.Refresh();
     }
     public PlayerSave LoadPlayer()
     {
