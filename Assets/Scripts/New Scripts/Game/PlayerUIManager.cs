@@ -17,6 +17,14 @@ public class PlayerUIManager : MonoBehaviour
     [SerializeField] private Sprite[] img_rankSprite;
     [SerializeField] private string[] text_rankText;
 
+    void Awake()
+    {
+        WindowPlayerInfo.OnUpdate += SetPlayer;
+    }
+    void OnDestroy()
+    {
+        WindowPlayerInfo.OnUpdate -= SetPlayer;
+    }
     // Start is called before the first frame update
     void Start()
     {

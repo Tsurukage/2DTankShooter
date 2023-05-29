@@ -30,5 +30,6 @@ public class SaveManager : MonoBehaviour
     {
         string json = string.Empty;
         File.WriteAllText(AssetDatabase.GetAssetPath(saveFile), json);
+        AssetDatabase.Refresh();
     }
 }

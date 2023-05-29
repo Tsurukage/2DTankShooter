@@ -10,7 +10,7 @@ public class Top_UI_Manager : MonoBehaviour
     [SerializeField] private Transform _animalCountUi;
     [SerializeField] private Button btn_setting;
 
-    public static event Action OnClick;
+    public static event Action OnSettingClick;
     void Awake()
     {
         SimpleGame.Top_UI += SetTankCount;
@@ -24,10 +24,9 @@ public class Top_UI_Manager : MonoBehaviour
         if (btn_setting != null)
             btn_setting.onClick.AddListener(SetSettingActive);
     }
-
     public void SetSettingActive()
     {
-        OnClick?.Invoke();
+        OnSettingClick?.Invoke();
         SoundEffectManager.Instance.OnClickSound();
     }
     public void SetTankCount(int tank, int shoot, int badge, int animal)

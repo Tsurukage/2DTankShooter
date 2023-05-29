@@ -17,16 +17,18 @@ namespace Models
         public string Nationality { get; set; }
         public int Badge { get; set; }
         public Rank Rank { get; set; }
+        public  Gender Gender { get; set; }
         //public int Diamond { get; set; }
 
-        internal Player(string uid, string name, string nationality, int badge, int diamond, Rank rank)
+        internal Player(string uid, string name, string nationality, int badge, Rank rank, Gender gender)
         {
             Uid = uid;
             Name = name;
             Nationality = nationality;
             Badge = badge;
-            //Diamond = diamond;
             Rank = (Rank)rank;
+            Gender = gender;
+            //Diamond = diamond;
         }
         public Player(PlayerSave p)
         {
@@ -34,7 +36,7 @@ namespace Models
             Name = p.Name;
             Nationality = p.Nationality;
             Badge = p.Badge;
-            Diamond = p.Diamond;
+            //Diamond = p.Diamond;
             Rank = p.Rank;
         }
         internal void AddBadge(int badge)
@@ -76,15 +78,9 @@ public enum Rank
     Legend = 7,
     Mythic = 8
 }
-public enum GameLevel
+public enum Gender
 {
-    LevelOne,
-    LevelTwo,
-    LevelThree,
-    LevelFour,
-    LevelFive,
-    LevelSix,
-    LevelSeven,
-    LevelEight,
-    LevelNight
+    Unknown = 0,
+    Female = 1,
+    Male = 2
 }

@@ -9,17 +9,22 @@ public class PlayerSave
     public string Name { get; set; }
     public string Nationality { get; set; }
     public int Badge { get; set; }
-    public int Diamond { get; set; }
     public Rank Rank { get; set; }
+    public Gender Gender { get; set; }
+    //public int Diamond { get; set; }
 
     public PlayerSave(Player p)
     {
         Uid = p.Uid;
-        Name = p.Name;
+        if(p.Name == string.Empty)
+            Name = p.Uid;
+        else
+            Name = p.Name;
         Nationality = p.Nationality;
         Badge = p.Badge;
-        Diamond = p.Diamond;
         Rank = p.Rank;
+        Gender = p.Gender;
+        //Diamond = p.Diamond;
     }
     public PlayerSave()
     {

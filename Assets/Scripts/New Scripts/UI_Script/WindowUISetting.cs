@@ -14,11 +14,11 @@ public class WindowUISetting : MonoBehaviour
 
     void Awake()
     {
-        Top_UI_Manager.OnClick += SetObjectActive;
+        Top_UI_Manager.OnSettingClick += SetObjectActive;
     }
     void OnDestroy()
     {
-        Top_UI_Manager.OnClick -= SetObjectActive;
+        Top_UI_Manager.OnSettingClick -= SetObjectActive;
     }
     public void SetObjectActive()
     {

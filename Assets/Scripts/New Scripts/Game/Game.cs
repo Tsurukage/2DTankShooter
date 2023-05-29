@@ -17,14 +17,6 @@ public class Game : MonoBehaviour
     }
     void Start()
     {
-        string[] data = playerDataTA.text.Split(",");
-        Player player = new Player();
-        player.Uid = data[0];
-        player.Name = data[1];
-        player.Nationality = data[2];
-        player.Badge = Convert.ToInt32(data[3]);
-        player.Rank = (Rank)Convert.ToInt32(data[4]);
-
         World = new GameWorld();
         SaveManager = saveMgr;
         Load();
@@ -38,7 +30,7 @@ public class Game : MonoBehaviour
         var player = SaveManager.LoadPlayer()?.ToModel();
         if (player == null)
         {
-            player = new Player("uid3991", "Leo", "Malaysia", 0, 60, 0);
+            player = new Player("uid3991", "Leo", "Malaysia", 0, 0, 0);
             World.SetPlayer(player);
             Save();
         }
