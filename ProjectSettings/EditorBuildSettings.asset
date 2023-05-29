@@ -78,6 +78,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Stage/0603.unity
     guid: 396f65089ac8fd24da6d4e650e3fa234
   - enabled: 1
+    path: Assets/Scenes/Stage/0604.unity
+    guid: 5ddf39b7ec3fb4a4ca23511dc7572a15
+  - enabled: 1
     path: Assets/Scenes/Stage/0701.unity
     guid: 88d31816a7b3cb84f835880b23aa96f7
   - enabled: 1
@@ -98,6 +101,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage/0803.unity
     guid: 46f53854a2f680342ae5c60bc6e1c1b6
+  - enabled: 1
+    path: Assets/Scenes/Stage/0804.unity
+    guid: c84716892847af4429169231195574c5
   - enabled: 1
     path: Assets/Scenes/Stage/0901.unity
     guid: eda8598221239024684c02e03c5cb290
