@@ -10165,45 +10165,55 @@ MonoBehaviour:
   - 0102
   - 0103
   - 0104
+  - 0105
   tier_silver:
   - 0201
   - 0202
   - 0203
   - 0204
+  - 0205
   tier_gold:
   - 0301
   - 0302
   - 0303
   - 0304
+  - 0305
   tier_platinum:
   - 0401
   - 0402
   - 0403
   - 0404
+  - 0405
   tier_diamond:
   - 0501
   - 0502
   - 0503
   - 0504
+  - 0505
   tier_master:
   - 0601
   - 0602
   - 0603
   - 0604
+  - 0605
   tier_grandmaster:
   - 0701
   - 0702
   - 0703
   - 0704
+  - 0705
   tier_legend:
   - 0801
   - 0802
   - 0803
   - 0804
+  - 0805
   tier_mythic:
   - 0901
   - 0902
   - 0903
+  - 0904
+  - 0905
 --- !u!4 &1623144922
 Transform:
   m_ObjectHideFlags: 0
