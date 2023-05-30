@@ -43,7 +43,6 @@ public class PlayerUIManager : MonoBehaviour
     private void ResetPlayerPrefs()
     {
         var clear = FindObjectOfType<SaveManager>();
-        print(clear);
         clear.Clear();
     }
 
