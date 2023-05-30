@@ -27,11 +27,11 @@ public class SoundEffectManager : MonoBehaviour
     }
     public void OnVictorySound()
     {
-        _soundeffect.PlayOneShot(_victory_se, 0.3f);
+        _soundeffect.PlayOneShot(_victory_se, 0.5f);
     }
     public void OnFailSound()
     {
-        _soundeffect.PlayOneShot(_fail_se, 0.3f);
+        _soundeffect.PlayOneShot(_fail_se, 0.5f);
     }
 
     internal void SetSFX(AudioClip clip)
