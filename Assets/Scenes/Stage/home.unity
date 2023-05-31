@@ -9921,7 +9921,7 @@ SpriteRenderer:
   m_SortingLayerID: -1495791489
   m_SortingLayer: 6
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 1b451b67ea5195242896db3409ef3a61, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 55c7421e491363d4a977a64bb47a743c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9961,7 +9961,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd351a0952595d941bf711eb16317476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveFile: {fileID: 4900000, guid: ac97093effd47464e8fd2b4f263f7aa6, type: 3}
 --- !u!4 &1583296003
 Transform:
   m_ObjectHideFlags: 0
@@ -10166,6 +10165,7 @@ MonoBehaviour:
   - 0103
   - 0104
   - 0105
+  - 0106
   tier_silver:
   - 0201
   - 0202
@@ -13167,7 +13167,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 410733588282432481, guid: e4fd499883adf5b4d9114d81b74c95fc, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000045776367
+      value: 0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 410733588282432481, guid: e4fd499883adf5b4d9114d81b74c95fc, type: 3}
       propertyPath: m_AnchoredPosition.y
