@@ -11,6 +11,8 @@ public class PlayerSave
     public int Badge { get; set; }
     public Rank Rank { get; set; }
     public Gender Gender { get; set; }
+    public int Avatar { get; set; }
+
     //public int Diamond { get; set; }
 
     public PlayerSave(Player p)
@@ -24,6 +26,7 @@ public class PlayerSave
         Badge = p.Badge;
         Rank = p.Rank;
         Gender = p.Gender;
+        Avatar = p.Avatar;
         //Diamond = p.Diamond;
     }
     public PlayerSave()

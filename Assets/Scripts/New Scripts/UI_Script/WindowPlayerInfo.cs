@@ -2,35 +2,62 @@ using Models;
 using System;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class WindowPlayerInfo : MonoBehaviour
 {
     [SerializeField] private Button btn_close;
+    [SerializeField] private Button btn_profile;
     [SerializeField] private Text text_uid;
     [SerializeField] private Button btn_edit;
     [SerializeField] private InputField field_input;
     [SerializeField] private ToggleGroup toggle_gender;
     private Player Player => Game.World.Player;
     public static event Action OnUpdate;
+    public UnityEvent OnClickAction = new UnityEvent();
+
+    private Sprite[] sprite_avatars;
+    private void Awake()
+    {
+        Window_AvatarLoader.OnAvatarUpdate += InitUI;
+    }
+    private void OnDestroy()
+    {
+        Window_AvatarLoader.OnAvatarUpdate -= InitUI;
+    }
     void Start()
     {
-        InitUI();
+        sprite_avatars = Resources.LoadAll<Sprite>("profile_pictures");
         if(btn_close != null)
             btn_close.onClick.AddListener(CloseWindow);
         if (btn_edit != null)
             btn_edit.onClick.AddListener(EditName);
+        if (btn_profile != null)
+            btn_profile.onClick.AddListener(ProfilePicSelector);
         foreach(var toggle in toggle_gender.GetComponentsInChildren<Toggle>())
         {
             toggle.onValueChanged.AddListener(OnToggleValueChanged);
         }
+        InitUI();
     }
+
+    private void ProfilePicSelector()
+    {
+        SoundEffectManager.Instance.OnClickSound();
+        OnClickAction?.Invoke();
+    }
+
     void InitUI()
     {
         SetUid(Player.Uid);
         SetName(Player.Name);
         SetGender((int)Player.Gender);
+        SetAvatar(sprite_avatars[Player.Avatar]);
     }
+
+    private void SetAvatar(Sprite sprite) => btn_profile.GetComponent<Image>().sprite = sprite;
+
     public void SetWindowActive()
     {
         gameObject.SetActive(true);
@@ -64,8 +91,8 @@ public class WindowPlayerInfo : MonoBehaviour
             if(selected != null)
             {
                 int index = GetToggleIndex(selected);
-                print(index);
                 Player.Gender = (Gender)index;
+                print(Player.Gender);
             }
             else
             {

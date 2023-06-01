@@ -18,9 +18,10 @@ namespace Models
         public int Badge { get; set; }
         public Rank Rank { get; set; }
         public  Gender Gender { get; set; }
+        public int Avatar { get;set; }
         //public int Diamond { get; set; }
 
-        internal Player(string uid, string name, string nationality, int badge, Rank rank, Gender gender)
+        internal Player(string uid, string name, string nationality, int badge, Rank rank, Gender gender, int avatar)
         {
             Uid = uid;
             Name = name;
@@ -28,6 +29,7 @@ namespace Models
             Badge = badge;
             Rank = (Rank)rank;
             Gender = gender;
+            Avatar = avatar;
             //Diamond = diamond;
         }
         public Player(PlayerSave p)
@@ -38,6 +40,7 @@ namespace Models
             Badge = p.Badge;
             //Diamond = p.Diamond;
             Rank = p.Rank;
+            Avatar = p.Avatar;
         }
         internal void AddBadge(int badge)
         {

@@ -30,7 +30,7 @@ public class Game : MonoBehaviour
         var player = SaveManager.LoadPlayer()?.ToModel();
         if (player == null)
         {
-            player = new Player("uid3991", "Leo", "Malaysia", 0, 0, 0);
+            player = new Player("uid3991", "Leo", "Malaysia", 0, 0, 0, 0);
             World.SetPlayer(player);
             Save();
         }
