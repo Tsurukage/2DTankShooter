@@ -24,6 +24,5 @@ public class BackgroundMusicManager : MonoBehaviour
     {
         bgmAudioSource.clip = clip;
         bgmAudioSource.Play();
-        bgmAudioSource.volume = 0.25f;
     }
 }

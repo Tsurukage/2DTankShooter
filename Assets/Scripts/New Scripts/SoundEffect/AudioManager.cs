@@ -10,7 +10,7 @@ public class AudioManager : MonoBehaviour
     private AudioSource bgmAudioSource;
     private AudioSource[] sfxAudioSource;
 
-    private float bgmVolume = 0.5f;
+    private float bgmVolume = 0.25f;
     private float sfxVolume = 0.5f;
 
     public bool isBgmEnabled = true;
@@ -57,15 +57,11 @@ public class AudioManager : MonoBehaviour
     public void ToggleBGM()
     {
         isBgmEnabled = !isBgmEnabled;
-        //PlayerPrefs.SetInt(BGMPrefsKey, isBgmEnabled ? 1 : 0);
-        //PlayerPrefs.Save();
         ApplyAudioSettings();
     }
     public void ToggleSFX()
     {
         isSfxEnabled = !isSfxEnabled;
-        //PlayerPrefs.SetInt(SFXPrefsKey, isSfxEnabled ? 1 : 0);
-        //PlayerPrefs.Save();
         ApplyAudioSettings();
     }
 }
