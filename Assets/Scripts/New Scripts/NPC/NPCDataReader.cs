@@ -8,7 +8,6 @@ public class NPCDataReader : MonoBehaviour
 {
     public TextAsset npcDataFile;
     public Dictionary<string, Player> npcPlayerDictionary = new Dictionary<string, Player>();
-    private List<Player> npcPlayerList = new List<Player>();
     void Start()
     {
         ReadNPCDataFromCSV();
@@ -34,7 +33,6 @@ public class NPCDataReader : MonoBehaviour
 
             Player npcPlayer = new Player(npcID, npcName, npcNationality, npcBadge, (Rank)npcRank, (Gender)npcGender, npcAvatar);
             npcPlayerDictionary.Add(npcID, npcPlayer);
-            npcPlayerList.Add(npcPlayer);
         }
         print(npcPlayerDictionary.Count);
         int random = UnityEngine.Random.Range(1, 11);

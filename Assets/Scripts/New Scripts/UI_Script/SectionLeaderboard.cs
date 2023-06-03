@@ -45,6 +45,7 @@ public class SectionLeaderboard : MonoBehaviour
                 objPrefab.SetRank((int)npc.Rank);
                 objPrefab.SetIcon(npc.Avatar);
                 objPrefab.SetBadge(npc.Badge);
+                objPrefab.SetGender((int)npc.Gender);
                 objPrefab.SetRankPos(i+1);
             }
         }
@@ -84,12 +85,12 @@ public class SectionLeaderboard : MonoBehaviour
         bool isRankUp = UnityEngine.Random.Range(0f, 1f) < 0.5f;
         if(isRankUp)
         {
-            int incRank = UnityEngine.Random.Range(1, 4);
+            int incRank = UnityEngine.Random.Range(0, 2);
             rank += incRank;
         }
         else
         {
-            int decRank = UnityEngine.Random.Range(1, 4);
+            int decRank = UnityEngine.Random.Range(0, 2);
             rank -= decRank;
         }
         rank = (rank < 0) ? 0 : rank;
