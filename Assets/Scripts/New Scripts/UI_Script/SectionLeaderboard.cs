@@ -1,10 +1,7 @@
 using Models;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SectionLeaderboard : MonoBehaviour
 {
@@ -66,15 +63,15 @@ public class SectionLeaderboard : MonoBehaviour
 
     private int UpdateBadge(int badge)
     {
-        bool isBadgeIncrease = UnityEngine.Random.Range(0f, 1f) < 0.5f;
+        bool isBadgeIncrease = Random.Range(0f, 1f) < 0.5f;
         if(isBadgeIncrease)
         {
-            int incValue = UnityEngine.Random.Range(1, 4);
+            int incValue = Random.Range(1, 4);
             badge += incValue;
         }
         else
         {
-            int decValue = UnityEngine.Random.Range(1, 4);
+            int decValue = Random.Range(1, 4);
             badge -= decValue;
         }
         return badge;
@@ -82,15 +79,15 @@ public class SectionLeaderboard : MonoBehaviour
 
     private Rank UpdateRank(Rank rank)
     {
-        bool isRankUp = UnityEngine.Random.Range(0f, 1f) < 0.5f;
+        bool isRankUp = Random.Range(0f, 1f) < 0.5f;
         if(isRankUp)
         {
-            int incRank = UnityEngine.Random.Range(0, 2);
+            int incRank = Random.Range(0, 2);
             rank += incRank;
         }
         else
         {
-            int decRank = UnityEngine.Random.Range(0, 2);
+            int decRank = Random.Range(0, 2);
             rank -= decRank;
         }
         rank = (rank < 0) ? 0 : rank;

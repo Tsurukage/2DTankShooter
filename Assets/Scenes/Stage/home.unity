@@ -295,6 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcDataFile: {fileID: 4900000, guid: 7ed6a9d800765c74fad22a932d5d52ae, type: 3}
+  MaxNpc: 10
 --- !u!4 &51575241
 Transform:
   m_ObjectHideFlags: 0
