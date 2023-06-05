@@ -8,43 +8,50 @@ public class SectionLeaderboard : MonoBehaviour
     [SerializeField] private NPCDataReader npcsData;
     [SerializeField] private GameObject npcLeaderboard;
     [SerializeField] private Transform leaderboard;
-
     private float interval = 5f;
     private List<Player> npcPlayerList;
     void Start()
     {
-        npcPlayerList = npcsData.npcPlayerDictionary.Values.ToList();
-
+        Load();
         GenerateLeaderBoard();
         UpdateLeaderboard();
     }
 
+    private void Load()
+    {
+        var npc = npcsData.LoadNPCData();
+        npcPlayerList = npc;
+        if(npcPlayerList == null)
+        {
+            npcsData.ReadNPCDataFromCSV(10);
+            npcPlayerList = npcsData.npcPlayerDictionary.Values.ToList();
+            UpdateData();
+        }
+    }
     public void GenerateLeaderBoard()
     {
         foreach(Transform child in leaderboard)
         {
             Destroy(child.gameObject);
         }
-        List<Player> allList = new List<Player>(npcPlayerList);
+        List<Player> allList = new List<Player>();
         var player = Game.World.Player;
         allList.Add(player);
+        allList.AddRange(npcPlayerList);
 
         allList = allList.OrderByDescending(npc => npc.Rank).ThenByDescending(npc => npc.Badge).ToList();
-        for(int i = 0; i < allList.Count; i++)
+        for (int i = 0; i < allList.Count; i++)
         {
-            if(i < allList.Count)
-            {
-                Player npc = allList[i];
-                var npcObj = Instantiate(npcLeaderboard, leaderboard);
-                var objPrefab = npcObj.GetComponent<Prefab_NPC>();
-                objPrefab.SetName(npc.Name);
-                objPrefab.SetNation(npc.Nationality);
-                objPrefab.SetRank((int)npc.Rank);
-                objPrefab.SetIcon(npc.Avatar);
-                objPrefab.SetBadge(npc.Badge);
-                objPrefab.SetGender((int)npc.Gender);
-                objPrefab.SetRankPos(i+1);
-            }
+            Player npc = allList[i];
+            var npcObj = Instantiate(npcLeaderboard, leaderboard);
+            var objPrefab = npcObj.GetComponent<Prefab_NPC>();
+            objPrefab.SetName(npc.Name);
+            objPrefab.SetNation(npc.Nationality);
+            objPrefab.SetRank((int)npc.Rank);
+            objPrefab.SetIcon(npc.Avatar);
+            objPrefab.SetBadge(npc.Badge);
+            objPrefab.SetGender((int)npc.Gender);
+            objPrefab.SetRankPos(i + 1);
         }
     }
     private void UpdateLeaderboard()
@@ -58,6 +65,7 @@ public class SectionLeaderboard : MonoBehaviour
             npcPlayer.Rank = UpdateRank(npcPlayer.Rank);
             npcPlayer.Badge = UpdateBadge(npcPlayer.Badge);
         }
+        UpdateData();
         GenerateLeaderBoard();
     }
 
@@ -93,5 +101,10 @@ public class SectionLeaderboard : MonoBehaviour
         rank = (rank < 0) ? 0 : rank;
         rank = ((int)rank > 8) ? (Rank)8 : rank;
         return rank;
+    }
+    void UpdateData()
+    {
+        npcsData.SaveNPCJson(npcPlayerList);
+
     }
 }

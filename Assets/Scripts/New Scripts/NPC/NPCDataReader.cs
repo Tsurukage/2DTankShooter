@@ -3,28 +3,21 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 
 public class NPCDataReader : MonoBehaviour
 {
     public TextAsset npcDataFile;
     public Dictionary<string, Player> npcPlayerDictionary = new Dictionary<string, Player>();
-    [SerializeField] private int MaxNpc = 10;
     string jsonFilePath;
     private void Awake()
     {
         jsonFilePath = Path.Combine(Application.persistentDataPath, "npcDave.bytes");
     }
-    void Start()
+    public void ReadNPCDataFromCSV(int count)
     {
-        Clear();
-        ReadNPCDataFromCSV(MaxNpc);
-        SaveNPCJson(npcPlayerDictionary);
-        LoadNPCData();
-
-    }
-    private void ReadNPCDataFromCSV(int count)
-    {
+        List<Player> npcDataList = new List<Player>();
         Dictionary<string, Player> dataDict = new Dictionary<string, Player>();
         string[] lines = npcDataFile.text.Split("\n");
         List<string> npcLines = new List<string>(lines);
@@ -60,6 +53,7 @@ public class NPCDataReader : MonoBehaviour
                             {
                                 Player npcData = new Player(npc_id, npc_name, npc_nationality, npc_badge, (Rank)npc_rank, (Gender)npc_gender, npc_avatar);
                                 dataDict.Add(npc_id, npcData);
+                                npcDataList.Add(npcData);
                             }
                         }
                     }
@@ -68,31 +62,23 @@ public class NPCDataReader : MonoBehaviour
         }
         npcPlayerDictionary = dataDict;
     }
-    private void SaveNPCJson(Dictionary<string, Player> npcDataDict)
+    public void SaveNPCJson(List<Player> listNPC)
     {
-        List<Player> npcDataList = new List<Player>(npcDataDict.Values);
-        string jsonData = JsonConvert.SerializeObject(new NPCDataList(npcDataList), Formatting.Indented);
-
+        var npcSave = listNPC.Select(n => new PlayerSave(n)).ToList();
+        string jsonData = JsonConvert.SerializeObject(npcSave, Formatting.Indented);
         File.WriteAllText(jsonFilePath, jsonData);
+        print(jsonData);
     }
 
-    private Dictionary<string, Player> LoadNPCData()
+    public List<Player> LoadNPCData()
     {
-        Dictionary<string, Player> dataDict = new Dictionary<string, Player>();
         try
         {
-            if (File.Exists(jsonFilePath))
-            {
-                string json = File.ReadAllText(jsonFilePath);
-                NPCDataList dataList = JsonConvert.DeserializeObject<NPCDataList>(json);
-                foreach (Player npcData in dataList.npcDataList)
-                {
-                    dataDict.Add(npcData.Uid, npcData);
-                }
-            }
-            return dataDict;
+            string json = File.ReadAllText(jsonFilePath);
+            var npcDataList = JsonConvert.DeserializeObject<List<PlayerSave>>(json);
+            return npcDataList.Select(n => new Player(n)).ToList();
         }
-        catch (Exception)
+        catch (Exception e)
         {
             return null;
         }
