@@ -40,6 +40,7 @@ namespace Models
             //Diamond = p.Diamond;
             Rank = p.Rank;
             Avatar = p.Avatar;
+            Gender = p.Gender;
         }
         internal void AddBadge(int badge)
         {

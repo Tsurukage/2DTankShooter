@@ -39,13 +39,13 @@ public class Window_AvatarLoader : MonoBehaviour
 
     private void OnAvatarSelect(int index)
     {
+        SoundEffectManager.Instance.OnClickSound();
         print(index);
         for(var i = 0; i < sprite_avatars.Length; i++)
         {
             var btn = scroll_content.GetChild(i);
             var isSelected = i == index;
             btn.Find("img_selected").gameObject.SetActive(isSelected);
-            SoundEffectManager.Instance.OnClickSound();
         }
         Player.Avatar = index;
         OnAvatarUpdate?.Invoke();

@@ -52,8 +52,9 @@ public class WindowPlayerInfo : MonoBehaviour
     {
         SetUid(Player.Uid);
         SetName(Player.Name);
-        SetGender((int)Player.Gender);
+        print((int)Player.Gender);
         SetAvatar(sprite_avatars[Player.Avatar]);
+        SetGender((int)Player.Gender);
     }
 
     private void SetAvatar(Sprite sprite) => btn_profile.GetComponent<Image>().sprite = sprite;
@@ -80,7 +81,7 @@ public class WindowPlayerInfo : MonoBehaviour
     private void SetGender(int gender)
     {
         Toggle[] toggles = toggle_gender.GetComponentsInChildren<Toggle>();
-        toggles[gender].isOn = true;
+        toggles[gender - 1].isOn = true;
     }
     private void OnToggleValueChanged(bool isOn)
     {
@@ -88,16 +89,16 @@ public class WindowPlayerInfo : MonoBehaviour
         if (isOn)
         {
             Toggle selected = toggle_gender.ActiveToggles().FirstOrDefault();
-            if(selected != null)
+            if (selected != null)
             {
                 int index = GetToggleIndex(selected);
                 Player.Gender = (Gender)index;
                 print(Player.Gender);
             }
-            else
-            {
-                Player.Gender = 0;
-            }
+        }
+        else
+        {
+            Player.Gender = 0;
         }
     }
     private int GetToggleIndex(Toggle toggle)
