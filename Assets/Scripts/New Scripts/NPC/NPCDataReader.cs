@@ -78,7 +78,7 @@ public class NPCDataReader : MonoBehaviour
             var npcDataList = JsonConvert.DeserializeObject<List<PlayerSave>>(json);
             return npcDataList.Select(n => new Player(n)).ToList();
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return null;
         }

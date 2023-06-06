@@ -1,4 +1,5 @@
 using Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,8 +10,10 @@ public class SectionLeaderboard : MonoBehaviour
     [SerializeField] private GameObject npcLeaderboard;
     [SerializeField] private Transform leaderboard;
     [SerializeField] private int maxNPCs;
-    [SerializeField ]private float interval = 200f;
+    [SerializeField ]private float interval = 1800;
     private List<Player> npcPlayerList;
+
+    private DateTime lastRefreshTime; //Test time for logout
     void Start()
     {
         Load();
@@ -22,12 +25,31 @@ public class SectionLeaderboard : MonoBehaviour
     {
         var npc = npcsData.LoadNPCData();
         npcPlayerList = npc;
+        lastRefreshTime = LoadRefreshTime();
         if(npcPlayerList == null)
         {
             npcsData.ReadNPCDataFromCSV(maxNPCs);
             npcPlayerList = npcsData.npcPlayerDictionary.Values.ToList();
             UpdateData();
         }
+    }
+    //Test time for logout
+    private DateTime LoadRefreshTime()
+    {
+        string lastRefreshTimeString = PlayerPrefs.GetString("LastRefreshTime");
+        if (!string.IsNullOrEmpty(lastRefreshTimeString))
+        {
+            return DateTime.Parse(lastRefreshTimeString);
+        }
+        else
+        {
+            return DateTime.Now;
+        }
+    }
+    private void SaveLastRefreshTime()
+    {
+        PlayerPrefs.SetString("LastRefreshTime", lastRefreshTime.ToString());
+        PlayerPrefs.Save();
     }
     public void GenerateLeaderBoard()
     {
@@ -58,7 +80,23 @@ public class SectionLeaderboard : MonoBehaviour
     private void UpdateLeaderboard()
     {
         InvokeRepeating("UpdateNpcPlayerData", interval, interval);
+        InvokeRepeating("CheckRefreshTime", 0f, 30f);
     }
+    private void CheckRefreshTime()
+    {
+        TimeSpan timeSinceLastRefresh = DateTime.Now - lastRefreshTime;
+        int refreshCount = (int)(timeSinceLastRefresh.TotalMinutes / 30);
+        if (refreshCount > 0)
+        {
+            for (int i = 0; i < refreshCount; i++)
+            {
+                UpdateNpcPlayerData();
+            }
+            GenerateLeaderBoard();
+            SaveLastRefreshTime();
+        }
+    }
+
     private void UpdateNpcPlayerData()
     {
         foreach(var npcPlayer in npcPlayerList)
@@ -72,15 +110,15 @@ public class SectionLeaderboard : MonoBehaviour
 
     private int UpdateBadge(int badge)
     {
-        bool isBadgeIncrease = Random.Range(0f, 1f) < 0.5f;
+        bool isBadgeIncrease = UnityEngine.Random.Range(0f, 1f) < 0.5f;
         if(isBadgeIncrease)
         {
-            int incValue = Random.Range(1, 4);
+            int incValue = UnityEngine.Random.Range(1, 4);
             badge += incValue;
         }
         else
         {
-            int decValue = Random.Range(1, 4);
+            int decValue = UnityEngine.Random.Range(1, 4);
             badge -= decValue;
         }
         return badge;
@@ -88,15 +126,15 @@ public class SectionLeaderboard : MonoBehaviour
 
     private Rank UpdateRank(Rank rank)
     {
-        bool isRankUp = Random.Range(0f, 1f) < 0.5f;
+        bool isRankUp = UnityEngine.Random.Range(0f, 1f) < 0.5f;
         if(isRankUp)
         {
-            int incRank = Random.Range(0, 2);
+            int incRank = UnityEngine.Random.Range(0, 2);
             rank += incRank;
         }
         else
         {
-            int decRank = Random.Range(0, 2);
+            int decRank = UnityEngine.Random.Range(0, 2);
             rank -= decRank;
         }
         rank = (rank < 0) ? 0 : rank;
@@ -106,6 +144,5 @@ public class SectionLeaderboard : MonoBehaviour
     void UpdateData()
     {
         npcsData.SaveNPCJson(npcPlayerList);
-
     }
 }
