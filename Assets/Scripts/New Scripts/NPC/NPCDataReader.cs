@@ -13,7 +13,7 @@ public class NPCDataReader : MonoBehaviour
     string jsonFilePath;
     private void Awake()
     {
-        jsonFilePath = Path.Combine(Application.persistentDataPath, "npcDave.bytes");
+        jsonFilePath = Path.Combine(Application.persistentDataPath, "npcSave.bytes");
     }
     public void ReadNPCDataFromCSV(int count)
     {

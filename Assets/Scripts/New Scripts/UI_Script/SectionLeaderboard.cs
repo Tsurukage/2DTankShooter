@@ -8,7 +8,8 @@ public class SectionLeaderboard : MonoBehaviour
     [SerializeField] private NPCDataReader npcsData;
     [SerializeField] private GameObject npcLeaderboard;
     [SerializeField] private Transform leaderboard;
-    private float interval = 5f;
+    [SerializeField] private int maxNPCs;
+    [SerializeField ]private float interval = 200f;
     private List<Player> npcPlayerList;
     void Start()
     {
@@ -23,7 +24,7 @@ public class SectionLeaderboard : MonoBehaviour
         npcPlayerList = npc;
         if(npcPlayerList == null)
         {
-            npcsData.ReadNPCDataFromCSV(10);
+            npcsData.ReadNPCDataFromCSV(maxNPCs);
             npcPlayerList = npcsData.npcPlayerDictionary.Values.ToList();
             UpdateData();
         }
