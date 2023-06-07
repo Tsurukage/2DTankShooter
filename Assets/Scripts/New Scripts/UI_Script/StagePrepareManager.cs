@@ -64,10 +64,18 @@ public class StagePrepareManager : MonoBehaviour
 
     private void OnAdsClickAction()
     {
-        var loot = GetComponent<LootBag>();
-        loot.InstantiateLoot();
-        SoundEffectManager.Instance.OnClickSound();
-        SetInteraction(false);
+        AdsSimulation.SimAds(isSuccess =>
+        {
+            if (isSuccess)
+            {
+                var loot = GetComponent<LootBag>();
+                loot.InstantiateLoot();
+                SoundEffectManager.Instance.OnClickSound();
+                SetInteraction(false);
+                return;
+            }
+            Debug.Log("ñvõˆçêä≈ÅI");
+        });
     }
     private void SetInteraction(bool interactable)
     {
