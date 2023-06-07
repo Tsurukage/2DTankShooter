@@ -57,7 +57,6 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1393087183
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -90,7 +89,7 @@ GameObject:
   - component: {fileID: 8077608096355667431}
   m_Layer: 8
   m_Name: RewardBox
-  m_TagString: Hittable
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

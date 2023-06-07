@@ -12,6 +12,11 @@ public class RewardBox : MonoBehaviour
         if(collider.tag == "Player")
             StartCoroutine(SpawnLoot());
     }
+    //For barrel explosion
+    public void Looting()
+    {
+        StartCoroutine(SpawnLoot());
+    }
     IEnumerator SpawnLoot()
     {
         yield return new WaitForSeconds(0.2f);

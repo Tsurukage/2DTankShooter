@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,6 +25,11 @@ public class BombBarrel : MonoBehaviour
                     var disance = Vector2.Distance(closestPoint, transform.position);
                     var damagePercentage = Mathf.InverseLerp(_splashRange, 0, disance);
                     enemy.Hit((int)(_bombBarrelDamage * damagePercentage));
+                }
+                var reward = hit.GetComponent<RewardBox>();
+                if(reward != null)
+                {
+                    reward.Looting();
                 }
             }
         }

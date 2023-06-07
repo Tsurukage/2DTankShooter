@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class Bullet : MonoBehaviour
 {
     public BulletData bulletData;
+    public float acceleration;
     private GameObject _trailLineObj;
     private float splashRange;
     private SpriteRenderer bulletSprite;
@@ -49,6 +50,10 @@ public class Bullet : MonoBehaviour
             OnHit?.Invoke();
         }
     }
+    private void FixedUpdate()
+    {
+        rb2d.AddForce(transform.up * acceleration, ForceMode2D.Force);
+    }
     private void DisableObject()
     {
         rb2d.velocity = Vector2.zero;
@@ -60,7 +65,7 @@ public class Bullet : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
-        CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));//击中目标
+        CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));//击中目眮E
         OnHit?.Invoke();
         var bulletType = bulletData.bulletType;
         var damage = bulletData.damage;
@@ -86,6 +91,11 @@ public class Bullet : MonoBehaviour
                             var disance = Vector2.Distance(closestPoint, transform.position);
                             var damagePercentage = Mathf.InverseLerp(bulletData.splashRange, 0, disance);
                             childDamagable.Hit((int)(damage * damagePercentage));
+                        }
+                        var reward = hitCollider.GetComponent<RewardBox>();
+                        if(reward != null)
+                        {
+                            reward.Looting();
                         }
                     }
                     DisableObject();
@@ -130,7 +140,7 @@ public class Bullet : MonoBehaviour
                     var stbullet = collider.GetComponent<Damagable>();
                     if (stbullet != null)
                         stbullet.Hit(damage);
-                    CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));//只击中有效目标
+                    CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));//只击中有效目眮E
                     bulletOutOfbound = true;
                 }
                 break;
@@ -149,7 +159,7 @@ public class Bullet : MonoBehaviour
                     var sltbullet = collider.GetComponent<Damagable>();
                     if (sltbullet != null)
                         sltbullet.Hit(damage);
-                    CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));//只击中有效目标
+                    CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));//只击中有效目眮E
                     bulletOutOfbound = true;
                 }
                 break;
