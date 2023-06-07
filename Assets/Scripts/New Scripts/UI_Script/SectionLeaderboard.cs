@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SectionLeaderboard : MonoBehaviour
 {
@@ -62,6 +63,11 @@ public class SectionLeaderboard : MonoBehaviour
             objPrefab.SetBadge(npc.Badge);
             objPrefab.SetGender((int)npc.Gender);
             objPrefab.SetRankPos(i + 1);
+            if(npc.Name == player.Name)
+            {
+                var bg = npcObj.GetComponent<Image>();
+                bg.color = Color.cyan;
+            }
         }
     }
     private void UpdateLeaderboard()

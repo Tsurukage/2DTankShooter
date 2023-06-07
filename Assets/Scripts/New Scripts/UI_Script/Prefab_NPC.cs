@@ -13,8 +13,9 @@ public class Prefab_NPC : MonoBehaviour
     [SerializeField] private Text text_badge;
 
     private Sprite[] sprite_avatars;
-    private Sprite[] sprite_rank;
     private Sprite[] sprite_gender;
+    [SerializeField] private Sprite[] sprite_rank;
+    [SerializeField] private string[] rank_name;
     void Awake()
     {
         sprite_avatars = Resources.LoadAll<Sprite>("profile_pictures");
@@ -33,8 +34,15 @@ public class Prefab_NPC : MonoBehaviour
     public void SetNation(string nation) => text_nationality.text = nation;
     public void SetRank(int rank)
     {
-        //img_rank.sprite = sprite_rank[rank];
-        text_level.text = rank.ToString();
+        int spritePick = 0;
+        if (rank < 4)
+            spritePick = 0;
+        if (rank > 3 && rank < 7)
+            spritePick = 1;
+        if (rank > 6 && rank < 9)
+            spritePick = 2;
+        img_rank.sprite = sprite_rank[spritePick];
+        text_level.text = rank_name[rank];
     }
     public void SetBadge(int badge) => text_badge.text = badge.ToString();
 }
