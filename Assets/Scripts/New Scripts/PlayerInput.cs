@@ -26,7 +26,7 @@ public class PlayerInput : MonoBehaviour
     private void GetShottingInput()
     {
         OnShoot?.Invoke();
-        CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));
+        CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.5f, 0.5f));//·¢ÉäÅÚµ¯ÆÁÄ»Õð¶¯
     }
     private void Move(Vector2 input)
     {

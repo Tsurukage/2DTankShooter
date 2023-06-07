@@ -29,7 +29,7 @@ public class DestroyUtl : MonoBehaviour
     }
     public void TankDestroyEffect()
     {
-        CameraEffects.ShakeOnce(1f, 10f, Vector3.one);
+        CameraEffects.ShakeOnce(1f, 10f, Vector3.one);//坦克爆炸时的屏幕震动
         DestroyFlash.OnDestroyFlashEffect(0.8f);
     }
 }
