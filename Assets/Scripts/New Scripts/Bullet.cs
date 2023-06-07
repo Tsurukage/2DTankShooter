@@ -60,7 +60,7 @@ public class Bullet : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
-        CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));
+        CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));//击中目标
         OnHit?.Invoke();
         var bulletType = bulletData.bulletType;
         var damage = bulletData.damage;
@@ -95,7 +95,7 @@ public class Bullet : MonoBehaviour
                 var penDamagable = collider.GetComponent<Damagable>();
                 if (penDamagable != null)
                 {
-                    CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));
+                    CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));//穿透时的击中
                     penDamagable.Hit(damage);
                 }
                 break;
@@ -109,7 +109,7 @@ public class Bullet : MonoBehaviour
                     {
                         reflDamagable.Hit(damage);
                     }
-                    CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));
+                    CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));//反弹时的击中
                     DisableObject();
                 }
                 else
@@ -130,7 +130,7 @@ public class Bullet : MonoBehaviour
                     var stbullet = collider.GetComponent<Damagable>();
                     if (stbullet != null)
                         stbullet.Hit(damage);
-                    CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));
+                    CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));//只击中有效目标
                     bulletOutOfbound = true;
                 }
                 break;
@@ -149,7 +149,7 @@ public class Bullet : MonoBehaviour
                     var sltbullet = collider.GetComponent<Damagable>();
                     if (sltbullet != null)
                         sltbullet.Hit(damage);
-                    CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));
+                    CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));//只击中有效目标
                     bulletOutOfbound = true;
                 }
                 break;
