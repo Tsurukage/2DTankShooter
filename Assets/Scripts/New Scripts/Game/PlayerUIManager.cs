@@ -33,7 +33,6 @@ public class PlayerUIManager : MonoBehaviour
         if (ResetPlayerPref != null)
             ResetPlayerPref.onClick.AddListener(ResetPlayerPrefs);
         sprite_avatars = Resources.LoadAll<Sprite>("profile_pictures");
-        print(sprite_avatars[Player.Avatar].name);
         SetPlayer();
     }
    

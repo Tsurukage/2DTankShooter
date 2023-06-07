@@ -13,11 +13,15 @@ public class SectionLeaderboard : MonoBehaviour
     [SerializeField ]private float interval = 1800;
     private List<Player> npcPlayerList;
 
-    private DateTime lastRefreshTime; //Test time for logout
     void Start()
     {
         Load();
         GenerateLeaderBoard();
+        int timelapse = PlayerPrefs.GetInt("Count");
+        for(int i = 0; i < timelapse; i++)
+        {
+            UpdateNpcPlayerData();
+        }
         UpdateLeaderboard();
     }
 
@@ -25,7 +29,6 @@ public class SectionLeaderboard : MonoBehaviour
     {
         var npc = npcsData.LoadNPCData();
         npcPlayerList = npc;
-        lastRefreshTime = LoadRefreshTime();
         if(npcPlayerList == null)
         {
             npcsData.ReadNPCDataFromCSV(maxNPCs);
@@ -33,24 +36,7 @@ public class SectionLeaderboard : MonoBehaviour
             UpdateData();
         }
     }
-    //Test time for logout
-    private DateTime LoadRefreshTime()
-    {
-        string lastRefreshTimeString = PlayerPrefs.GetString("LastRefreshTime");
-        if (!string.IsNullOrEmpty(lastRefreshTimeString))
-        {
-            return DateTime.Parse(lastRefreshTimeString);
-        }
-        else
-        {
-            return DateTime.Now;
-        }
-    }
-    private void SaveLastRefreshTime()
-    {
-        PlayerPrefs.SetString("LastRefreshTime", lastRefreshTime.ToString());
-        PlayerPrefs.Save();
-    }
+    
     public void GenerateLeaderBoard()
     {
         foreach(Transform child in leaderboard)
@@ -67,6 +53,7 @@ public class SectionLeaderboard : MonoBehaviour
         {
             Player npc = allList[i];
             var npcObj = Instantiate(npcLeaderboard, leaderboard);
+            npcObj.name = $"{npc.Name}, {npc.Badge}";
             var objPrefab = npcObj.GetComponent<Prefab_NPC>();
             objPrefab.SetName(npc.Name);
             objPrefab.SetNation(npc.Nationality);
@@ -80,21 +67,6 @@ public class SectionLeaderboard : MonoBehaviour
     private void UpdateLeaderboard()
     {
         InvokeRepeating("UpdateNpcPlayerData", interval, interval);
-        InvokeRepeating("CheckRefreshTime", 0f, 30f);
-    }
-    private void CheckRefreshTime()
-    {
-        TimeSpan timeSinceLastRefresh = DateTime.Now - lastRefreshTime;
-        int refreshCount = (int)(timeSinceLastRefresh.TotalMinutes / 30);
-        if (refreshCount > 0)
-        {
-            for (int i = 0; i < refreshCount; i++)
-            {
-                UpdateNpcPlayerData();
-            }
-            GenerateLeaderBoard();
-            SaveLastRefreshTime();
-        }
     }
 
     private void UpdateNpcPlayerData()
@@ -145,4 +117,5 @@ public class SectionLeaderboard : MonoBehaviour
     {
         npcsData.SaveNPCJson(npcPlayerList);
     }
+   
 }

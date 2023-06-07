@@ -2036,6 +2036,7 @@ GameObject:
   - component: {fileID: 869693100}
   - component: {fileID: 869693102}
   - component: {fileID: 869693103}
+  - component: {fileID: 869693104}
   m_Layer: 0
   m_Name: AppGame
   m_TagString: Untagged
@@ -2098,6 +2099,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   State: 0
+--- !u!114 &869693104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869693099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32590c18c8af1b540b5cd4b81d2c50eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &877554635
 GameObject:
   m_ObjectHideFlags: 0
@@ -3787,7 +3800,7 @@ MonoBehaviour:
   npcLeaderboard: {fileID: 2979587927955151503, guid: c6591aaf38cffa2468f1c163b62b2868, type: 3}
   leaderboard: {fileID: 1484946273}
   maxNPCs: 200
-  interval: 1800
+  interval: 900
 --- !u!1 &1525391802
 GameObject:
   m_ObjectHideFlags: 0
