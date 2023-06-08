@@ -59,11 +59,22 @@ public class StageChanceManager : MonoBehaviour
 
     private void OnAdsClickAction()
     {
-        SoundEffectManager.Instance.OnClickSound();
-        SimpleGame.Instance.SetBool();
         clicked = true;
-        SetInteraction(!clicked);
-        SimpleGame.Instance.IncreaseShootingCount(1);
+        AdsSimulation.SimAds(isSuccess =>
+        {
+            if (isSuccess)
+            {
+                SoundEffectManager.Instance.OnClickSound();
+                SimpleGame.Instance.SetBool();
+                SimpleGame.Instance.IncreaseShootingCount(1);
+                GameManager.Instance.UpdateGameState(GameState.StageInProgress);
+            }
+            else
+            {
+                Debug.Log("ñvõˆçêä≈ÅI");
+                GameManager.Instance.UpdateGameState(GameState.StageFailUI);
+            }
+        });
     }
     private void SetInteraction(bool interactable)
     {
@@ -81,10 +92,8 @@ public class StageChanceManager : MonoBehaviour
             }
             if (value_time < 0)
             {
-                if (clicked)
-                    GameManager.Instance.UpdateGameState(GameState.StageInProgress);
-                else
-                    GameManager.Instance.UpdateGameState(GameState.StageFailUI);
+                GameManager.Instance.UpdateGameState(GameState.StageFailUI);
+                //if (clicked)                else
             }
             text_timer.text = value_time.ToString("00");
         }

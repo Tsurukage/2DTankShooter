@@ -35,11 +35,11 @@ public class Prefab_NPC : MonoBehaviour
     public void SetRank(int rank)
     {
         int spritePick = 0;
-        if (rank < 4)
+        if (rank < 3)
             spritePick = 0;
-        if (rank > 3 && rank < 7)
+        if (rank > 2 && rank < 6)
             spritePick = 1;
-        if (rank > 6 && rank < 9)
+        if (rank > 5 && rank < 9)
             spritePick = 2;
         img_rank.sprite = sprite_rank[spritePick];
         text_level.text = rank_name[rank];
