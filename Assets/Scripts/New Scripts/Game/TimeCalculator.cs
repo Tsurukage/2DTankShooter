@@ -47,4 +47,10 @@ public class TimeCalculator : MonoBehaviour
         PlayerPrefs.SetString("LogoutTime", DateTime.Now.ToString());
         PlayerPrefs.Save();
     }
+
+    private void OnDestroy()
+    {
+        PlayerPrefs.SetString("LogoutTime", DateTime.Now.ToString());
+        PlayerPrefs.Save();
+    }
 }
