@@ -61,7 +61,14 @@ namespace Models
             Rank += rank;
             if (Rank < Rank.Bronze) Rank = Rank.Bronze;
             if (Rank > Rank.Mythic) Rank = Rank.Mythic;
-            Debug.Log($"Player up level from [{(Rank)last}] to [{Rank}]");
+            if(last > (int)Rank)
+            {
+                Debug.Log($"Player down level from [{(Rank)last}] to [{Rank}]");
+            }
+            if(last < (int)Rank)
+            {
+                Debug.Log($"Player level up from [{(Rank)last}] to [{Rank}]");
+            }
         }
         public PlayerSave ToSave()
         {

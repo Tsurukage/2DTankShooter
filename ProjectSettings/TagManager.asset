@@ -80,6 +80,9 @@ TagManager:
   - name: SpecialEffect
     uniqueID: 650075355
     locked: 0
+  - name: SkyObject
+    uniqueID: 3730964751
+    locked: 0
   - name: UI
     uniqueID: 2901880113
     locked: 0

@@ -59,6 +59,7 @@ public class StageChanceManager : MonoBehaviour
 
     private void OnAdsClickAction()
     {
+        GameManager.Instance.UpdateGameState(GameState.StageWatchAds);
         clicked = true;
         AdsSimulation.SimAds(isSuccess =>
         {

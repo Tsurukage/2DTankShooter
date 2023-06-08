@@ -64,10 +64,12 @@ public class StagePrepareManager : MonoBehaviour
 
     private void OnAdsClickAction()
     {
+        GameManager.Instance.UpdateGameState(GameState.StageWatchAds);
         AdsSimulation.SimAds(isSuccess =>
         {
             if (isSuccess)
             {
+                GameManager.Instance.UpdateGameState(GameState.StageInProgress);
                 var loot = GetComponent<LootBag>();
                 loot.InstantiateLoot();
                 SoundEffectManager.Instance.OnClickSound();

@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.StageChancesUI:
                 break;
+            case GameState.StageWatchAds:
+                break;
             case GameState.StageClearUI:
                 break;
             case GameState.StageFailUI:
@@ -79,6 +81,7 @@ public enum GameState
     StagePrepareUI,
     StageInProgress,
     StageChancesUI,
+    StageWatchAds,
     StageClearUI,
     StageFailUI
 }
