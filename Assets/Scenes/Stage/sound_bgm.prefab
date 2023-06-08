@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1355027471672956405}
   - component: {fileID: 3458172010799357527}
   m_Layer: 0
-  m_Name: bgm
+  m_Name: sound_bgm
   m_TagString: BGM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f21c6bdfcaf9cef428fc3fb4e0bec16c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
