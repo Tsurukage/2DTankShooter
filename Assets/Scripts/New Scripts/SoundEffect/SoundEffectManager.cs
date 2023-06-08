@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class SoundEffectManager : MonoBehaviour
@@ -40,11 +41,19 @@ public class SoundEffectManager : MonoBehaviour
     internal void StopSFX()
     {
         _soundeffect.volume = 0f;
+        _soundeffect.loop = false;
     }
 
     internal void SetSecondSFX(AudioClip clip)
     {
         _soundeffect2.clip = clip;
         _soundeffect2.Play();
+    }
+
+    internal void LoopCasting(AudioClip clip)
+    {
+        _soundeffect.clip = clip;
+        _soundeffect.Play();
+        _soundeffect.loop = true;
     }
 }
