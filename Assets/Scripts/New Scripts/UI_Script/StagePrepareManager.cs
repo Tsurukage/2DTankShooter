@@ -76,7 +76,10 @@ public class StagePrepareManager : MonoBehaviour
                 SetInteraction(false);
                 return;
             }
-            Debug.Log("–v›öŠÅI");
+            {
+                Debug.Log("–v›öŠÅI");
+                GameManager.Instance.UpdateGameState(GameState.StageInProgress);
+            }
         });
     }
     private void SetInteraction(bool interactable)

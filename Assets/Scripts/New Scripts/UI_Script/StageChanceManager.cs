@@ -9,7 +9,6 @@ public class StageChanceManager : MonoBehaviour
     [SerializeField] private Text text_timer;
     [SerializeField] private Button btn_ads;
     [SerializeField] private Button btn_diamond;
-    bool clicked = false;
     bool starTimer = false;
     void Awake()
     {
@@ -60,7 +59,6 @@ public class StageChanceManager : MonoBehaviour
     private void OnAdsClickAction()
     {
         GameManager.Instance.UpdateGameState(GameState.StageWatchAds);
-        clicked = true;
         AdsSimulation.SimAds(isSuccess =>
         {
             if (isSuccess)
@@ -94,7 +92,6 @@ public class StageChanceManager : MonoBehaviour
             if (value_time < 0)
             {
                 GameManager.Instance.UpdateGameState(GameState.StageFailUI);
-                //if (clicked)                else
             }
             text_timer.text = value_time.ToString("00");
         }

@@ -67,7 +67,7 @@ public class NPCDataReader : MonoBehaviour
         var npcSave = listNPC.Select(n => new PlayerSave(n)).ToList();
         string jsonData = JsonConvert.SerializeObject(npcSave, Formatting.Indented);
         File.WriteAllText(jsonFilePath, jsonData);
-        print(jsonData);
+        //print(jsonData);
     }
 
     public List<Player> LoadNPCData()
