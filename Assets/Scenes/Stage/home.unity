@@ -3880,6 +3880,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1036127922192298065, guid: b03fa7d62a5db6849b90bb7e10aba3ca, type: 3}
@@ -3931,6 +3932,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: b03fa7d62a5db6849b90bb7e10aba3ca, type: 3}
 --- !u!1 &1574804078
 GameObject:
@@ -4174,19 +4176,24 @@ MonoBehaviour:
   - 0106
   - 0107
   - 0108
-  tier_silver:
   tier_bronzeMid:
   - 0201
   - 0202
   - 0203
   - 0204
   - 0205
+  - 0206
+  - 0207
+  - 0208
   tier_bronzeHigh:
   - 0301
   - 0302
   - 0303
   - 0304
   - 0305
+  - 0306
+  - 0307
+  - 0308
   tier_silverLow:
   - 0401
   - 0402
