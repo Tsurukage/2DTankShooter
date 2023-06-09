@@ -28,4 +28,8 @@ public class InstantiateUtil : MonoBehaviour
     {
         SoundEffectManager.Instance.LoopCasting(clip);
     }
+    public void StopLoop()
+    {
+        SoundEffectManager.Instance.StopLoop();
+    }
 }

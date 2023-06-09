@@ -1,8 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using ToastNotify.Model;
 
 public class AdsSimulation : MonoBehaviour
 {
@@ -38,6 +37,7 @@ public class AdsSimulation : MonoBehaviour
         {
             callbackAction(false);
             instance.Display(false);
+            Toast.Show("没广告啊！");
         });
     }
 }

@@ -41,7 +41,6 @@ public class SoundEffectManager : MonoBehaviour
     internal void StopSFX()
     {
         _soundeffect.volume = 0f;
-        _soundeffect.loop = false;
     }
 
     internal void SetSecondSFX(AudioClip clip)
@@ -55,5 +54,9 @@ public class SoundEffectManager : MonoBehaviour
         _soundeffect.clip = clip;
         _soundeffect.Play();
         _soundeffect.loop = true;
+    }
+    internal void StopLoop()
+    {
+        _soundeffect.loop = false;
     }
 }
