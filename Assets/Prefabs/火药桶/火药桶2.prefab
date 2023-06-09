@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2521e3a4b9e3f27408c16ba5a4d47897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosionSplashPrefab: {fileID: 5289400932657006000, guid: 973a4fc123122ee4d9a6ffcd01168a08, type: 3}
+  _explosionSplashPrefab: {fileID: 5289400932657006000, guid: 0834d8a9fc3759d4aad431fbb813d0cd, type: 3}
 --- !u!1 &7711845987154597817
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,7 +367,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1393087183
-  m_SortingLayer: 11
+  m_SortingLayer: 12
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 0.11764706}

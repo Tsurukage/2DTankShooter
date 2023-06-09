@@ -5,15 +5,15 @@ using UnityEngine.SceneManagement;
 public class SceneAssetsManager : MonoBehaviour
 {
     public static SceneAssetsManager Instance;
-    [SerializeField] private List<string> tier_bronze = new List<string>();
-    [SerializeField] private List<string> tier_silver = new List<string>();
-    [SerializeField] private List<string> tier_gold = new List<string>();
-    [SerializeField] private List<string> tier_platinum = new List<string>();
-    [SerializeField] private List<string> tier_diamond = new List<string>();
-    [SerializeField] private List<string> tier_master = new List<string>();
-    [SerializeField] private List<string> tier_grandmaster = new List<string>();
-    [SerializeField] private List<string> tier_legend = new List<string>();
-    [SerializeField] private List<string> tier_mythic = new List<string>();
+    [SerializeField] private List<string> tier_bronzeLow = new List<string>();
+    [SerializeField] private List<string> tier_bronzeMid = new List<string>();
+    [SerializeField] private List<string> tier_bronzeHigh = new List<string>();
+    [SerializeField] private List<string> tier_silverLow = new List<string>();
+    [SerializeField] private List<string> tier_silverMid = new List<string>();
+    [SerializeField] private List<string> tier_silverHigh = new List<string>();
+    [SerializeField] private List<string> tier_goldLow = new List<string>();
+    [SerializeField] private List<string> tier_goldMid = new List<string>();
+    [SerializeField] private List<string> tier_goldHigh = new List<string>();
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -27,40 +27,40 @@ public class SceneAssetsManager : MonoBehaviour
         List<string> possibleScene = new List<string>();
         switch (rank)
         {
-            case Rank.Bronze:
-                foreach (string scene in tier_bronze)
+            case Rank.BronzeLow:
+                foreach (string scene in tier_bronzeLow)
                     possibleScene.Add(scene);
                 break;
-            case Rank.Silver:
-                foreach (string scene in tier_silver)
+            case Rank.BronzeMid:
+                foreach (string scene in tier_bronzeMid)
                     possibleScene.Add(scene);
                 break;
-            case Rank.Gold:
-                foreach (string scene in tier_gold)
+            case Rank.BronzeHigh:
+                foreach (string scene in tier_bronzeHigh)
                     possibleScene.Add(scene);
                 break;
-            case Rank.Platinum:
-                foreach (string scene in tier_platinum)
+            case Rank.SilverLow:
+                foreach (string scene in tier_silverLow)
                     possibleScene.Add(scene);
                 break;
-            case Rank.Diamond:
-                foreach (string scene in tier_diamond)
+            case Rank.SilverMid:
+                foreach (string scene in tier_silverMid)
                     possibleScene.Add(scene);
                 break;
-            case Rank.Master:
-                foreach (string scene in tier_master)
+            case Rank.SilverHigh:
+                foreach (string scene in tier_silverHigh)
                     possibleScene.Add(scene);
                 break;
-            case Rank.Grandmaster:
-                foreach (string scene in tier_grandmaster)
+            case Rank.GoldLow:
+                foreach (string scene in tier_goldLow)
                     possibleScene.Add(scene);
                 break;
-            case Rank.Legend:
-                foreach (string scene in tier_legend)
+            case Rank.GoldMid:
+                foreach (string scene in tier_goldMid)
                     possibleScene.Add(scene);
                 break;
-            case Rank.Mythic:
-                foreach (string scene in tier_mythic)
+            case Rank.GoldHigh:
+                foreach (string scene in tier_goldHigh)
                     possibleScene.Add(scene);
                 break;
         }

@@ -59,8 +59,8 @@ namespace Models
         {
             var last = (int)Rank;
             Rank += rank;
-            if (Rank < Rank.Bronze) Rank = Rank.Bronze;
-            if (Rank > Rank.Mythic) Rank = Rank.Mythic;
+            if (Rank < Rank.BronzeLow) Rank = Rank.BronzeLow;
+            if (Rank > Rank.GoldHigh) Rank = Rank.GoldHigh;
             if(last > (int)Rank)
             {
                 Debug.Log($"Player down level from [{(Rank)last}] to [{Rank}]");
@@ -78,15 +78,15 @@ namespace Models
 }
 public enum Rank
 {
-    Bronze = 0,
-    Silver = 1,
-    Gold = 2,
-    Platinum = 3,
-    Diamond = 4,
-    Master = 5,
-    Grandmaster = 6,
-    Legend = 7,
-    Mythic = 8
+    BronzeLow = 0,
+    BronzeMid = 1,
+    BronzeHigh = 2,
+    SilverLow = 3,
+    SilverMid = 4,
+    SilverHigh = 5,
+    GoldLow = 6,
+    GoldMid = 7,
+    GoldHigh = 8
 }
 public enum Gender
 {

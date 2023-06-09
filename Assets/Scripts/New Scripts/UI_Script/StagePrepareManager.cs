@@ -64,6 +64,7 @@ public class StagePrepareManager : MonoBehaviour
 
     private void OnAdsClickAction()
     {
+        SoundEffectManager.Instance.OnClickSound();
         GameManager.Instance.UpdateGameState(GameState.StageWatchAds);
         AdsSimulation.SimAds(isSuccess =>
         {
@@ -72,7 +73,6 @@ public class StagePrepareManager : MonoBehaviour
                 GameManager.Instance.UpdateGameState(GameState.StageInProgress);
                 var loot = GetComponent<LootBag>();
                 loot.InstantiateLoot();
-                SoundEffectManager.Instance.OnClickSound();
                 SetInteraction(false);
                 return;
             }

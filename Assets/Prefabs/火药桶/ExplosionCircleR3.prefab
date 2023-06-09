@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4165723099359124232}
   - component: {fileID: 1430500417853921804}
   m_Layer: 7
-  m_Name: ExplosionCircle
+  m_Name: ExplosionCircleR3
   m_TagString: Explosive
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,7 +125,7 @@ Animator:
   m_GameObject: {fileID: 5289400932657006000}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d9a7f6becab80764488319663cab3820, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7f4736d081f6628449173a09081ed44e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -30,11 +30,13 @@ public class AdsSimulation : MonoBehaviour
         Btn_failure.onClick.RemoveAllListeners();
         Btn_success.onClick.AddListener(() =>
         {
+            SoundEffectManager.Instance.OnClickSound();
             callbackAction(true);
             instance.Display(false);
         });
         Btn_failure.onClick.AddListener(() =>
         {
+            SoundEffectManager.Instance.OnClickSound();
             callbackAction(false);
             instance.Display(false);
             Toast.Show("没广告啊！");
