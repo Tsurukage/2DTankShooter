@@ -30,14 +30,14 @@ public class Patrolling : MonoBehaviour
     {
         if(moveRight)
         {
-            transform.Translate(Speed * Time.deltaTime, 0, 0);
+            transform.Translate(speed * Time.deltaTime, 0, 0);
             tankSprite.flipX = moveRight;
             if (transform.position.x > boundary)
                 moveRight = false;
         }
         else
         {
-            transform.Translate(-Speed * Time.deltaTime, 0, 0);
+            transform.Translate(-speed * Time.deltaTime, 0, 0);
             tankSprite.flipX = moveRight;
             if (transform.position.x < -boundary)
                 moveRight = true;

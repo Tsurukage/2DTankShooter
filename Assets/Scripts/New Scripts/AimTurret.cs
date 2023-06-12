@@ -10,4 +10,7 @@ public class AimTurret : MonoBehaviour
         Quaternion rotation = Quaternion.AngleAxis(desiredAngle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, turretRotationSpeed);
     }
+    
+
+
 }
