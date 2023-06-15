@@ -6,14 +6,14 @@ using UnityEngine;
 public class TankAttack : MonoBehaviour
 {
     [SerializeField] private GameObject go_tankBullet;
-    [SerializeField] private Transform target;
+    [SerializeField] private GameObject target;
     [SerializeField] private TankAim turret;
     [SerializeField] private Transform barrel;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        target = GameObject.FindWithTag("Player");
     }
 
     public void Shoot()
@@ -26,6 +26,6 @@ public class TankAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        turret.Aim(target);
+        turret.Aim(target.transform);
     }
 }

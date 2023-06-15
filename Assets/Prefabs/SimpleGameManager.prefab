@@ -57,8 +57,11 @@ MonoBehaviour:
   - _name: "\u5E38\u89C4\u5766\u514B4"
     _enemySO: {fileID: 11400000, guid: 8758783f76ad17b43aeb96d624da2e4a, type: 2}
     position: {x: 2, y: -1}
+  _enemyCounterComp: []
   _tankPrefab: {fileID: 2854092050511861261, guid: 9f0a8e55e998ec440abca7e9f167c126, type: 3}
+  _tankCounterPrefab: {fileID: 7261272153812333767, guid: 270e0ff4bddccd84f9a8f7d52b2e6251, type: 3}
   _stageName: 
+  _audioClip: {fileID: 0}
   countDown: 0
   tankCount: 0
   shootingCount: 5

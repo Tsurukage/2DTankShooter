@@ -54,7 +54,7 @@ public class SectionLeaderboard : MonoBehaviour
         {
             Player npc = allList[i];
             var npcObj = Instantiate(npcLeaderboard, leaderboard);
-            npcObj.name = $"{npc.Name}, {npc.Badge}";
+            npcObj.name = $"{npc.Uid}, {npc.Name}, {npc.Badge}";
             var objPrefab = npcObj.GetComponent<Prefab_NPC>();
             objPrefab.SetName(npc.Name);
             objPrefab.SetNation(npc.Nationality);
@@ -63,7 +63,7 @@ public class SectionLeaderboard : MonoBehaviour
             objPrefab.SetBadge(npc.Badge);
             objPrefab.SetGender((int)npc.Gender);
             objPrefab.SetRankPos(i + 1);
-            if(npc.Name == player.Name)
+            if(npc.Uid == player.Uid)
             {
                 var bg = npcObj.GetComponent<Image>();
                 bg.color = Color.cyan;

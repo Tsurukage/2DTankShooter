@@ -8,7 +8,9 @@ public class SimpleGame : MonoBehaviour
     public static SimpleGame Instance;
     private Player Player => Game.World.Player;
     [SerializeField] List<EnemyComp> _enemyComp;
+    [SerializeField] List<EnemyComp> _enemyCounterComp;
     [SerializeField] private GameObject _tankPrefab;
+    [SerializeField] private GameObject _tankCounterPrefab;
     [SerializeField] private string _stageName;
     [SerializeField] private AudioClip _audioClip;
     public string Stage_Name
@@ -48,6 +50,7 @@ public class SimpleGame : MonoBehaviour
         Top_UI?.Invoke(tankCount, shootingCount, badgeCount, animalCount);
         InitAnimalCount = animalCount;
         SpawnCurrentLevel();
+        SpawnCounterTank();
         chanceUsed = false;
         BackgroundMusicManager.Instance.SetBgm(_audioClip);
     }
@@ -61,6 +64,18 @@ public class SimpleGame : MonoBehaviour
             enemyGO.GetComponentInChildren<Patrolling>().Speed = enemyComp._enemySO.enemySpeed;
             enemyGO.GetComponentInChildren<Damagable>().Health = enemyComp._enemySO.maxHealth;
             enemyGO.GetComponentInChildren<TankBadgeDrop>().SetTankData(enemyComp._enemySO);
+        }
+    }
+    private void SpawnCounterTank()
+    {
+        foreach(EnemyComp enemyCounterComp in _enemyCounterComp)
+        {
+            GameObject enemyCGO = Instantiate(_tankCounterPrefab);
+            enemyCGO.transform.position = enemyCounterComp.position;
+            enemyCGO.GetComponentInChildren<SpriteRenderer>().sprite = enemyCounterComp._enemySO.enemySprite;
+            enemyCGO.GetComponentInChildren<Patrolling>().Speed = enemyCounterComp._enemySO.enemySpeed;
+            enemyCGO.GetComponentInChildren<Damagable>().Health = enemyCounterComp._enemySO.maxHealth;
+            enemyCGO.GetComponentInChildren<TankBadgeDrop>().SetTankData(enemyCounterComp._enemySO);
         }
     }
     public void UpdateTankCount()
