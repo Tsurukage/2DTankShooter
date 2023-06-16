@@ -8,7 +8,7 @@ public class SimpleGame : MonoBehaviour
     public static SimpleGame Instance;
     private Player Player => Game.World.Player;
     [SerializeField] List<EnemyComp> _enemyComp;
-    [SerializeField] List<EnemyComp> _enemyCounterComp;
+    [SerializeField] List<EnemyAdvanceComp> _enemyCounterComp;
     [SerializeField] private GameObject _tankPrefab;
     [SerializeField] private GameObject _tankCounterPrefab;
     [SerializeField] private string _stageName;
@@ -68,14 +68,15 @@ public class SimpleGame : MonoBehaviour
     }
     private void SpawnCounterTank()
     {
-        foreach(EnemyComp enemyCounterComp in _enemyCounterComp)
+        foreach(EnemyAdvanceComp enemyCounterComp in _enemyCounterComp)
         {
             GameObject enemyCGO = Instantiate(_tankCounterPrefab);
             enemyCGO.transform.position = enemyCounterComp.position;
-            enemyCGO.GetComponentInChildren<SpriteRenderer>().sprite = enemyCounterComp._enemySO.enemySprite;
-            enemyCGO.GetComponentInChildren<Patrolling>().Speed = enemyCounterComp._enemySO.enemySpeed;
-            enemyCGO.GetComponentInChildren<Damagable>().Health = enemyCounterComp._enemySO.maxHealth;
-            enemyCGO.GetComponentInChildren<TankBadgeDrop>().SetTankData(enemyCounterComp._enemySO);
+            enemyCGO.GetComponentInChildren<SpriteRenderer>().sprite = enemyCounterComp._enemyAdSO.tank_patrol;
+            enemyCGO.GetComponentInChildren<Patrolling>().Speed = enemyCounterComp._enemyAdSO.tank_speed;
+            enemyCGO.GetComponentInChildren<Damagable>().Health = enemyCounterComp._enemyAdSO.tank_maxHealth;
+            enemyCGO.GetComponentInChildren<TankBadgeDrop>().SetAdTankData(enemyCounterComp._enemyAdSO);
+            enemyCGO.GetComponentInChildren<TankObject>().SetData(enemyCounterComp._enemyAdSO);
         }
     }
     public void UpdateTankCount()
@@ -183,5 +184,12 @@ public class EnemyComp
 {
     public string _name;
     public EnemyScriptableObject _enemySO;
+    public Vector2 position;
+}
+[Serializable]
+public class EnemyAdvanceComp
+{
+    public string _name;
+    public EnemyAdvanceSO _enemyAdSO;
     public Vector2 position;
 }

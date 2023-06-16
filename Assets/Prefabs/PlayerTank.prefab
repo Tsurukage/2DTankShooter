@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6816457412502399229}
   - component: {fileID: 7005475813835557081}
+  - component: {fileID: 5319645753543687441}
   m_Layer: 12
-  m_Name: Shield
+  m_Name: Shield_outer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,6 +49,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.5
+--- !u!114 &5319645753543687441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751943715450259409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61177e60600ab64d93ee0b066651e56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &793043195888218333
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,8 +105,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7273239619080588226}
   - component: {fileID: 4276033261869635315}
-  m_Layer: 0
-  m_Name: Shield (2)
+  - component: {fileID: 1782222858042625220}
+  m_Layer: 12
+  m_Name: Shield_inner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,6 +144,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &1782222858042625220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020516960465232690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61177e60600ab64d93ee0b066651e56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4304419465286320184
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,6 +167,7 @@ GameObject:
   - component: {fileID: 4304419465286320185}
   - component: {fileID: 4304419465286320182}
   - component: {fileID: 4304419465286320183}
+  - component: {fileID: 6162598215038797457}
   m_Layer: 12
   m_Name: TankBase
   m_TagString: Untagged
@@ -225,12 +252,24 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.7
+--- !u!114 &6162598215038797457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4304419465286320184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e4062921aad80748aef9b42d7d050c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4304419465344363611
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,8 +966,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4873626788770840827}
   - component: {fileID: 4030438273349367103}
-  m_Layer: 0
-  m_Name: Shield (1)
+  - component: {fileID: 6550902622332591789}
+  m_Layer: 12
+  m_Name: Shield_mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -965,6 +1005,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.25
+--- !u!114 &6550902622332591789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4862639802351835331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61177e60600ab64d93ee0b066651e56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6104291627964914889
 GameObject:
   m_ObjectHideFlags: 0

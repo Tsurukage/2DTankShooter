@@ -6,22 +6,24 @@ using UnityEngine;
 public class TankBadgeDrop : MonoBehaviour
 {
     [SerializeField] private EnemyScriptableObject _enemySO;
+    [SerializeField] private EnemyAdvanceSO _enemyAdvanceSO;
     [SerializeField] private GameObject rankIcon;
     [SerializeField] private Transform _starHolder;
     List<TankRankBadge> _badges = new List<TankRankBadge>();
     int redConvertValue = 4;
     private void Start()
     {
-        DrawRankIcon(_enemySO.badgeDrop);
+        if(_enemySO != null )
+            DrawRankIcon(_enemySO.badgeDrop);
+        if (_enemyAdvanceSO != null)
+            DrawRankIcon(_enemyAdvanceSO.tank_badge);
     }
-    public void SetTankData(EnemyScriptableObject data)
-    {
-        _enemySO = data;
-    }
-    public void SetBadgeDrop()
-    {
-        SimpleGame.Instance.UpdateBadgeCount(_enemySO.badgeDrop);
-    }
+    //Normal type tank
+    public void SetTankData(EnemyScriptableObject data) => _enemySO = data;
+    public void SetBadgeDrop() => SimpleGame.Instance.UpdateBadgeCount(_enemySO.badgeDrop);
+    //Counter type tank
+    public void SetAdTankData(EnemyAdvanceSO data) => _enemyAdvanceSO = data;
+    public void SetBadgeDropAd() => SimpleGame.Instance.UpdateBadgeCount(_enemyAdvanceSO.tank_badge);
 
     public void DrawRankIcon(int arg)
     {

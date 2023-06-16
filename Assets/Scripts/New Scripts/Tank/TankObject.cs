@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class TankObject : MonoBehaviour
 {
+    [SerializeField] private EnemyAdvanceSO enemyAdSO;
     public TankState State;
     private bool isAttacking = false;
     [SerializeField] private Sprite[] tankSprite;
+
+    public void SetData(EnemyAdvanceSO data)
+    {
+        enemyAdSO = data;
+        tankSprite[0] = enemyAdSO.tank_patrol;
+        tankSprite[1] = enemyAdSO.tank_attack;
+    }
     public void UpdateTankState(TankState state)
     {
         State = state;
@@ -62,10 +70,12 @@ public class TankObject : MonoBehaviour
         {
             for (int i = 0; i < 3; i++)
             {
+                if (GameManager.Instance.State == GameState.StageFailUI || GameManager.Instance.State == GameState.StageClearUI)
                 {
-                    shoot.Shoot();
-                    yield return new WaitForSeconds(2f);
+                    break;
                 }
+                shoot.Shoot();
+                yield return new WaitForSeconds(2f);
             }
         }
         yield return new WaitForSeconds(2f);
