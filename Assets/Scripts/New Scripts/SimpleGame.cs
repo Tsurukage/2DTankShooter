@@ -83,6 +83,7 @@ public class SimpleGame : MonoBehaviour
     {
         tankCount--;
         UpdateCount();
+        CheckGame();
     }
     public void UpdateShootingCount()
     {
@@ -94,11 +95,13 @@ public class SimpleGame : MonoBehaviour
     {
         animalCount--;
         UpdateCount();
+        CheckGame();
     }
     public void UpdateBadgeCount(int amount)
     {
         badgeCount += amount;
         UpdateCount();
+        CheckGame();
     }
     public void UpdateCount()
     {
@@ -108,36 +111,45 @@ public class SimpleGame : MonoBehaviour
     {
         if (tankCount == 0 || tankCount < 0)
         {
-            GameManager.Instance.HandleStageClear(false);
-            Debug.Log("Stage Complete");
-            GameManager.Instance.UpdateGameState(GameState.StageClearUI, 4);
-            FinalBadge(badgeCount);
-            print(badgeCount);
-        }
-        if (shootingCount == 0)
-        {
-            if (tankCount > 0)
+            if (GameManager.Instance.State != GameState.StageClearUI)
             {
-                if (!chanceUsed)
+                GameManager.Instance.HandleStageClear(false);
+                Debug.Log("Stage Complete");
+                GameManager.Instance.UpdateGameState(GameState.StageClearUI, 4);
+                FinalBadge(badgeCount);
+                print(badgeCount);
+            }
+        }
+        else if (shootingCount == 0)
+        {
+            if (GameManager.Instance.State != GameState.StageFailUI)
+            {
+                if (tankCount > 0)
                 {
-                    GameManager.Instance.UpdateGameState(GameState.StageChancesUI, 1);
-                }
-                else
-                {
-                    GameManager.Instance.HandleStageClear(false);
-                    FinalBadge(badgeCount);
-                    GameManager.Instance.UpdateGameState(GameState.StageFailUI, 4);
-                    Debug.Log("Game Over!");
+                    if (!chanceUsed)
+                    {
+                        GameManager.Instance.UpdateGameState(GameState.StageChancesUI, 1);
+                    }
+                    else
+                    {
+                        GameManager.Instance.HandleStageClear(false);
+                        FinalBadge(badgeCount);
+                        GameManager.Instance.UpdateGameState(GameState.StageFailUI, 4);
+                        Debug.Log("Game Over!");
+                    }
                 }
             }
         }
-        if (animalCount == 0)
+        else if (animalCount == 0)
         {
-            GameManager.Instance.HandleStageClear(false);
-            print(badgeCount);
-            FinalBadge(badgeCount);
-            Debug.Log("不要滥杀动物！");
-            GameManager.Instance.UpdateGameState(GameState.StageFailUI, 4);
+            if (GameManager.Instance.State != GameState.StageFailUI)
+            {
+                GameManager.Instance.HandleStageClear(false);
+                print(badgeCount);
+                FinalBadge(badgeCount);
+                Debug.Log("不要滥杀动物！");
+                GameManager.Instance.UpdateGameState(GameState.StageFailUI, 4);
+            }
         }
         StarOne?.Invoke(tankCount == 0);
         StarTwo?.Invoke(shootingCount > 0);
