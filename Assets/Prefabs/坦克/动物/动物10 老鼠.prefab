@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 8986129765170244921}
   - component: {fileID: 3319313375955575461}
   m_Layer: 0
-  m_Name: "\u52A8\u7269 \u871C\u8702"
+  m_Name: "\u52A8\u726910 \u8001\u9F20"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 6807524068642881894}
   - component: {fileID: 8193252663119690681}
   - component: {fileID: 8630056764930882464}
-  - component: {fileID: 1494099417922283300}
+  - component: {fileID: 5328689719236652277}
   m_Layer: 7
   m_Name: Animal
   m_TagString: Animal
@@ -335,7 +335,7 @@ SpriteRenderer:
   m_SortingLayerID: -1495791489
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1582720954, guid: aea1d53f56f2b9346ba137be26b14d47, type: 3}
+  m_Sprite: {fileID: 1811441881, guid: aea1d53f56f2b9346ba137be26b14d47, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -405,8 +405,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92609104ee8467640b7bc9fdd95f45b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 10
-  health: 10
+  MaxHealth: 20
+  health: 20
   OnDead:
     m_PersistentCalls:
       m_Calls:
@@ -527,7 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6fa00eaa5c10b341841a2a137caeb5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.7
+  speed: 1
   boundary: 0
   moveRight: 0
 --- !u!114 &2324800093519862957
@@ -556,8 +556,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f44f3ebe0eec6174da6218bc4d7878f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToinstantiate: {fileID: 2324829210072079084, guid: f2a2db93d66e34042acaab1f23a02600, type: 3}
-  clip: {fileID: 8300000, guid: b2936f4637f055b4e98d43adbf294c3b, type: 3}
+  objectToinstantiate: {fileID: 2324829210072079084, guid: b6e40e5a8b29a7645a8fbd08f815e087, type: 3}
+  clip: {fileID: 8300000, guid: af56d36e7cf82bf43b3a1e989ffc22f4, type: 3}
 --- !u!114 &6807524068642881894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -598,7 +598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _reducedValue: -1
---- !u!95 &1494099417922283300
+--- !u!95 &5328689719236652277
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -608,7 +608,7 @@ Animator:
   m_GameObject: {fileID: 6938841390574633065}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0b47e151472e87c49a17db90e35e31b6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 32c9e2f3644c01f46986203df14ba62d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -751,6 +751,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1393087183
   m_SortingOrder: 0
   m_TargetDisplay: 0
