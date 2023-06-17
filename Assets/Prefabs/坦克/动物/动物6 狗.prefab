@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 8986129765170244921}
   - component: {fileID: 3319313375955575461}
   m_Layer: 0
-  m_Name: "\u52A8\u7269 \u5C71\u9E21"
+  m_Name: "\u52A8\u72696 \u72D7"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -270,8 +270,8 @@ GameObject:
   - component: {fileID: 3114246529303911151}
   - component: {fileID: 6807524068642881894}
   - component: {fileID: 8193252663119690681}
-  - component: {fileID: 7527513357434112347}
-  - component: {fileID: 7102464648544565557}
+  - component: {fileID: 8630056764930882464}
+  - component: {fileID: 1313141912849072760}
   m_Layer: 7
   m_Name: Animal
   m_TagString: Animal
@@ -335,7 +335,7 @@ SpriteRenderer:
   m_SortingLayerID: -1495791489
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1062193309, guid: 12f7b2251e334904087e331c55edaebd, type: 3}
+  m_Sprite: {fileID: -1149712911, guid: 6c38f351272e6464ea6b43338a0fcd43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -363,7 +363,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 0.4, y: 0.4}
     newSize: {x: 0.2734375, y: 0.21484375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -405,8 +405,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92609104ee8467640b7bc9fdd95f45b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 10
-  health: 10
+  MaxHealth: 20
+  health: 20
   OnDead:
     m_PersistentCalls:
       m_Calls:
@@ -473,7 +473,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7527513357434112347}
+      - m_Target: {fileID: 8630056764930882464}
         m_TargetAssemblyTypeName: AnimalBadgeReduce, Assembly-CSharp
         m_MethodName: DecreaseBadge
         m_Mode: 1
@@ -527,7 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6fa00eaa5c10b341841a2a137caeb5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.8
+  speed: 0.6
   boundary: 0
   moveRight: 0
 --- !u!114 &2324800093519862957
@@ -556,8 +556,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f44f3ebe0eec6174da6218bc4d7878f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToinstantiate: {fileID: 2324829210072079084, guid: da45514465b22e040afbfe2509057ac2, type: 3}
-  clip: {fileID: 8300000, guid: 679349bb5db84f0448396c2f1614f5e0, type: 3}
+  objectToinstantiate: {fileID: 2324829210072079084, guid: fa586915dda30694a84f3871a59636bc, type: 3}
+  clip: {fileID: 8300000, guid: 666bdd6ea3727a14f9c66439061835b1, type: 3}
 --- !u!114 &6807524068642881894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -585,7 +585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageValue: {fileID: 1076536266769833005, guid: 8b6e3a5eb513f7442bfa07e0a793ff12, type: 3}
---- !u!114 &7527513357434112347
+--- !u!114 &8630056764930882464
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -597,8 +597,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a395fd060894d8c40bfaefec8e168c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _reducedValue: -1
---- !u!95 &7102464648544565557
+  _reducedValue: -2
+--- !u!95 &1313141912849072760
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -608,7 +608,7 @@ Animator:
   m_GameObject: {fileID: 6938841390574633065}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b1523e669af824840a358ce92a0ec289, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1f6f06966abefb747ad0d8b4493e8a90, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
