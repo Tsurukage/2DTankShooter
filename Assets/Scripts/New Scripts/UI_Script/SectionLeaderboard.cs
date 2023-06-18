@@ -1,5 +1,6 @@
 using Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -18,12 +19,18 @@ public class SectionLeaderboard : MonoBehaviour
     {
         Load();
         GenerateLeaderBoard();
+        StartCoroutine(DelayUpdateLeaderBoard());
+        UpdateLeaderboard();
+    }
+
+    IEnumerator DelayUpdateLeaderBoard()
+    {
+        yield return new WaitForSeconds(1f);
         int timelapse = PlayerPrefs.GetInt("Count");
         for(int i = 0; i < timelapse; i++)
         {
             UpdateNpcPlayerData();
         }
-        UpdateLeaderboard();
     }
 
     private void Load()
