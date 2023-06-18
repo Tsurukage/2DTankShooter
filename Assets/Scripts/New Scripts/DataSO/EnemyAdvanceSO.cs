@@ -12,6 +12,7 @@ public class EnemyAdvanceSO : ScriptableObject
     public int tank_badge = 1;
     public Sprite tank_patrol;
     public Sprite tank_attack;
+    public int shootingCount = 1;
     public float attackDelay;
     public float attackInterval;
 }

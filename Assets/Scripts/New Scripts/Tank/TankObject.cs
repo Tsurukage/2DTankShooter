@@ -68,7 +68,7 @@ public class TankObject : MonoBehaviour
         yield return new WaitForSeconds(5f);
         if (shoot != null)
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < enemyAdSO.shootingCount; i++)
             {
                 if (GameManager.Instance.State == GameState.StageFailUI || GameManager.Instance.State == GameState.StageClearUI)
                 {
