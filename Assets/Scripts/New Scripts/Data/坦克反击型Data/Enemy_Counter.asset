@@ -18,5 +18,6 @@ MonoBehaviour:
   tank_badge: 2
   tank_patrol: {fileID: 349579049, guid: 7e4adf07f9e939746b2aae9372fae2f1, type: 3}
   tank_attack: {fileID: 2066237745, guid: 7e4adf07f9e939746b2aae9372fae2f1, type: 3}
+  shootingCount: 2
   attackDelay: 4
   attackInterval: 2

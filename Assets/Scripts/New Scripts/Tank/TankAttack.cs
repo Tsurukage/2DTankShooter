@@ -10,6 +10,7 @@ public class TankAttack : MonoBehaviour
     [SerializeField] private GameObject target;
     [SerializeField] private TankAim turret;
     [SerializeField] private Transform barrel;
+    private GameObject go_bulletTrail;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,10 @@ public class TankAttack : MonoBehaviour
         var bullet = Instantiate(go_tankBullet);
         bullet.transform.position = barrel.position;
         bullet.transform.localRotation = barrel.rotation;
+        var bulletData = bullet.GetComponent<Bullet>();
+        if (bulletData.bulletData != null)
+            go_bulletTrail = bulletData.bulletData.bulletTrail;
+        Instantiate(go_bulletTrail, bullet.transform);
     }
 
     // Update is called once per frame

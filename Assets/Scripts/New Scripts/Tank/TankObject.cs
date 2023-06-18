@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TankObject : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class TankObject : MonoBehaviour
     public TankState State;
     private bool isAttacking = false;
     [SerializeField] private Sprite[] tankSprite;
+
+    public UnityEvent OnShoot;
 
     public void SetData(EnemyAdvanceSO data)
     {
@@ -27,6 +30,7 @@ public class TankObject : MonoBehaviour
                     speed.Speed = 0f;
                 break;
             case TankState.Patrolling:
+                PanelWarningFlash.Instance.EndFlash();
                 if (tankSprite != null)
                     sprite.sprite = tankSprite[0];
                 if (speed != null)
@@ -35,6 +39,7 @@ public class TankObject : MonoBehaviour
             case TankState.SlowDown:
                 break;
             case TankState.Attacking:
+                PanelWarningFlash.Instance.StartFlash();
                 if (tankSprite != null)
                     sprite.sprite = tankSprite[1];
                 if (!isAttacking)
@@ -75,6 +80,7 @@ public class TankObject : MonoBehaviour
                     break;
                 }
                 shoot.Shoot();
+                OnShoot?.Invoke();
                 yield return new WaitForSeconds(2f);
             }
         }
