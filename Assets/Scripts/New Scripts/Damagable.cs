@@ -8,7 +8,7 @@ public class Damagable : MonoBehaviour
     [SerializeField] private int MaxHealth;
     [SerializeField] private int health = 0;
     private int damageValue;
-
+    private TankObject tankObj;
     public int DamageValue
     {
         get { return damageValue; }
@@ -31,6 +31,7 @@ public class Damagable : MonoBehaviour
 
     private void Start()
     {
+        tankObj = GetComponent<TankObject>();
         MaxHealth = Health;
         OnHealthChange?.Invoke((float)Health / MaxHealth);
         if(health == 0)
@@ -43,9 +44,12 @@ public class Damagable : MonoBehaviour
         Health -= damageppoint;
         if (health <= 0)
         {
+            if (tankObj != null)
+                tankObj.UpdateTankState(TankState.HealthEmpty);
             var speed = transform.GetComponent<Patrolling>();
             if (speed != null)
                 speed.Speed = 0;
+            SoundEffectManager.Instance.StopThirdSFX();
             OnHealthEmpty?.Invoke();
             StartCoroutine(Dead());
         }
@@ -59,5 +63,10 @@ public class Damagable : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         OnDead?.Invoke();
+        SoundEffectManager.Instance.StopLoopThirdSFX();
+        if (tankObj != null)
+        {
+            tankObj.UpdateTankState(TankState.Destroyed);
+        }
     }
 }

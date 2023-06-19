@@ -27,6 +27,7 @@ public class TankObject : MonoBehaviour
         switch (state)
         {
             case TankState.Idle:
+                PanelWarningFlash.Instance.EndFlash();
                 if (speed != null)
                     speed.Speed = 0f;
                 break;
@@ -50,7 +51,11 @@ public class TankObject : MonoBehaviour
                 break;
             case TankState.Reloading:
                 break;
+            case TankState.HealthEmpty:
+                break;
             case TankState.Destroyed:
+                PanelWarningFlash.Instance.EndFlash();
+                SoundEffectManager.Instance.StopLoopThirdSFX();
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(state), state, null);
@@ -77,7 +82,7 @@ public class TankObject : MonoBehaviour
         {
             for (int i = 0; i < enemyAdSO.shootingCount; i++)
             {
-                if (GameManager.Instance.State == GameState.StageFailUI || GameManager.Instance.State == GameState.StageClearUI)
+                if (GameManager.Instance.State == GameState.StageFailUI || GameManager.Instance.State == GameState.StageClearUI || State == TankState.HealthEmpty)
                 {
                     break;
                 }
@@ -89,11 +94,12 @@ public class TankObject : MonoBehaviour
         yield return new WaitForSeconds(1f);
         isAttacking = false;
         UpdateTankState(TankState.Idle);
+        SoundEffectManager.Instance.StopLoopThirdSFX();
         CheckHealth();
     }
     IEnumerator RedAlertSound()
     {
-        SoundEffectManager.Instance.SetSecondSFX(redAlertSFX);
+        SoundEffectManager.Instance.LoopThirdSFX(redAlertSFX);
         yield return new WaitForSeconds(0.1f);
     }
     void CheckHealth()
@@ -117,5 +123,6 @@ public enum TankState
     SlowDown,
     Attacking,
     Reloading,
+    HealthEmpty,
     Destroyed
 }

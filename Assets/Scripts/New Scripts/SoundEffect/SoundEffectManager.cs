@@ -6,6 +6,7 @@ public class SoundEffectManager : MonoBehaviour
     public static SoundEffectManager Instance;
     public AudioSource _soundeffect;
     public AudioSource _soundeffect2;
+    public AudioSource _soundeffect3;
     public AudioClip _click_se;
     public AudioClip _victory_se;
     public AudioClip _fail_se;
@@ -48,6 +49,11 @@ public class SoundEffectManager : MonoBehaviour
         _soundeffect2.clip = clip;
         _soundeffect2.Play();
     }
+    internal void SetThirdSFX(AudioClip clip)
+    {
+        _soundeffect3.clip = clip;
+        _soundeffect3.Play();
+    }
 
     internal void LoopCasting(AudioClip clip)
     {
@@ -55,8 +61,29 @@ public class SoundEffectManager : MonoBehaviour
         _soundeffect.Play();
         _soundeffect.loop = true;
     }
+    internal void LoopSecondSFX(AudioClip clip)
+    {
+        _soundeffect2.clip = clip;
+        _soundeffect2.Play();
+        _soundeffect2.loop = true;
+    }
+    internal void LoopThirdSFX(AudioClip clip)
+    {
+        _soundeffect3.clip = clip;
+        _soundeffect3.Play();
+        _soundeffect3.loop = true;
+    }
     internal void StopLoop()
     {
         _soundeffect.loop = false;
     }
+    internal void StopLoopSecondSFX()
+    {
+        _soundeffect2.loop = false;
+    }
+    internal void StopLoopThirdSFX()
+    {
+        _soundeffect3.loop = false;
+    }
+    internal void StopThirdSFX() => _soundeffect3.Stop(); 
 }
