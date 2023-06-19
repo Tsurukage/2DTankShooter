@@ -46,7 +46,7 @@ public class SimpleGame : MonoBehaviour
 
     void Start()
     {
-        tankCount = _enemyComp.Count;
+        tankCount = _enemyComp.Count + _enemyCounterComp.Count;
         Top_UI?.Invoke(tankCount, shootingCount, badgeCount, animalCount);
         InitAnimalCount = animalCount;
         SpawnCurrentLevel();
