@@ -9,6 +9,7 @@ public class PlayerTank : MonoBehaviour
         if(collision.gameObject.layer == 11)
         {
             GameManager.Instance.UpdateGameState(GameState.StageFailUI,2f);
+            GameManager.Instance.HandleStageClear(false);
             Destroy(gameObject.transform.parent.parent.gameObject);
         }
     }

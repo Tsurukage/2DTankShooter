@@ -778,6 +778,7 @@ MonoBehaviour:
   tankSprite:
   - {fileID: 546106425, guid: 7fc6011be975b6d4e9d005acce4127e7, type: 3}
   - {fileID: 987618261, guid: 7fc6011be975b6d4e9d005acce4127e7, type: 3}
+  redAlertSFX: {fileID: 8300000, guid: 798abe5735cd24342b7fe3a3b6255d97, type: 3}
   OnShoot:
     m_PersistentCalls:
       m_Calls:

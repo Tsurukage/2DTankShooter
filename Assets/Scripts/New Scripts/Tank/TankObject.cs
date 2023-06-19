@@ -9,6 +9,7 @@ public class TankObject : MonoBehaviour
     public TankState State;
     private bool isAttacking = false;
     [SerializeField] private Sprite[] tankSprite;
+    [SerializeField] private AudioClip redAlertSFX;
 
     public UnityEvent OnShoot;
 
@@ -70,7 +71,8 @@ public class TankObject : MonoBehaviour
     {
         isAttacking = true;
         var shoot = GetComponent<TankAttack>();
-        yield return new WaitForSeconds(5f);
+        StartCoroutine(RedAlertSound());
+        yield return new WaitForSeconds(enemyAdSO.attackDelay);
         if (shoot != null)
         {
             for (int i = 0; i < enemyAdSO.shootingCount; i++)
@@ -81,13 +83,18 @@ public class TankObject : MonoBehaviour
                 }
                 shoot.Shoot();
                 OnShoot?.Invoke();
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(enemyAdSO.attackInterval);
             }
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         isAttacking = false;
         UpdateTankState(TankState.Idle);
         CheckHealth();
+    }
+    IEnumerator RedAlertSound()
+    {
+        SoundEffectManager.Instance.SetSecondSFX(redAlertSFX);
+        yield return new WaitForSeconds(0.1f);
     }
     void CheckHealth()
     {
