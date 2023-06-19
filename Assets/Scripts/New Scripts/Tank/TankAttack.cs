@@ -33,12 +33,7 @@ public class TankAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (tankObj.State == TankState.Attacking)
-        {
-            if (target != null)
-                turret.Aim(target.transform);
-        }
-        else
-            turret.ResetAim();
+        if (target != null)
+            turret.Aim(target.transform);
     }
 }
