@@ -13,6 +13,8 @@ public class BulletData : ScriptableObject
     public GameObject bulletTrail;
     public float splashRange = 1;
     public BulletType bulletType;
+    public Sprite bullet_npc;
+
     public BulletData(string bulletName, float speed, int damage, float maxDistance, float splashRange, Sprite bulletSprite, Sprite bulletIcon, Sprite bulletGradeBase)
     {
         this.bulletName = bulletName;

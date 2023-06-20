@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3010828327976200360}
   - component: {fileID: 3010828327976200372}
   - component: {fileID: 7333031865668917721}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: "\u6876"
   m_TagString: Explosive
   m_Icon: {fileID: 0}

@@ -10,13 +10,14 @@ public class SpawnButtonManager : MonoBehaviour
     [SerializeField] List<BulletData> _bulletData = new List<BulletData>();
     [SerializeField] private Transform _prefabParent;
 
-    [SerializeField] private ScrollRect _scrollRect;
+    [SerializeField] private Image img_bulletNPC;
     private int SelectedIndex { get; set; }
     private void Start()
     {
         Spawn();
         if (_bulletData.Count > 0)
             ChangeBulletData(SelectedIndex);
+        SetImgae(SelectedIndex);
     }
     //为了显示当前选择的炮弹
     private void Update()
@@ -24,6 +25,19 @@ public class SpawnButtonManager : MonoBehaviour
         if (SelectedIndex < _bulletData.Count)
             ChangeBulletData(SelectedIndex);
         else if (SelectedIndex >= _bulletData.Count) ChangeBulletData(SelectedIndex - 1);
+    }
+    private void SetImgae(int index)
+    {
+        if (_bulletData[index].bullet_npc != null)
+        {
+            img_bulletNPC.gameObject.SetActive(true);
+            img_bulletNPC.sprite = _bulletData[index].bullet_npc;
+        }
+        else
+        {
+            img_bulletNPC.gameObject.SetActive(false);
+            img_bulletNPC.sprite = null;
+        }
     }
     public void Spawn()
     {
@@ -64,6 +78,7 @@ public class SpawnButtonManager : MonoBehaviour
             btn.Find("img_selected").gameObject.SetActive(isSelected);
             SelectedIndex = buttonIndex;
         }
+        SetImgae(SelectedIndex);
     }
 
     public void Remove()
