@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5289400932657006013}
   - component: {fileID: 4165723099359124232}
   - component: {fileID: 1430500417853921804}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: ExplosionCircleR3
   m_TagString: Explosive
   m_Icon: {fileID: 0}
