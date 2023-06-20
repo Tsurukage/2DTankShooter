@@ -22,4 +22,4 @@ MonoBehaviour:
   bulletTrail: {fileID: 5195730231380689795, guid: f47e708d40f1060478bc0aa50c4d06ca, type: 3}
   splashRange: 0.2
   bulletType: 4
-  bullet_npc: {fileID: 21300000, guid: 1064fbc2de48f3d4782cdfbf6c1b6581, type: 3}
+  bullet_npc: {fileID: 21300000, guid: f610852ad673fef4395c494653478a23, type: 3}
