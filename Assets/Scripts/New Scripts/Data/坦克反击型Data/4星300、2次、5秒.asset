@@ -15,9 +15,9 @@ MonoBehaviour:
   tank_name: "\u6D4B\u8BD5\u5766\u514B"
   tank_speed: 0.4
   tank_maxHealth: 300
-  tank_badge: 4
-  tank_patrol: {fileID: 349579049, guid: 7e4adf07f9e939746b2aae9372fae2f1, type: 3}
-  tank_attack: {fileID: 2066237745, guid: 7e4adf07f9e939746b2aae9372fae2f1, type: 3}
+  tank_badge: 5
+  tank_patrol: {fileID: 915377354, guid: e675a755fe570c94d9baefae93e2eb0f, type: 3}
+  tank_attack: {fileID: 1877895573, guid: e675a755fe570c94d9baefae93e2eb0f, type: 3}
   shootingCount: 2
   attackDelay: 5
   attackInterval: 5

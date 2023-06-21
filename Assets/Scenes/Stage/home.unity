@@ -4164,6 +4164,7 @@ MonoBehaviour:
   - 0107
   - 0108
   - 0109
+  - 0110
   tier_bronzeMid:
   - 0201
   - 0202
@@ -4174,6 +4175,7 @@ MonoBehaviour:
   - 0207
   - 0208
   - 0209
+  - 0210
   tier_bronzeHigh:
   - 0301
   - 0302
@@ -4184,6 +4186,7 @@ MonoBehaviour:
   - 0307
   - 0308
   - 0309
+  - 0310
   tier_silverLow:
   - 0401
   - 0402
@@ -4194,6 +4197,7 @@ MonoBehaviour:
   - 0407
   - 0408
   - 0409
+  - 0410
   tier_silverMid:
   - 0501
   - 0502
@@ -4204,6 +4208,7 @@ MonoBehaviour:
   - 0507
   - 0508
   - 0509
+  - 0510
   tier_silverHigh:
   - 0601
   - 0602
@@ -4214,6 +4219,7 @@ MonoBehaviour:
   - 0607
   - 0608
   - 0609
+  - 0610
   tier_goldLow:
   - 0701
   - 0702
@@ -4224,6 +4230,7 @@ MonoBehaviour:
   - 0707
   - 0708
   - 0709
+  - 0710
   tier_goldMid:
   - 0801
   - 0802
@@ -4234,6 +4241,7 @@ MonoBehaviour:
   - 0807
   - 0808
   - 0809
+  - 0810
   tier_goldHigh:
   - 0901
   - 0902
@@ -4244,6 +4252,7 @@ MonoBehaviour:
   - 0907
   - 0908
   - 0909
+  - 0910
 --- !u!4 &1623144922
 Transform:
   m_ObjectHideFlags: 0
