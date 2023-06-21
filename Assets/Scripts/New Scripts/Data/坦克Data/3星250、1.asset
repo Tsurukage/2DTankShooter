@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd49e1b6fc905146af7cd3efbc14bba, type: 3}
   m_Name: "3\u661F250\u30011"
   m_EditorClassIdentifier: 
-  enemySprite: {fileID: -2102333625, guid: ac0ecfb4793546242aade2051aa46497, type: 3}
+  enemySprite: {fileID: 915377354, guid: e675a755fe570c94d9baefae93e2eb0f, type: 3}
   enemyName: "\u6C99\u5C18\u66B4"
   enemySpeed: 1
   maxHealth: 250
