@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c89ebfecbf972924e847433a613444d4, type: 3}
+  m_Name: "2\u661F301"
+  m_EditorClassIdentifier: 
+  tank_name: "\u6D4B\u8BD5\u5766\u514B"
+  tank_speed: 0.5
+  tank_maxHealth: 175
+  tank_badge: 2
+  tank_patrol: {fileID: 353733740, guid: 8e5850c72fbb0d84995e727e61cce9fd, type: 3}
+  tank_attack: {fileID: -1102778036, guid: 8e5850c72fbb0d84995e727e61cce9fd, type: 3}
+  shootingCount: 1
+  attackDelay: 3
+  attackInterval: 3
