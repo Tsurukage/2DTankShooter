@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dd49e1b6fc905146af7cd3efbc14bba, type: 3}
-  m_Name: "3\u661F300\u30010.5"
+  m_Name: "2\u661F401"
   m_EditorClassIdentifier: 
-  enemySprite: {fileID: 1782561473, guid: ac0ecfb4793546242aade2051aa46497, type: 3}
-  enemyName: "\u6C99\u6F20\u874E"
-  enemySpeed: 0.5
-  maxHealth: 300
-  badgeDrop: 3
+  enemySprite: {fileID: 169818568, guid: f670b3d23b37d0a4aa7ca8c9549f0827, type: 3}
+  enemyName: "\u94C1\u5854"
+  enemySpeed: 0.25
+  maxHealth: 200
+  badgeDrop: 2

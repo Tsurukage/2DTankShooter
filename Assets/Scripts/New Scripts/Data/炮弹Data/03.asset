@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletName: "\u96F7\u795E\u2160\u53F7"
   speed: 10
-  damage: 100
+  damage: 10
   maxDistance: 20
   bulletSprite: {fileID: 21300000, guid: 1ea096cb371d5d542bc3bf6eb2c3e395, type: 3}
   bulletIcon: {fileID: 21300000, guid: 50b02d9158cd5d44181cb8d613e14451, type: 3}

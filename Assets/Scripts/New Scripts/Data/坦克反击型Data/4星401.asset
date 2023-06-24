@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c89ebfecbf972924e847433a613444d4, type: 3}
-  m_Name: "5\u661F500\u30011\u6B21\u30015\u79D2"
+  m_Name: "4\u661F401"
   m_EditorClassIdentifier: 
   tank_name: "\u6D4B\u8BD5\u5766\u514B"
-  tank_speed: 0.3
-  tank_maxHealth: 500
-  tank_badge: 6
-  tank_patrol: {fileID: 1359019003, guid: b61938574437fa44aa75a28086378059, type: 3}
-  tank_attack: {fileID: -1065389776, guid: b61938574437fa44aa75a28086378059, type: 3}
-  shootingCount: 1
-  attackDelay: 5
-  attackInterval: 5
+  tank_speed: 0.25
+  tank_maxHealth: 300
+  tank_badge: 4
+  tank_patrol: {fileID: 915377354, guid: e675a755fe570c94d9baefae93e2eb0f, type: 3}
+  tank_attack: {fileID: 1877895573, guid: e675a755fe570c94d9baefae93e2eb0f, type: 3}
+  shootingCount: 2
+  attackDelay: 3
+  attackInterval: 3
