@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
     }
     public void HomeScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("home");
         UpdateGameState(GameState.InMainMenu);
     }
     public void ExitApplication()

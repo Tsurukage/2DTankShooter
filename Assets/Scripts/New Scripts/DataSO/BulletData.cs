@@ -14,6 +14,8 @@ public class BulletData : ScriptableObject
     public float splashRange = 1;
     public BulletType bulletType;
     public Sprite bullet_npc;
+    public bool doubleFire;
+    public float doubleFireDelay = 1f;
 
     public BulletData(string bulletName, float speed, int damage, float maxDistance, float splashRange, Sprite bulletSprite, Sprite bulletIcon, Sprite bulletGradeBase)
     {

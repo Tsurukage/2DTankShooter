@@ -52,7 +52,6 @@ public class WindowPlayerInfo : MonoBehaviour
     {
         SetUid(Player.Uid);
         SetName(Player.Name);
-        print((int)Player.Gender);
         SetAvatar(sprite_avatars[Player.Avatar]);
         SetGender((int)Player.Gender);
     }
@@ -77,11 +76,23 @@ public class WindowPlayerInfo : MonoBehaviour
         Player.Name = field_input.textComponent.text;
         Game.Save();
         OnUpdate?.Invoke();
+        var leaderBoard = FindObjectOfType<SectionLeaderboard>();
+        if(leaderBoard != null )
+        {
+            leaderBoard.GenerateLeaderBoard();
+        }
     }
     private void SetGender(int gender)
     {
         Toggle[] toggles = toggle_gender.GetComponentsInChildren<Toggle>();
-        toggles[gender - 1].isOn = true;
+        if(gender >= 1 && gender <= toggles.Length)
+        {
+            toggles[gender - 1].isOn = true;
+        }
+        else
+        {
+            //Debug.LogError($"Invalid gender indexF{gender}");
+        }
     }
     private void OnToggleValueChanged(bool isOn)
     {
