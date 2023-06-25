@@ -37,10 +37,20 @@ public class Prefab_NPC : MonoBehaviour
         int spritePick = 0;
         if (rank < 3)
             spritePick = 0;
-        if (rank > 2 && rank < 6)
+        else if (rank > 2 && rank < 6)
             spritePick = 1;
-        if (rank > 5 && rank < 9)
+        else if (rank > 5 && rank < 9)
             spritePick = 2;
+        else if(rank > 8 && rank < 12)
+            spritePick = 3;
+        else if(rank > 11 && rank < 15)
+            spritePick = 4;
+        else if(rank > 14 && rank < 18)
+            spritePick = 5;
+        else if(rank == 18)
+            spritePick = 6;
+        else if(rank == 19)
+            spritePick = 7;
         img_rank.sprite = sprite_rank[spritePick];
         text_level.text = rank_name[rank];
     }

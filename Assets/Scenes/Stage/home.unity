@@ -4253,6 +4253,28 @@ MonoBehaviour:
   - 0908
   - 0909
   - 0910
+  tier_platinumLow:
+  - 001
+  tier_platinumMid:
+  - 001
+  tier_platinumHigh:
+  - 001
+  tier_diamondLow:
+  - 001
+  tier_diamondMid:
+  - 001
+  tier_diamondHigh:
+  - 001
+  tier_masterLow:
+  - 001
+  tier_masterMid:
+  - 001
+  tier_masterHigh:
+  - 001
+  tier_challenger:
+  - 001
+  tier_grandmaster:
+  - 001
 --- !u!4 &1623144922
 Transform:
   m_ObjectHideFlags: 0
@@ -4512,7 +4534,7 @@ MonoBehaviour:
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u8F93\u5165\u6635\u79F0..."
@@ -4685,7 +4707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1995736023
 RectTransform:
   m_ObjectHideFlags: 0

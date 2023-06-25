@@ -122,8 +122,11 @@ public class SectionLeaderboard : MonoBehaviour
             int decRank = UnityEngine.Random.Range(0, 2);
             rank -= decRank;
         }
-        rank = (rank < 0) ? 0 : rank;
-        rank = ((int)rank > 8) ? (Rank)8 : rank;
+        int lowestRankValue = Enum.GetValues(typeof(Rank)).Cast<int>().Min();
+        int highestRankValue = Enum.GetValues(typeof(Rank)).Cast<int>().Max();
+
+        rank = (rank < (Rank)lowestRankValue) ? (Rank)lowestRankValue : rank;
+        rank = (rank > (Rank)highestRankValue) ? (Rank)highestRankValue : rank;
         return rank;
     }
     void UpdateData()
