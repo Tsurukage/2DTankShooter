@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 
 namespace Models
@@ -59,8 +60,11 @@ namespace Models
         {
             var last = (int)Rank;
             Rank += rank;
-            if (Rank < Rank.BronzeLow) Rank = Rank.BronzeLow;
-            if (Rank > Rank.GoldHigh) Rank = Rank.GoldHigh;
+            int lowestRankValue = Enum.GetValues(typeof(Rank)).Cast<int>().Min();
+            int highestRankValue = Enum.GetValues(typeof(Rank)).Cast<int>().Max();
+
+            if (Rank < (Rank)lowestRankValue) Rank = (Rank)lowestRankValue;
+            if (Rank > (Rank)highestRankValue) Rank = (Rank)highestRankValue;
             if(last > (int)Rank)
             {
                 Debug.Log($"Player down level from [{(Rank)last}] to [{Rank}]");
@@ -86,7 +90,18 @@ public enum Rank
     SilverHigh = 5,
     GoldLow = 6,
     GoldMid = 7,
-    GoldHigh = 8
+    GoldHigh = 8,
+    PlatinumLow = 9,
+    PlatinumMid = 10,
+    PlatinumHigh = 11,
+    DiamondLow = 12,
+    DiamondMid = 13,
+    DiamondHigh = 14,
+    MasterLow = 15,
+    MasterMid = 16,
+    MasterHigh = 17,
+    Challenger = 18,
+    GrandMaster = 19
 }
 public enum Gender
 {
