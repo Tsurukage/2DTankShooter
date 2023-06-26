@@ -7159,6 +7159,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1948680673}
     m_Modifications:
+    - target: {fileID: 8077608096355667431, guid: 919aa8c81101e2a41b7426897115dffc, type: 3}
+      propertyPath: lootList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077608096355667431, guid: 919aa8c81101e2a41b7426897115dffc, type: 3}
+      propertyPath: lootList.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: e6df823b542fd0341988c54063e3c42b, type: 2}
     - target: {fileID: 8434228570385511521, guid: 919aa8c81101e2a41b7426897115dffc, type: 3}
       propertyPath: m_RootOrder
       value: 2
