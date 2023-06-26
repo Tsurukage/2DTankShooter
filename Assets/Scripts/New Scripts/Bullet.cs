@@ -66,9 +66,9 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));//ª˜÷–ƒø±ÅE
-        OnHit?.Invoke();
         var bulletType = bulletData.bulletType;
         var damage = bulletData.damage;
+        OnHit?.Invoke();
         switch (bulletType)
         {
             case BulletType.SingleHit:
@@ -93,7 +93,7 @@ public class Bullet : MonoBehaviour
                             childDamagable.Hit((int)(damage * damagePercentage));
                         }
                         var reward = hitCollider.GetComponent<RewardBox>();
-                        if(reward != null)
+                        if (reward != null)
                         {
                             reward.Looting();
                         }
