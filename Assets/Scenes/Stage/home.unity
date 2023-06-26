@@ -3291,7 +3291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8986129765170244921, guid: 5fd2d09dfcc730a4c830081a96c93942, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.38
+      value: -3.82
       objectReference: {fileID: 0}
     - target: {fileID: 8986129765170244921, guid: 5fd2d09dfcc730a4c830081a96c93942, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4275,6 +4275,26 @@ MonoBehaviour:
   - 0908
   - 0909
   - 0910
+  tier_platinumLow:
+  - 1001
+  tier_platinumMid:
+  - 1001
+  tier_platinumHigh:
+  - 1001
+  tier_diamondLow:
+  - 1001
+  tier_diamondMid:
+  - 1001
+  tier_diamondHigh:
+  - 1001
+  tier_masterLow:
+  - 1001
+  tier_masterMid:
+  - 1001
+  tier_masterHigh:
+  - 1001
+  tier_challenger: []
+  tier_grandmaster: []
 --- !u!4 &1623144922
 Transform:
   m_ObjectHideFlags: 0
