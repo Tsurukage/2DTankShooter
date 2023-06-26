@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,8 +26,10 @@ public class StageClearManager : MonoBehaviour
 
     private void SetBadgeValue(int tank, int shoot, int badge, int animal)
     {
+        var total = badge + shoot;
+        print(total);
         if (_badgeValue != null)
-            _badgeValue.text = badge.ToString();
+            _badgeValue.text = total.ToString();
     }
 
     void OnDestroy()

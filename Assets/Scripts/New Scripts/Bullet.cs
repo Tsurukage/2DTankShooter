@@ -56,8 +56,8 @@ public class Bullet : MonoBehaviour
     }
     private void DisableObject()
     {
-        rb2d.velocity = Vector2.zero;
         OnDestroy?.Invoke();
+        rb2d.velocity = Vector2.zero;
     }
     void OnBecameInvisible()
     {
@@ -129,10 +129,14 @@ public class Bullet : MonoBehaviour
                 if (collider.tag == "Enemy")
                 {
                     var speed = collider.GetComponent<Patrolling>();
+                    var sbullet = collider.GetComponent<Damagable>();
                     if (speed != null)
                     {
                         speed.Speed = 0;
                     }
+                    if (sbullet != null)
+                        sbullet.Hit(damage);
+                    CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));//只击中有效目眮E
                     DisableObject();
                 }
                 else
@@ -148,10 +152,14 @@ public class Bullet : MonoBehaviour
                 if (collider.tag == "Enemy")
                 {
                     var slow = collider.GetComponent<Patrolling>();
+                    var slbullet = collider.GetComponent<Damagable>();
                     if (slow != null)
                     {
                         slow.Speed = (slow.Speed / 2);
                     }
+                    if (slbullet != null)
+                        slbullet.Hit(damage);
+                    CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.1f, 0.1f));//只击中有效目眮E
                     DisableObject();
                 }
                 else
@@ -167,10 +175,13 @@ public class Bullet : MonoBehaviour
                 if (collider.tag == "Enemy")
                 {
                     var slow = collider.GetComponent<Patrolling>();
+                    var toBullet = collider.GetComponent<Damagable>();
                     if (slow != null)
                     {
                         slow.Speed = (slow.Speed / 2);
                     }
+                    if (toBullet != null)
+                        toBullet.Hit(damage);
                     DisableObject();
                 }
                 break;

@@ -44,13 +44,13 @@ public class Damagable : MonoBehaviour
         Health -= damageppoint;
         if (health <= 0)
         {
+            OnHealthEmpty?.Invoke();
             if (tankObj != null)
                 tankObj.UpdateTankState(TankState.HealthEmpty);
             var speed = transform.GetComponent<Patrolling>();
             if (speed != null)
                 speed.Speed = 0;
             SoundEffectManager.Instance.StopThirdSFX();
-            OnHealthEmpty?.Invoke();
             StartCoroutine(Dead());
         }
         else

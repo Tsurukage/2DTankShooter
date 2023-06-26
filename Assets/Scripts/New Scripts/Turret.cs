@@ -72,6 +72,14 @@ public class Turret : MonoBehaviour
                         {
                             Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), collider);
                         }
+                        if(turretData.bulletData.bulletType == BulletType.TankOnly)
+                        {
+                            bullet.layer = 14;
+                        }
+                        else
+                        {
+                            bullet.layer = 6;
+                        }
                     }
                 }
                 OnShoot?.Invoke();
