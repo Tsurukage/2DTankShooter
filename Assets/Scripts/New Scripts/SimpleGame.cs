@@ -118,9 +118,11 @@ public class SimpleGame : MonoBehaviour
                 GameManager.Instance.UpdateGameState(GameState.StageClearUI, 4);
                 FinalBadge(badgeCount);
                 print($"最终勋章数目：{badgeCount}");
-                var finalSCount = shootingCount - 1;
-                FinalBadge(finalSCount);
-                print($"剩余可乐： {finalSCount}");
+                //var finalSCount = shootingCount - 1;
+                shootingCount--;
+                UpdateCount();
+                FinalBadge(shootingCount);
+                print($"剩余可乐： {shootingCount}");
             }
         }
         else if (shootingCount == 0)
