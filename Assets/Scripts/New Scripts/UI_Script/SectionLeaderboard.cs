@@ -11,6 +11,7 @@ public class SectionLeaderboard : MonoBehaviour
     [SerializeField] private NPCDataReader npcsData;
     [SerializeField] private GameObject npcLeaderboard;
     [SerializeField] private Transform leaderboard;
+    [SerializeField] private ScrollRect scroll_leaderboard;
     [SerializeField] private int maxNPCs;
     [SerializeField ]private float interval = 1800;
     private List<Player> npcPlayerList;
@@ -74,6 +75,7 @@ public class SectionLeaderboard : MonoBehaviour
             {
                 var bg = npcObj.GetComponent<Image>();
                 bg.color = Color.cyan;
+                SectionPlayerRank.SPRankInstance.SetPlayerRankComp(i + 1, player.Name, player.Avatar, (int)player.Gender, player.Nationality, (int)player.Rank, player.Badge);
             }
         }
     }
@@ -133,5 +135,9 @@ public class SectionLeaderboard : MonoBehaviour
     {
         npcsData.SaveNPCJson(npcPlayerList);
     }
-   
+    public void ScrollToTargetRank(int targetRank)
+    {
+        float normalizePos = 1f - (float)targetRank / (float)leaderboard.childCount;
+        scroll_leaderboard.verticalNormalizedPosition = Mathf.Clamp01(normalizePos);
+    }
 }
