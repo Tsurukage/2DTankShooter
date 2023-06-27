@@ -3946,7 +3946,6 @@ MonoBehaviour:
   npcsData: {fileID: 51575240}
   npcLeaderboard: {fileID: 2979587927955151503, guid: c6591aaf38cffa2468f1c163b62b2868, type: 3}
   leaderboard: {fileID: 1484946273}
-  scroll_leaderboard: {fileID: 0}
   maxNPCs: 200
   interval: 900
 --- !u!1 &1525391802
@@ -4307,16 +4306,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tier_bronzeLow:
-  - 0101
-  - 0102
-  - 0103
-  - 0104
-  - 0105
-  - 0106
-  - 0107
-  - 0108
-  - 0109
-  - 0110
+  - 00101
+  - 00102
   tier_bronzeMid:
   - 0201
   - 0202
