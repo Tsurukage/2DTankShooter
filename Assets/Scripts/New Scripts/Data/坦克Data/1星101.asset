@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd49e1b6fc905146af7cd3efbc14bba, type: 3}
   m_Name: "1\u661F101"
   m_EditorClassIdentifier: 
-  enemySprite: {fileID: 1462333581, guid: f670b3d23b37d0a4aa7ca8c9549f0827, type: 3}
-  enemyName: "\u571F\u874E"
+  enemySprite: {fileID: -380045388, guid: 8c8b91b0c6aa86444bc6637b66fa77a0, type: 3}
+  enemyName: 
   enemySpeed: 1
   maxHealth: 75
   badgeDrop: 1

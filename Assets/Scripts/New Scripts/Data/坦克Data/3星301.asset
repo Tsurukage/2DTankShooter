@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "3\u661F301"
   m_EditorClassIdentifier: 
   enemySprite: {fileID: -2025842555, guid: ac0ecfb4793546242aade2051aa46497, type: 3}
-  enemyName: "\u6C99\u6F20\u738B"
+  enemyName: 
   enemySpeed: 0.5
   maxHealth: 225
   badgeDrop: 3
