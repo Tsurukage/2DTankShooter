@@ -30,8 +30,10 @@ public class SectionLeaderboard : MonoBehaviour
         int timelapse = PlayerPrefs.GetInt("Count");
         for(int i = 0; i < timelapse; i++)
         {
-            UpdateNpcPlayerData();
+            NPCPlayerDataRenew();
         }
+        UpdateData();
+        GenerateLeaderBoard();
     }
 
     private void Load()
@@ -86,13 +88,17 @@ public class SectionLeaderboard : MonoBehaviour
 
     private void UpdateNpcPlayerData()
     {
+        NPCPlayerDataRenew();
+        UpdateData();
+        GenerateLeaderBoard();
+    }
+    private void NPCPlayerDataRenew()
+    {
         foreach(var npcPlayer in npcPlayerList)
         {
             npcPlayer.Rank = UpdateRank(npcPlayer.Rank);
             npcPlayer.Badge = UpdateBadge(npcPlayer.Badge);
         }
-        UpdateData();
-        GenerateLeaderBoard();
     }
 
     private int UpdateBadge(int badge)
