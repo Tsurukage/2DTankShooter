@@ -44,6 +44,8 @@ public class Damagable : MonoBehaviour
         Health -= damageppoint;
         if (health <= 0)
         {
+            var col2D = GetComponent<Collider2D>();
+            col2D.enabled = false;
             OnHealthEmpty?.Invoke();
             if (tankObj != null)
                 tankObj.UpdateTankState(TankState.HealthEmpty);
