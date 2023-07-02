@@ -64,7 +64,8 @@ public class TankObject : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        StartCoroutine(StartAttackAfterDelay());
+        if(collider.gameObject.name.Contains("Bullet"))
+            StartCoroutine(StartAttackAfterDelay());
     }
     IEnumerator StartAttackAfterDelay()
     {
