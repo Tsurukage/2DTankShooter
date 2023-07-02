@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 8986129765170244921}
   - component: {fileID: 3319313375955575461}
   m_Layer: 0
-  m_Name: "\u52A8\u726921 \u6D77\u9E25"
+  m_Name: "\u52A8\u726922 \u677E\u9F20"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 6807524068642881894}
   - component: {fileID: 8193252663119690681}
   - component: {fileID: 8630056764930882464}
-  - component: {fileID: 7028533180479028723}
+  - component: {fileID: 2452799122644207549}
   m_Layer: 7
   m_Name: Animal
   m_TagString: Animal
@@ -335,7 +335,7 @@ SpriteRenderer:
   m_SortingLayerID: -1495791489
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1340359742, guid: 0c27c85cbe98a2140a98c470827dfaef, type: 3}
+  m_Sprite: {fileID: 1102244354, guid: 17d08caa9b3aadf4c9d67531988ec830, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -363,7 +363,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.56, y: 0.4}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 0.2734375, y: 0.21484375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -527,7 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6fa00eaa5c10b341841a2a137caeb5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.8
+  speed: 1
   boundary: 0
   moveRight: 0
 --- !u!114 &2324800093519862957
@@ -556,8 +556,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f44f3ebe0eec6174da6218bc4d7878f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToinstantiate: {fileID: 2324829210072079084, guid: 1116d194c204e3f448a5082936097c40, type: 3}
-  clip: {fileID: 8300000, guid: 94b3bc990c9644b4298fd7121b88b858, type: 3}
+  objectToinstantiate: {fileID: 2324829210072079084, guid: b6e40e5a8b29a7645a8fbd08f815e087, type: 3}
+  clip: {fileID: 8300000, guid: af56d36e7cf82bf43b3a1e989ffc22f4, type: 3}
 --- !u!114 &6807524068642881894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -598,7 +598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _reducedValue: -3
---- !u!95 &7028533180479028723
+--- !u!95 &2452799122644207549
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -608,7 +608,7 @@ Animator:
   m_GameObject: {fileID: 6938841390574633065}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 74317c164b3d0d741a765e8ca54e689c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7eb5bbb9be2749c488a2f59b2be35ccc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
