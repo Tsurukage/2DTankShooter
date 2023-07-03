@@ -23,7 +23,6 @@ public class StageFailManager : MonoBehaviour
         transform.localScale = Vector3.zero;
         if (state == GameState.StageFailUI)
         {
-            SimpleGame.Instance.CheckStreak(lose: 1);
             StartCoroutine(SetDelay(delay));
         }
     }
@@ -52,6 +51,7 @@ public class StageFailManager : MonoBehaviour
     IEnumerator SetDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
+        SimpleGame.Instance.CheckStreak(lose: 1);
         transform.localScale = Vector3.one;
         if (SoundEffectManager.Instance != null)
             SoundEffectManager.Instance.OnFailSound();

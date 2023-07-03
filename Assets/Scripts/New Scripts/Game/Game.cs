@@ -36,4 +36,10 @@ public class Game : MonoBehaviour
         }
         World.SetPlayer(player);
     }
+    public void SetNewPlayer(string uid, string name, string nation, int badge, Rank rank, Gender gender, int avatar)
+    {
+        var player = new Player(uid, name, nation, badge, rank, gender, avatar);
+        World.SetPlayer(player);
+        Save();
+    }
 }

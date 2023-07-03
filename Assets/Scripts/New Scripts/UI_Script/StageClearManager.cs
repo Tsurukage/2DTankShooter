@@ -44,7 +44,6 @@ public class StageClearManager : MonoBehaviour
         transform.localScale = Vector3.zero;
         if (state == GameState.StageClearUI)
         {
-            SimpleGame.Instance.CheckStreak(win: 1);
             StartCoroutine(SetDealy(delay));
         }
     }
@@ -75,6 +74,7 @@ public class StageClearManager : MonoBehaviour
     IEnumerator SetDealy(float delay)
     {
         yield return new WaitForSeconds(delay);
+        SimpleGame.Instance.CheckStreak(win: 1);
         transform.localScale = Vector3.one;
         if (SoundEffectManager.Instance != null)
             SoundEffectManager.Instance.OnVictorySound();

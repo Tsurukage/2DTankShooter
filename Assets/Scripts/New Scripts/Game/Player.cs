@@ -68,10 +68,12 @@ namespace Models
             if(last > (int)Rank)
             {
                 Debug.Log($"Player down level from [{(Rank)last}] to [{Rank}]");
+                WindowPlayerRankUp.RankChange(last, (int)Rank);
             }
             if(last < (int)Rank)
             {
                 Debug.Log($"Player level up from [{(Rank)last}] to [{Rank}]");
+                WindowPlayerRankUp.RankChange(last, (int)Rank);
             }
         }
         public PlayerSave ToSave()

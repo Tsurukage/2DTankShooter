@@ -88,6 +88,8 @@ public class SimpleGame : MonoBehaviour
     public void UpdateShootingCount()
     {
         shootingCount--;
+        if (shootingCount < 0)
+            shootingCount = 0;
         UpdateCount();
         CheckGame();
     }
