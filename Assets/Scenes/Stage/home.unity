@@ -4417,9 +4417,17 @@ MonoBehaviour:
   - 01004
   - 01005
   tier_platinumMid:
-  - 1001
+  - 01101
+  - 01102
+  - 01103
+  - 01104
+  - 01105
   tier_platinumHigh:
-  - 1001
+  - 01201
+  - 01202
+  - 01203
+  - 01204
+  - 01205
   tier_diamondLow:
   - 1001
   tier_diamondMid:
