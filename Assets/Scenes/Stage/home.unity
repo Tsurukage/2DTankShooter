@@ -4429,7 +4429,11 @@ MonoBehaviour:
   - 01204
   - 01205
   tier_diamondLow:
-  - 1001
+  - 01301
+  - 01302
+  - 01303
+  - 01304
+  - 01305
   tier_diamondMid:
   - 1001
   tier_diamondHigh:
