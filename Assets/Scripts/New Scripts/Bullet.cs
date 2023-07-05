@@ -43,9 +43,10 @@ public class Bullet : MonoBehaviour
     private void Update()
     {
         conquaredDistance = Vector2.Distance(transform.position, startPosition);
-        if(conquaredDistance >= bulletData.maxDistance || bulletOutOfbound)
+        if (conquaredDistance >= bulletData.maxDistance || bulletOutOfbound)
         {
             DisableObject();
+            GameManager.Instance.HandleStageClear(true);
             ToogleDarkness.Instance.ToggleToLight();
             OnHit?.Invoke();
         }
@@ -72,9 +73,33 @@ public class Bullet : MonoBehaviour
         switch (bulletType)
         {
             case BulletType.SingleHit:
-                var damagable = collider.GetComponent<Damagable>();
-                if (damagable != null)
-                    damagable.Hit(damage);
+                if (!bulletData.doubleFire)
+                {
+                    if (collider.tag == "Enemy")
+                    {
+                        WindowQTE.TriggerQTE(isClick =>
+                        {
+                            if (isClick)
+                            {
+                                var damagable = collider.GetComponent<Damagable>();
+                                if (damagable != null)
+                                    damagable.Hit(damage * 2);
+                            }
+                            else
+                            {
+                                var damagable = collider.GetComponent<Damagable>();
+                                if (damagable != null)
+                                    damagable.Hit(damage);
+                            }
+                        });
+                    }
+                }
+                else
+                {
+                    var damagable = collider.GetComponent<Damagable>();
+                    if (damagable != null)
+                        damagable.Hit(damage);
+                }
                 bulletOutOfbound = true;
                 break;
             case BulletType.Explosion:
