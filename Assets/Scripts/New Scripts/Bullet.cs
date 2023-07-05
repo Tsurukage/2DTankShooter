@@ -46,7 +46,6 @@ public class Bullet : MonoBehaviour
         if (conquaredDistance >= bulletData.maxDistance || bulletOutOfbound)
         {
             DisableObject();
-            GameManager.Instance.HandleStageClear(true);
             ToogleDarkness.Instance.ToggleToLight();
             OnHit?.Invoke();
         }
