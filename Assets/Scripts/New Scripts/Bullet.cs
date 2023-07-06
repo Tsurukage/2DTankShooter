@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -6,6 +7,8 @@ public class Bullet : MonoBehaviour
 {
     public BulletData bulletData;
     public float acceleration;
+    public List<float> multiplier = new List<float>();
+
     private GameObject _trailLineObj;
     private float splashRange;
     private SpriteRenderer bulletSprite;
@@ -81,16 +84,25 @@ public class Bullet : MonoBehaviour
                             if (isClick)
                             {
                                 var damagable = collider.GetComponent<Damagable>();
+                                float ranMulti = GetRandomFloat();
                                 if (damagable != null)
-                                    damagable.Hit(damage * 2);
+                                    damagable.Hit((int)(damage * ranMulti));
+                                Time.timeScale = 1f;
                             }
                             else
                             {
                                 var damagable = collider.GetComponent<Damagable>();
                                 if (damagable != null)
                                     damagable.Hit(damage);
+                                Time.timeScale = 1f;
                             }
                         });
+                    }
+                    else
+                    {
+                        var damagable = collider.GetComponent<Damagable>();
+                        if (damagable != null)
+                            damagable.Hit(damage);
                     }
                 }
                 else
@@ -213,7 +225,11 @@ public class Bullet : MonoBehaviour
                 break;
         }
     }
-
+    private float GetRandomFloat()
+    {
+        int index = Random.Range(0, multiplier.Count);
+        return multiplier[index];
+    }
     private void OnDrawGizmos()
     {
         if(bulletData != null)

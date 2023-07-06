@@ -41,6 +41,7 @@ public class WindowQTE : MonoBehaviour
         }
         if(Value_cd < 0 )
         {
+            Time.timeScale = 1.0f;
             CallbackAction(false);
             Display(false);
             Value_cd = 0;
@@ -50,6 +51,7 @@ public class WindowQTE : MonoBehaviour
     public static void TriggerQTE(Action<bool> callbackAction)
     {
         instance.Display(true);
+        Time.timeScale = 0.1f;
         Value_cd = instance.value_cd;
         CallbackAction = callbackAction;
     }
