@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class WindowPlayerRankUp : MonoBehaviour
 {
-    public static WindowPlayerRankUp instance;
+    private static WindowPlayerRankUp instance;
     [SerializeField] private Image img_beforeRank;
     [SerializeField] private Image img_afterRank;
     [SerializeField] private Text text_beforeRank;

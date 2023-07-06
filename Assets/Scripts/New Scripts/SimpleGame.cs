@@ -179,6 +179,7 @@ public class SimpleGame : MonoBehaviour
         }
         if(winStreak > 0 && loseStreak > 0)
         {
+            Player.SetRank(-1);
             winStreak = 0;
             loseStreak = 0;
         }

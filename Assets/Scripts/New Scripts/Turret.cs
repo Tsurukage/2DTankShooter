@@ -38,6 +38,7 @@ public class Turret : MonoBehaviour
                 {
                     canShoot = true;
                     GameManager.Instance.HandleStageClear(true);
+                    SimpleGame.Instance.UpdateShootingCount();
                     //OnCountDown?.Invoke(canShoot);
                 }
             }
@@ -92,7 +93,6 @@ public class Turret : MonoBehaviour
         }
         else
             print("炮弹库存为0");
-        SimpleGame.Instance.UpdateShootingCount();
     }
 
     IEnumerator ShootDoubleBulletsWithDelay()

@@ -98,6 +98,6 @@ public class StagePrepareManager : MonoBehaviour
         {
             GameManager.Instance.UpdateGameState(GameState.StageInProgress);
         }
-        _timerText.text = _time.ToString("00");
+        _timerText.text = _time.ToString("0");
     }
 }
