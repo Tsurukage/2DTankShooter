@@ -1327,7 +1327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text_cd: {fileID: 5672712549387657612}
   btn_qte: {fileID: 4684339279456980732}
-  value_cd: 0.5
+  value_cd: 0.2
 --- !u!1 &8110693749435911700
 GameObject:
   m_ObjectHideFlags: 0
