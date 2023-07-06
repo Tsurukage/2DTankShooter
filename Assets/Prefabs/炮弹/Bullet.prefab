@@ -272,6 +272,8 @@ MonoBehaviour:
   bulletData: {fileID: 0}
   acceleration: 5
   multiplier:
+  - 2
+  - 2.5
   - 3
   OnHit:
     m_PersistentCalls:
