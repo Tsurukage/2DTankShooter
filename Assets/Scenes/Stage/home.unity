@@ -4447,9 +4447,17 @@ MonoBehaviour:
   - 01504
   - 01505
   tier_masterLow:
-  - 1001
+  - 01601
+  - 01602
+  - 01603
+  - 01604
+  - 01605
   tier_masterMid:
-  - 1001
+  - 01701
+  - 01702
+  - 01703
+  - 01704
+  - 01705
   tier_masterHigh:
   - 1001
   tier_challenger:
