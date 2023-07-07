@@ -135,7 +135,7 @@ public class SimpleGame : MonoBehaviour
                 {
                     if (!chanceUsed)
                     {
-                        GameManager.Instance.UpdateGameState(GameState.StageChancesUI, 1);
+                        GameManager.Instance.UpdateGameState(GameState.StageChancesUI);
                     }
                     else
                     {
