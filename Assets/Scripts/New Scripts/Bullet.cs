@@ -87,6 +87,7 @@ public class Bullet : MonoBehaviour
                                 float ranMulti = GetRandomFloat();
                                 if (damagable != null)
                                     damagable.Hit((int)(damage * ranMulti));
+                                damagable.CameraShake();
                                 Time.timeScale = 1f;
                             }
                             else
@@ -94,6 +95,7 @@ public class Bullet : MonoBehaviour
                                 var damagable = collider.GetComponent<Damagable>();
                                 if (damagable != null)
                                     damagable.Hit(damage);
+                                damagable.CameraShake();
                                 Time.timeScale = 1f;
                             }
                         });

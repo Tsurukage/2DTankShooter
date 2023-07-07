@@ -71,4 +71,8 @@ public class Damagable : MonoBehaviour
             tankObj.UpdateTankState(TankState.Destroyed);
         }
     }
+    public void CameraShake()
+    {
+        CameraEffects.ShakeOnce(1f, 10f, new Vector3(0.3f, 0.3f));
+    }
 }

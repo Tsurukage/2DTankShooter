@@ -29,6 +29,10 @@ public class InstantiateUtil : MonoBehaviour
     {
         SoundEffectManager.Instance.SetSecondSFX(clip);
     }
+    public void SendThirdSFX()
+    {
+        SoundEffectManager.Instance.SetThirdSFX(clip);
+    }
     public void LoopCasting()
     {
         SoundEffectManager.Instance.LoopCasting(clip);

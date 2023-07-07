@@ -75,7 +75,6 @@ public class SoundEffectManager : MonoBehaviour
     }
     internal void StopLoop()
     {
-        _soundeffect.Stop();
         _soundeffect.loop = false;
     }
     internal void StopLoopSecondSFX()
