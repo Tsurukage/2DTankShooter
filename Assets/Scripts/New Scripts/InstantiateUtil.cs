@@ -12,6 +12,11 @@ public class InstantiateUtil : MonoBehaviour
         if (objectToinstantiate != null)
             Instantiate(objectToinstantiate);
     }
+    public void InstantiateObjectRT()
+    {
+        if (objectToinstantiate != null)
+            Instantiate(objectToinstantiate, transform);
+    }
     public void SendSFX()
     {
         SoundEffectManager.Instance.SetSFX(clip);
