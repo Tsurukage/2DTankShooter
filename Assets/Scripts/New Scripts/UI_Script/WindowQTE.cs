@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class WindowQTE : MonoBehaviour
@@ -11,12 +12,15 @@ public class WindowQTE : MonoBehaviour
     [SerializeField] private float currentTime;
     [SerializeField] private Image img_circle;
     [SerializeField] private RectTransform rt_spawnArea;
+    [SerializeField] private AudioClip clip;
     private static Text Text_cd { get; set; }
     private static Button Btn_qte { get; set; }
     private static float Value_cd { get; set; }
     private static Image Img_Circle { get; set; }
     private static RectTransform Rt_spawnArea { get; set; }
+    private static AudioClip Clip { get; set; }
     private static event Action<bool> CallbackAction;
+    public UnityEvent OnSuccess = new UnityEvent();
     // Start is called before the first frame update
     public void Display(bool display)
     {
@@ -26,17 +30,22 @@ public class WindowQTE : MonoBehaviour
     {
         instance = this;
         Display(false);
+
         Text_cd = text_cd;
+        Btn_qte = btn_qte;
         Value_cd = value_cd;
         Img_Circle = img_circle;
-        currentTime = value_cd;
         Rt_spawnArea = rt_spawnArea;
+        Clip = clip;
+
+        currentTime = value_cd;
         Text_cd.text = Value_cd.ToString();
-        Btn_qte = btn_qte;
         Btn_qte.onClick.RemoveAllListeners();
         Btn_qte.onClick.AddListener(() =>
         {
             CallbackAction(true);
+            SoundEffectManager.Instance.StopLoopSecondSFX();
+            OnSuccess?.Invoke();
             instance.Display(false);
         });
     }
@@ -50,11 +59,12 @@ public class WindowQTE : MonoBehaviour
         {
             Value_cd -= Time.deltaTime;
         }
-        if(Value_cd < 0 )
+        if(Value_cd <= 0 )
         {
             currentTime = value_cd;
             Time.timeScale = 1.0f;
             CallbackAction(false);
+            SoundEffectManager.Instance.StopLoopSecondSFX();
             Display(false);
             Value_cd = 0;
         }
@@ -65,6 +75,7 @@ public class WindowQTE : MonoBehaviour
         Img_Circle.rectTransform.position = instance.GetRandomPosition();
         instance.currentTime = instance.value_cd;
         instance.Display(true);
+        SoundEffectManager.Instance.LoopSecondSFX(Clip);
         Time.timeScale = 0.1f;
         Value_cd = instance.value_cd;
         CallbackAction = callbackAction;

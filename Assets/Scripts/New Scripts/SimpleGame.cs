@@ -171,11 +171,12 @@ public class SimpleGame : MonoBehaviour
         winStreak += win;
         loseStreak += lose;
         print($"{winStreak}, {loseStreak}");
-        if (winStreak == 3 && loseStreak == 0)
+        if (winStreak == 2 && loseStreak == 0)
         {
             Player.SetRank(1);
             print(Player.Rank);
             winStreak = 0;
+            loseStreak = 0;
         }
         if(winStreak > 0 && loseStreak > 0)
         {
