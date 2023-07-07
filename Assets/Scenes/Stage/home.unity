@@ -4459,7 +4459,11 @@ MonoBehaviour:
   - 01704
   - 01705
   tier_masterHigh:
-  - 1001
+  - 01801
+  - 01802
+  - 01803
+  - 01804
+  - 01805
   tier_challenger:
   - 1001
   tier_grandmaster:
