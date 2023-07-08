@@ -12,6 +12,7 @@ public class TankObject : MonoBehaviour
     [SerializeField] private AudioClip redAlertSFX;
 
     public UnityEvent OnShoot;
+    public UnityEvent OnStopShooting;
 
     public void SetData(EnemyAdvanceSO data)
     {
@@ -94,6 +95,7 @@ public class TankObject : MonoBehaviour
         }
         yield return new WaitForSeconds(1f);
         isAttacking = false;
+        OnStopShooting?.Invoke();
         UpdateTankState(TankState.Idle);
         SoundEffectManager.Instance.StopLoopThirdSFX();
         CheckHealth();

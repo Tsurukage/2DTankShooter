@@ -29,6 +29,10 @@ public class InstantiateUtil : MonoBehaviour
     {
         SoundEffectManager.Instance.SetSecondSFX(clip);
     }
+    public void StopSecondSFX()
+    {
+        SoundEffectManager.Instance.StopLoopSecondSFX();
+    }
     public void SendThirdSFX()
     {
         SoundEffectManager.Instance.SetThirdSFX(clip);
