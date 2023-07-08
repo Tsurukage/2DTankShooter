@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _splashRange: 2
-  _bombBarrelDamage: 150
+  _bombBarrelDamage: 100
   OnExplode:
     m_PersistentCalls:
       m_Calls:
