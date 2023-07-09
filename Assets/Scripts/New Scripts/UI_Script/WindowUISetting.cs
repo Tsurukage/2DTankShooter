@@ -11,7 +11,7 @@ public class WindowUISetting : MonoBehaviour
     [SerializeField] private Button btn_exitApp;
     [SerializeField] private Button btn_exitLevel;
     [SerializeField] private Button btn_closeWin;
-
+    [SerializeField] private Button btn_privacy;
     void Awake()
     {
         Top_UI_Manager.OnSettingClick += SetObjectActive;
@@ -44,7 +44,13 @@ public class WindowUISetting : MonoBehaviour
             btn_exitApp.onClick.AddListener(ExitApp);
         if (btn_exitLevel != null)
             btn_exitLevel.onClick.AddListener(ExitLevel);
+        if (btn_privacy != null)
+            btn_privacy.onClick.AddListener(OpenAgreement);
+    }
 
+    private void OpenAgreement()
+    {
+        WindowPrivacyAgreement.OpenDisplay();
     }
 
     private void ExitLevel()
@@ -82,5 +88,6 @@ public class WindowUISetting : MonoBehaviour
     {
         btn_exitApp.gameObject.SetActive(state == GameState.InMainMenu);
         btn_exitLevel.gameObject.SetActive(state != GameState.InMainMenu);
+        btn_privacy.gameObject.SetActive(state == GameState.InMainMenu);
     }
 }
