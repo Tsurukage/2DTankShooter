@@ -20,7 +20,7 @@ public class WindowQTE : MonoBehaviour
     private static RectTransform Rt_spawnArea { get; set; }
     private static AudioClip Clip { get; set; }
     private static event Action<bool> CallbackAction;
-    public UnityEvent OnSuccess = new UnityEvent();
+    //public UnityEvent OnSuccess = new UnityEvent();
     // Start is called before the first frame update
     public void Display(bool display)
     {
@@ -45,7 +45,7 @@ public class WindowQTE : MonoBehaviour
         {
             CallbackAction(true);
             SoundEffectManager.Instance.StopLoopSecondSFX();
-            OnSuccess?.Invoke();
+            //OnSuccess?.Invoke();
             instance.Display(false);
         });
     }
@@ -74,6 +74,7 @@ public class WindowQTE : MonoBehaviour
     {
         Img_Circle.rectTransform.position = instance.GetRandomPosition();
         instance.currentTime = instance.value_cd;
+        SoundEffectManager.Instance.OnClickSound();
         instance.Display(true);
         SoundEffectManager.Instance.LoopSecondSFX(Clip);
         Time.timeScale = 0.1f;

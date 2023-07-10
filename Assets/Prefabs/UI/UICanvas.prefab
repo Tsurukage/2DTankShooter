@@ -1486,33 +1486,6 @@ MonoBehaviour:
   img_circle: {fileID: 1308723685763837470}
   rt_spawnArea: {fileID: 7828405501104029377}
   clip: {fileID: 8300000, guid: ff2746da1d410da40b2927147d1cea12, type: 3}
-  OnSuccess:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8222800176588512604}
-        m_TargetAssemblyTypeName: InstantiateUtil, Assembly-CSharp
-        m_MethodName: InstantiateObjectRT
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8222800176588512604}
-        m_TargetAssemblyTypeName: InstantiateUtil, Assembly-CSharp
-        m_MethodName: SendSecondSFX
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &8108123947902234001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1525,6 +1498,7 @@ GameObject:
   - component: {fileID: 3006178805944584049}
   - component: {fileID: 1212769821049748998}
   - component: {fileID: 8222800176588512604}
+  - component: {fileID: 7967635452421209455}
   m_Layer: 5
   m_Name: perfect_area
   m_TagString: Untagged
@@ -1605,6 +1579,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToinstantiate: {fileID: 7529562203758876133, guid: e9e9b762fa33af04eba305c80771ac9b, type: 3}
   clip: {fileID: 8300000, guid: c7fa8c53045d0cf4089db11c18dec1e0, type: 3}
+--- !u!114 &7967635452421209455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8108123947902234001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9fd002991c134343af40b891aa3c456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feedbacks:
+  - {fileID: 7529562203758876133, guid: 6f74e2b44b875be40a31882af65cd4d8, type: 3}
+  - {fileID: 7529562203758876133, guid: 7cc4fa724e556c143bc9a9de487a89c6, type: 3}
+  - {fileID: 7529562203758876133, guid: e9e9b762fa33af04eba305c80771ac9b, type: 3}
+  clips:
+  - {fileID: 8300000, guid: c7fa8c53045d0cf4089db11c18dec1e0, type: 3}
+  - {fileID: 8300000, guid: c7fa8c53045d0cf4089db11c18dec1e0, type: 3}
+  - {fileID: 8300000, guid: c7fa8c53045d0cf4089db11c18dec1e0, type: 3}
 --- !u!1 &8110693749435911700
 GameObject:
   m_ObjectHideFlags: 0

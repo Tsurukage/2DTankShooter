@@ -24,6 +24,7 @@ public class WindowPrivacyAgreement : MonoBehaviour
     }
     private void CloseDisplay()
     {
+        SoundEffectManager.Instance.OnClickSound();
         Display(false);
     }
 }

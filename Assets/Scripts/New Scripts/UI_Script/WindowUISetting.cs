@@ -50,6 +50,7 @@ public class WindowUISetting : MonoBehaviour
 
     private void OpenAgreement()
     {
+        SoundEffectManager.Instance.OnClickSound();
         WindowPrivacyAgreement.OpenDisplay();
     }
 

@@ -65,22 +65,22 @@ public class StagePrepareManager : MonoBehaviour
     private void OnAdsClickAction()
     {
         SoundEffectManager.Instance.OnClickSound();
+        GameManager.Instance.UpdateGameState(GameState.StageWatchAds);
+        AdsSimulation.SimAds(isSuccess =>
+        {
+            if (isSuccess)
+            {
                 GameManager.Instance.UpdateGameState(GameState.StageInProgress);
                 var loot = GetComponent<LootBag>();
                 loot.InstantiateLoot();
                 SetInteraction(false);
-        //GameManager.Instance.UpdateGameState(GameState.StageWatchAds);
-        //AdsSimulation.SimAds(isSuccess =>
-        //{
-        //    if (isSuccess)
-        //    {
-        //        return;
-        //    }
-        //    {
-        //        Debug.Log("ñvõˆçêä≈ÅI");
-        //        GameManager.Instance.UpdateGameState(GameState.StageInProgress);
-        //    }
-        //});
+            }
+            else
+            {
+                Debug.Log("ñvõˆçêä≈ÅI");
+                GameManager.Instance.UpdateGameState(GameState.StageInProgress);
+            }
+        });
     }
     private void SetInteraction(bool interactable)
     {

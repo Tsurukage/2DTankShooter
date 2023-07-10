@@ -59,21 +59,21 @@ public class StageChanceManager : MonoBehaviour
     private void OnAdsClickAction()
     {
         SoundEffectManager.Instance.OnClickSound();
-        SimpleGame.Instance.SetBool();
-        SimpleGame.Instance.IncreaseShootingCount(1);
-        GameManager.Instance.UpdateGameState(GameState.StageInProgress);
-        //GameManager.Instance.UpdateGameState(GameState.StageWatchAds);
-        //AdsSimulation.SimAds(isSuccess =>
-        //{
-        //    if (isSuccess)
-        //    {
-        //    }
-        //    else
-        //    {
-        //        Debug.Log("ñvõˆçêä≈ÅI");
-        //        GameManager.Instance.UpdateGameState(GameState.StageFailUI);
-        //    }
-        //});
+        GameManager.Instance.UpdateGameState(GameState.StageWatchAds);
+        AdsSimulation.SimAds(isSuccess =>
+        {
+            if (isSuccess)
+            {
+                SimpleGame.Instance.SetBool();
+                SimpleGame.Instance.IncreaseShootingCount(1);
+                GameManager.Instance.UpdateGameState(GameState.StageInProgress);
+            }
+            else
+            {
+                Debug.Log("ñvõˆçêä≈ÅI");
+                GameManager.Instance.UpdateGameState(GameState.StageFailUI);
+            }
+        });
     }
     private void SetInteraction(bool interactable)
     {

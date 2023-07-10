@@ -16,6 +16,7 @@ public class Bullet : MonoBehaviour
     private float conquaredDistance = 0;
     private Rigidbody2D rb2d;
     bool bulletOutOfbound = false;
+    private int randomMultiplier;
 
     public UnityEvent OnHit = new UnityEvent();
     public UnityEvent OnDestroy = new UnityEvent();
@@ -88,6 +89,8 @@ public class Bullet : MonoBehaviour
                                 if (damagable != null)
                                     damagable.Hit((int)(damage * ranMulti));
                                 damagable.CameraShake();
+                                QTESuccessFeedback.instance.InstantiateQTEFeedback(randomMultiplier);
+                                QTESuccessFeedback.instance.SendSecondSFX(randomMultiplier);
                                 Time.timeScale = 1f;
                             }
                             else
@@ -230,6 +233,7 @@ public class Bullet : MonoBehaviour
     private float GetRandomFloat()
     {
         int index = Random.Range(0, multiplier.Count);
+        randomMultiplier = index;
         return multiplier[index];
     }
     private void OnDrawGizmos()
