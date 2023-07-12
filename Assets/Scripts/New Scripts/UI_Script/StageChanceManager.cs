@@ -70,7 +70,7 @@ public class StageChanceManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("ñvõˆçêä≈ÅI");
+                Debug.Log("√ªπ„∏Ê—º°£°£°£");
                 GameManager.Instance.UpdateGameState(GameState.StageFailUI);
             }
         });

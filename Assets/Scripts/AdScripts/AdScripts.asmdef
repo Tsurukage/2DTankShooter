@@ -1,0 +1,16 @@
+{
+    "name": "AdScripts",
+    "rootNamespace": "",
+    "references": [
+        "GUID:745ecf5cb5002204a91eece5679e64af"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

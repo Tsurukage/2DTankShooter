@@ -1,0 +1,15 @@
+Alias name: tank
+Creation date: Jun 7, 2023
+Entry type: PrivateKeyEntry
+Certificate chain length: 1
+Certificate[1]:
+Owner: C=60, ST=Sarawak, L=Miri, O=icefoxz, OU=icefoxz, CN=Leo Vun
+Issuer: C=60, ST=Sarawak, L=Miri, O=icefoxz, OU=icefoxz, CN=Leo Vun
+Serial number: 189c4f8c
+Valid from: Wed Jun 07 18:21:55 SGT 2023 until: Thu May 25 18:21:55 SGT 2073
+Certificate fingerprints:
+         SHA1: 27:19:F0:B7:28:83:06:BC:16:7A:1A:9A:4B:B9:58:DD:16:4E:C2:1F
+         SHA256: 15:BA:27:FA:15:CC:6A:8F:79:33:49:87:D5:DD:6A:67:EB:96:2E:26:48:00:BC:D5:85:EE:36:A9:2E:FB:61:19
+Signature algorithm name: SHA1withRSA (weak)
+Subject Public Key Algorithm: 2048-bit RSA key
+Version: 3

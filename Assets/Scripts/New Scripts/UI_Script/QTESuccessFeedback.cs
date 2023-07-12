@@ -19,10 +19,11 @@ public class QTESuccessFeedback : MonoBehaviour
     }
     public void SendSecondSFX(int index)
     {
-        SoundEffectManager.Instance.SetSecondSFX(clips[index]);
+        if (clips[index] != null)
+            SoundEffectManager.Instance.SetForthSFX(clips[index]);
     }
     public void StopSecondSFX()
     {
-        SoundEffectManager.Instance.StopLoopSecondSFX();
+        SoundEffectManager.Instance.StopLoopForthSFX();
     }
 }

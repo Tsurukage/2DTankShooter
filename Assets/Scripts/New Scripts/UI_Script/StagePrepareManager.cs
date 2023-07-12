@@ -66,7 +66,7 @@ public class StagePrepareManager : MonoBehaviour
     {
         SoundEffectManager.Instance.OnClickSound();
         GameManager.Instance.UpdateGameState(GameState.StageWatchAds);
-        AdsSimulation.SimAds(isSuccess =>
+        AdsSimulation.InitAds(isSuccess =>
         {
             if (isSuccess)
             {
@@ -77,7 +77,7 @@ public class StagePrepareManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("ñvõˆçêä≈ÅI");
+                Debug.Log("√ªπ„∏Ê—º°£°£°£");
                 GameManager.Instance.UpdateGameState(GameState.StageInProgress);
             }
         });

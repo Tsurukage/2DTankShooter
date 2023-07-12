@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using UnityEngine;
 
 public class SoundEffectManager : MonoBehaviour
@@ -7,6 +7,7 @@ public class SoundEffectManager : MonoBehaviour
     public AudioSource _soundeffect;
     public AudioSource _soundeffect2;
     public AudioSource _soundeffect3;
+    public AudioSource _soundeffect4; //For QTE feedback
     public AudioClip _click_se;
     public AudioClip _victory_se;
     public AudioClip _fail_se;
@@ -54,7 +55,16 @@ public class SoundEffectManager : MonoBehaviour
         _soundeffect3.clip = clip;
         _soundeffect3.Play();
     }
-
+    //专门给QTE的音效
+    internal void SetForthSFX(AudioClip clip)
+    {
+        _soundeffect4.clip = clip;
+        _soundeffect4.Play();
+    }
+    internal void StopLoopForthSFX()
+    {
+        _soundeffect4.Stop();
+    }
     internal void LoopCasting(AudioClip clip)
     {
         _soundeffect.clip = clip;
@@ -87,5 +97,6 @@ public class SoundEffectManager : MonoBehaviour
         _soundeffect3.Stop();
         _soundeffect3.loop = false;
     }
-    internal void StopThirdSFX() => _soundeffect3.Stop(); 
+    internal void StopThirdSFX() => _soundeffect3.Stop();
+
 }

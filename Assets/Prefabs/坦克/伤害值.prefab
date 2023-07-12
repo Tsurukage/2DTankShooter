@@ -86,7 +86,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076536266769833005}
-  m_Text: 100
+  m_Text: 75
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -109,9 +109,8 @@ SortingGroup:
   m_GameObject: {fileID: 1076536266769833005}
   m_Enabled: 1
   m_SortingLayerID: -1393087183
-  m_SortingLayer: 11
+  m_SortingLayer: 12
   m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!95 &3968119566612337507
 Animator:
   serializedVersion: 4
