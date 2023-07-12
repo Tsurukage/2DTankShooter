@@ -26,11 +26,11 @@
   <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
   <application
           android:allowBackup="true"
-          android:appComponentFactory="androidx.core.app.CoreComponentFactory"
           android:hardwareAccelerated="true"
           android:networkSecurityConfig="@xml/network_config"
           android:requestLegacyExternalStorage="true"
           android:supportsRtl="true">
+          <!--android:appComponentFactory="androidx.core.app.CoreComponentFactory"-->
     <meta-data
             android:name="test"
             android:value="one" />
@@ -54,8 +54,8 @@
               android:resource="@xml/file_paths" />
     </provider>
     <provider
-            android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"
-            android:authorities="${applicationId}.TTMultiProvider"
-            android:exported="false" />
+	        android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"
+	        android:authorities="${applicationId}.TTMultiProvider"
+	        android:exported="false"/>
   </application>
 </manifest>

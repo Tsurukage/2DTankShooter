@@ -8,6 +8,6 @@
       </intent-filter>
       <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
     </activity>
-    <provider android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider" android:authorities="com.Tsurukage.Shooting2D.TTMultiProvider" android:exported="false" />
+    <provider android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider" android:authorities="com.icefoxz.tankHunter.TTMultiProvider" android:exported="false" />
   </application>
 </manifest>
