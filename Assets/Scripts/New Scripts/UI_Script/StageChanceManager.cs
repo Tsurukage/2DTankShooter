@@ -60,7 +60,7 @@ public class StageChanceManager : MonoBehaviour
     {
         SoundEffectManager.Instance.OnClickSound();
         GameManager.Instance.UpdateGameState(GameState.StageWatchAds);
-        AdsSimulation.SimAds(isSuccess =>
+        AdsSimulation.InitAds(isSuccess =>
         {
             if (isSuccess)
             {
