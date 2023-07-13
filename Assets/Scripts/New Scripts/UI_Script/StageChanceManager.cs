@@ -66,6 +66,8 @@ public class StageChanceManager : MonoBehaviour
             {
                 SimpleGame.Instance.SetBool();
                 SimpleGame.Instance.IncreaseShootingCount(1);
+                var loot = GetComponent<LootBag>();
+                loot.InstantiateLoot();
                 GameManager.Instance.UpdateGameState(GameState.StageInProgress);
             }
             else

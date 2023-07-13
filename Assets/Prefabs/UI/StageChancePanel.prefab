@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 966682483311524134}
   - component: {fileID: 966682483311524135}
   - component: {fileID: 468046122163155520}
+  - component: {fileID: 408584943308276177}
   m_Layer: 5
   m_Name: StageChancePanel
   m_TagString: Untagged
@@ -338,6 +339,26 @@ MonoBehaviour:
   text_timer: {fileID: 966682483545157716}
   btn_ads: {fileID: 966682483099230912}
   btn_diamond: {fileID: 5503096021201379719}
+--- !u!114 &408584943308276177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966682483311524153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91d555845181e55478701fa195a46694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _droppedLootPrefab: {fileID: 2157933269341755862, guid: f7e86127c6ebf2142b188741bbffa9e3, type: 3}
+  lootList:
+  - {fileID: 11400000, guid: e5079eb28e4e78e47b6b4483b92edab8, type: 2}
+  - {fileID: 11400000, guid: cfc2dbca668f6c243885e7116f239dea, type: 2}
+  - {fileID: 11400000, guid: bc164a11b69acf345a749ee77edacb85, type: 2}
+  - {fileID: 11400000, guid: 55a840e5c6b7df84e93f0b50743d32d3, type: 2}
+  - {fileID: 11400000, guid: 406fbc72c70af8e49b6ce321f3d7612e, type: 2}
+  - {fileID: 11400000, guid: e6df823b542fd0341988c54063e3c42b, type: 2}
 --- !u!1 &966682483346662943
 GameObject:
   m_ObjectHideFlags: 0

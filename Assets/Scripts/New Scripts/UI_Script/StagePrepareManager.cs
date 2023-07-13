@@ -73,6 +73,7 @@ public class StagePrepareManager : MonoBehaviour
                 GameManager.Instance.UpdateGameState(GameState.StageInProgress);
                 var loot = GetComponent<LootBag>();
                 loot.InstantiateLoot();
+                SimpleGame.Instance.IncreaseShootingCount(1);
                 SetInteraction(false);
             }
             else
