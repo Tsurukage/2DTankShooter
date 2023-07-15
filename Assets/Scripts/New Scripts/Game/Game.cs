@@ -5,8 +5,10 @@ public class Game : MonoBehaviour
 {
     public static Game Instance;
     [SerializeField]private SaveManager saveMgr;
+    [SerializeField]private AdAgent adAgent;
     public static GameWorld World { get; private set; }
     public static SaveManager SaveManager { get; private set; }
+    public static AdAgent AdAgent { get; private set; }
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -19,6 +21,7 @@ public class Game : MonoBehaviour
     {
         World = new GameWorld();
         SaveManager = saveMgr;
+        AdAgent = adAgent;
         Load();
     }
     public static void Save()
@@ -30,7 +33,7 @@ public class Game : MonoBehaviour
         var player = SaveManager.LoadPlayer()?.ToModel();
         if (player == null)
         {
-            player = new Player("p001", "Šß‰Æ", "China", 0, 0, 0, 0);
+            player = new Player("p001", "ï¿½ß‰ï¿½", "China", 0, 0, 0, 0);
             World.SetPlayer(player);
             Save();
         }

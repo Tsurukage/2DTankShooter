@@ -4,6 +4,7 @@
     "com.leancloud.storage": "https://github.com/leancloud/csharp-sdk-upm.git#storage-1.0.2",
     "com.taptap.tds.common": "https://github.com/TapTap/TapCommon-Unity.git#3.18.7",
     "com.taptap.tds.login": "https://github.com/TapTap/TapLogin-Unity.git#3.18.7",
+    "com.unity.ads": "4.4.2",
     "com.unity.collab-proxy": "1.15.18",
     "com.unity.feature.2d": "1.0.0",
     "com.unity.ide.rider": "3.0.14",

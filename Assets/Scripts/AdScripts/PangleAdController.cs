@@ -7,6 +7,7 @@ public class PangleAdController
 {
     private AdNative _adNative;
     private RewardVideoAd rewardAd;
+    public bool IsInit { get; private set; }
 
     public string AndroidSlotID = "952667286";
     private AdNative AdNative
@@ -21,12 +22,16 @@ public class PangleAdController
         }
     }
 
-    public void Init(Action<bool,string> callbackAction) => Pangle.InitializeSDK((success,message)=>
-        {
-            callbackAction?.Invoke(success,message);
-            InitCallback(success, message);
-        });
-    private void InitCallback(bool success, string message) => Debug.Log("`````````````````初始化``````" + success + "-----" + message);
+    public void Init(Action<bool, string> callbackAction) => Pangle.InitializeSDK((success, message) =>
+    {
+        callbackAction?.Invoke(success, message);
+        InitCallback(success, message);
+    });
+    private void InitCallback(bool success, string message)
+    {
+        IsInit = success;
+        Debug.Log("`````````````````初始化``````" + success + "-----" + message);
+    }
 
     public void RequestDirectRewardedAd(UnityAction<bool, string> requestAction)
     {

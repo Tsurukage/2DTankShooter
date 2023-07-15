@@ -12,8 +12,6 @@ public class AdsSimulation : MonoBehaviour
     private static Button Btn_failure { get; set; }
     private static AdsSimulation instance;
 
-    private PangleAdController _pangleAdController;
-    private PangleAdController PangleAdController => _pangleAdController ??= new PangleAdController();
     void Display(bool display)
     {
         gameObject.SetActive(display);
@@ -24,9 +22,6 @@ public class AdsSimulation : MonoBehaviour
         Btn_success = btn_success;
         Btn_failure = btn_failure;
         Display(false);
-        PangleAdController.Init((success, massage) =>
-        {
-        });
     }
     public static void SimAds(Action<bool> callbackAction)
     {
@@ -49,8 +44,11 @@ public class AdsSimulation : MonoBehaviour
     public static void InitAds(Action<bool> callbackAction)
     {
         instance.Display(true);
-        instance.PangleAdController.RequestDirectRewardedAd((success, message) =>
+        Game.AdAgent.RequestRewardedAd(success =>
         {
+        //})
+        //instance.PangleAdController.RequestDirectRewardedAd((success, message) =>
+        //{
             if (success)
             {
                 callbackAction(true);

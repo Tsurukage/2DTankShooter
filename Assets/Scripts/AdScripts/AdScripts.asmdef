@@ -2,7 +2,8 @@
     "name": "AdScripts",
     "rootNamespace": "",
     "references": [
-        "GUID:745ecf5cb5002204a91eece5679e64af"
+        "GUID:745ecf5cb5002204a91eece5679e64af",
+        "GUID:ff6de30450f3748908ff580f6ec64d9a"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
