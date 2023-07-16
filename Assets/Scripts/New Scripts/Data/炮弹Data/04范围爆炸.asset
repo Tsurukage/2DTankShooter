@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51f643ce84ad9fa41b1918ee2355b17f, type: 3}
-  m_Name: 07
+  m_Name: "04\u8303\u56F4\u7206\u70B8"
   m_EditorClassIdentifier: 
-  bulletName: "\u53CC\u53D1\u70AE\u5F39"
+  bulletName: "\u706B\u795E\u2160\u53F7"
   speed: 10
-  damage: 50
+  damage: 75
   maxDistance: 15
   bulletSprite: {fileID: 21300000, guid: 1ea096cb371d5d542bc3bf6eb2c3e395, type: 3}
-  bulletIcon: {fileID: 21300000, guid: 1581ae2beee4122488d057eb57b21c9b, type: 3}
+  bulletIcon: {fileID: 21300000, guid: 7a5fcf1034ac4ef459316e260199d8ff, type: 3}
   bulletGradeBase: {fileID: 21300000, guid: a660f2a32cc32b546a347330db045595, type: 3}
   bulletTrail: {fileID: 5195730231380689795, guid: 2538ae3d46958f249bf8afe60af8a12b, type: 3}
-  splashRange: 0.2
-  bulletType: 0
+  splashRange: 1.5
+  bulletType: 1
   bullet_npc: {fileID: 21300000, guid: 14110b42e9537a6458fdd072db79ebb8, type: 3}
-  doubleFire: 1
-  doubleFireDelay: 0.3
+  doubleFire: 0
+  doubleFireDelay: 0
