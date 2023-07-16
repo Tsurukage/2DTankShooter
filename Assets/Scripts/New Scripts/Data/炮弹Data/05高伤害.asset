@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51f643ce84ad9fa41b1918ee2355b17f, type: 3}
-  m_Name: 05
+  m_Name: "05\u9AD8\u4F24\u5BB3"
   m_EditorClassIdentifier: 
   bulletName: "\u6218\u65A7\u2161\u53F7"
   speed: 10
