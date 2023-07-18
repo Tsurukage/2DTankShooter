@@ -4,6 +4,7 @@
 public class BulletData : ScriptableObject
 {
     public string bulletName;
+    public string bulletName_eng;
     public float speed = 100;
     public int damage = 5;
     public float maxDistance = 10;
@@ -17,9 +18,10 @@ public class BulletData : ScriptableObject
     public bool doubleFire;
     public float doubleFireDelay = 1f;
 
-    public BulletData(string bulletName, float speed, int damage, float maxDistance, float splashRange, Sprite bulletSprite, Sprite bulletIcon, Sprite bulletGradeBase)
+    public BulletData(string bulletName, string bulletName_eng, float speed, int damage, float maxDistance, float splashRange, Sprite bulletSprite, Sprite bulletIcon, Sprite bulletGradeBase)
     {
         this.bulletName = bulletName;
+        this.bulletName_eng = bulletName_eng;
         this.speed = speed;
         this.damage = damage;
         this.maxDistance = maxDistance;

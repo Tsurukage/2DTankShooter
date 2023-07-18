@@ -11,13 +11,10 @@ public class SimpleGame : MonoBehaviour
     [SerializeField] List<EnemyAdvanceComp> _enemyCounterComp;
     [SerializeField] private GameObject _tankPrefab;
     [SerializeField] private GameObject _tankCounterPrefab;
-    [SerializeField] private string _stageName;
+    //[SerializeField] private string _stageName;
     [SerializeField] private AudioClip _audioClip;
-    public string Stage_Name
-    {
-        get { return _stageName; }
-        set { _stageName = value; }
-    }
+    [SerializeField] private string[] stage_names;
+    public static string Stage_Name { get; set; }
     [SerializeField] private int countDown = 0;
     public int CountDown
     {
@@ -46,6 +43,8 @@ public class SimpleGame : MonoBehaviour
 
     void Start()
     {
+        var language = PlayerPrefs.GetInt("language");
+        SetLanguage((Language)language);
         tankCount = _enemyComp.Count + _enemyCounterComp.Count;
         Top_UI?.Invoke(tankCount, shootingCount, badgeCount, animalCount);
         InitAnimalCount = animalCount;
@@ -53,6 +52,24 @@ public class SimpleGame : MonoBehaviour
         SpawnCounterTank();
         chanceUsed = false;
         BackgroundMusicManager.Instance.SetBgm(_audioClip);
+    }
+    private void SetLanguage(Language language)
+    {
+        switch (language)
+        {
+            case Language.Chinese:
+                stage_names = LoadTextFile("Localization/Chinese/stage_names");
+                break;
+            case Language.English:
+                stage_names = LoadTextFile("Localization/English/stage_names");
+                break;
+        }
+        Stage_Name = stage_names[(int)Player.Rank];
+    }
+    private string[] LoadTextFile(string path)
+    {
+        TextAsset textAsset = Resources.Load<TextAsset>(path);
+        return textAsset.text.Split('\n');
     }
     private void SpawnCurrentLevel()
     {

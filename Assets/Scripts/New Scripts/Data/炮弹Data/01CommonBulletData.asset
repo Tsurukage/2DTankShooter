@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 01CommonBulletData
   m_EditorClassIdentifier: 
   bulletName: "\u6218\u65A7\u2160\u53F7"
+  bulletName_eng: Battle Axe I
   speed: 10
   damage: 30
   maxDistance: 15

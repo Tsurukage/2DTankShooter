@@ -1,4 +1,5 @@
 using Models;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ public class PlayerUIManager : MonoBehaviour
     [SerializeField] private Text text_diamond;
     [SerializeField] private Text text_badge;
 
+    public static PlayerUIManager Instance;
     //Test Reset
     [SerializeField] private Button ResetPlayerPref;
     [SerializeField] private Sprite[] img_rankSprite;
@@ -30,6 +32,7 @@ public class PlayerUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Instance = this;
         if (ResetPlayerPref != null)
             ResetPlayerPref.onClick.AddListener(ResetPlayerPrefs);
         sprite_avatars = Resources.LoadAll<Sprite>("profile_pictures");
@@ -41,7 +44,8 @@ public class PlayerUIManager : MonoBehaviour
         var name = (Player.Name == string.Empty)? Player.Uid : Player.Name;
         SetName(name);
         SetPlayerBadge(Player.Badge);
-        SetPlayerRank((int)Player.Rank);
+        var language = PlayerPrefs.GetInt("language");
+        SetLanguage((Language)language);
         SetAvatar(sprite_avatars[Player.Avatar]);
         //SetPlayerDiamond(Player.Diamond);
     }
@@ -60,4 +64,19 @@ public class PlayerUIManager : MonoBehaviour
     }
     public void SetPlayerDiamond(int value) => text_diamond.text = value.ToString();
     public void SetPlayerBadge(int value) => text_badge.text = value.ToString();
+
+    public void SetLanguage(Language language)
+    {
+        if (language == Language.English)
+            text_rankText = LoadTextFile("Localization/English/rank_names");
+        else if(language == Language.Chinese)
+            text_rankText = LoadTextFile("Localization/Chinese/rank_names");
+        SetPlayerRank((int)Player.Rank);
+    }
+
+    private string[] LoadTextFile(string path)
+    {
+        TextAsset textAsset= Resources.Load<TextAsset>(path);
+        return textAsset.text.Split('\n');
+    }
 }

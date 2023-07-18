@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: "006\u53EA\u653B\u51FB\u5766\u514B"
   m_EditorClassIdentifier: 
   bulletName: "\u54CD\u5C3E\u86C7\u2160\u53F7"
+  bulletName_eng: Rattlesnake I
   speed: 10
   damage: 50
   maxDistance: 15

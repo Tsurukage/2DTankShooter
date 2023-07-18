@@ -12,6 +12,7 @@ public class WindowUISetting : MonoBehaviour
     [SerializeField] private Button btn_exitLevel;
     [SerializeField] private Button btn_closeWin;
     [SerializeField] private Button btn_privacy;
+    [SerializeField] private Button btn_language;
     void Awake()
     {
         Top_UI_Manager.OnSettingClick += SetObjectActive;
@@ -46,6 +47,14 @@ public class WindowUISetting : MonoBehaviour
             btn_exitLevel.onClick.AddListener(ExitLevel);
         if (btn_privacy != null)
             btn_privacy.onClick.AddListener(OpenAgreement);
+        if (btn_language != null)
+            btn_language.onClick.AddListener(OpenLanguageSetting);
+    }
+
+    private void OpenLanguageSetting()
+    {
+        SoundEffectManager.Instance.OnClickSound();
+        WindowLanguageSetting.OpenDisplay();
     }
 
     private void OpenAgreement()

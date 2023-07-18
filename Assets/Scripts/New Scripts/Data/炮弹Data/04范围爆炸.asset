@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: "04\u8303\u56F4\u7206\u70B8"
   m_EditorClassIdentifier: 
   bulletName: "\u706B\u795E\u2160\u53F7"
+  bulletName_eng: Vulcan I
   speed: 10
   damage: 75
   maxDistance: 15

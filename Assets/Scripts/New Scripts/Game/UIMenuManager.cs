@@ -9,7 +9,7 @@ public class UIMenuManager : MonoBehaviour
     [SerializeField] private GameObject _stageChancePanel;
     [SerializeField] private GameObject _stageClearPanel;
     [SerializeField] private GameObject _stageFailPanel;
-    [SerializeField] private GameObject _windowSetting;
+    //[SerializeField] private GameObject _windowSetting;
     [SerializeField] private Transform _uiCanvas;
 
     void Start()
@@ -30,7 +30,7 @@ public class UIMenuManager : MonoBehaviour
         var panelFail = failPanel.GetComponent<StageFailManager>();
         panelFail.OnSetActive(GameManager.Instance.State);
 
-        var windowSetting = Instantiate(_windowSetting, _uiCanvas);
-        windowSetting.SetActive(false);
+        //var windowSetting = Instantiate(_windowSetting, _uiCanvas);
+        //windowSetting.SetActive(false);
     }
 }

@@ -41,11 +41,11 @@ public class SpawnButtonManager : MonoBehaviour
     }
     public void Spawn()
     {
-        var bullets = new List<(Sprite icon, Sprite gradeBase ,int index, string name)>();
+        var bullets = new List<(Sprite icon, Sprite gradeBase ,int index, string name, string name_eng)>();
         for (int i = 0; i < _bulletData.Count; i++)
         {
             var blt = _bulletData[i];
-            bullets.Add((blt.bulletIcon, blt.bulletGradeBase, blt.damage, blt.bulletName));
+            bullets.Add((blt.bulletIcon, blt.bulletGradeBase, blt.damage, blt.bulletName, blt.bulletName_eng));
         }
         ClearChild();
         for (int i = 0; i < bullets.Count; i++)
@@ -55,7 +55,16 @@ public class SpawnButtonManager : MonoBehaviour
             var obj = Instantiate(_prefabBtn, _prefabParent);
             obj.GetComponent<Image>().sprite = bullet.gradeBase;
             var text = obj.GetComponentInChildren<Text>();
-            text.text = bullet.name;
+            var language = (Language)PlayerPrefs.GetInt("language");
+            switch (language)
+            {
+                case Language.Chinese:
+                    text.text = bullet.name;
+                    break;
+                case Language.English:
+                    text.text = bullet.name_eng;
+                    break;
+            }
             var childObj = obj.transform.Find("img_bullet");
             childObj.GetComponent<Image>().sprite = bullet.icon;
             obj.onClick.AddListener(() => ChangeBulletData(index));

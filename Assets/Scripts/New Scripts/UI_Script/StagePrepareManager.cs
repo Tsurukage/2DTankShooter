@@ -36,10 +36,11 @@ public class StagePrepareManager : MonoBehaviour
         {
             var rank = (int)Player.Rank;
             img_rank.sprite = sprite_rank[rank];
-            text_rank.text = string_rank[rank];
+            var language = PlayerPrefs.GetInt("language");
+            SetLanguage((Language)language);
         }
         _timerText = GameObject.Find("text_cd").GetComponent<Text>();
-        _stageName.text = SimpleGame.Instance.Stage_Name;
+        _stageName.text = SimpleGame.Stage_Name;
         _time = SimpleGame.Instance.CountDown;
         _timerText.text = _time.ToString();
         _adsButton.onClick.AddListener(OnAdsClickAction);
@@ -100,5 +101,19 @@ public class StagePrepareManager : MonoBehaviour
             GameManager.Instance.UpdateGameState(GameState.StageInProgress);
         }
         _timerText.text = _time.ToString("0");
+    }
+    public void SetLanguage(Language language)
+    {
+        if (language == Language.English)
+            string_rank = LoadTextFile("Localization/English/rank_names");
+        else if (language == Language.Chinese)
+            string_rank = LoadTextFile("Localization/Chinese/rank_names");
+        text_rank.text = string_rank[(int)Player.Rank];
+    }
+
+    private string[] LoadTextFile(string path)
+    {
+        TextAsset textAsset = Resources.Load<TextAsset>(path);
+        return textAsset.text.Split('\n');
     }
 }

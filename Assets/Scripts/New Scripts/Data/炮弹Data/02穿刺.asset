@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: "02\u7A7F\u523A"
   m_EditorClassIdentifier: 
   bulletName: "\u98CE\u795E\u2160\u53F7"
+  bulletName_eng: Aeolus I
   speed: 15
   damage: 50
   maxDistance: 15

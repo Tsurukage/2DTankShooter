@@ -33,7 +33,7 @@ public class Game : MonoBehaviour
         var player = SaveManager.LoadPlayer()?.ToModel();
         if (player == null)
         {
-            player = new Player("p001", "�߉�", "China", 0, 0, 0, 0);
+            player = new Player("T201", "Player", "China", 0, 0, 0, 0);
             World.SetPlayer(player);
             Save();
         }

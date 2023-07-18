@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: "003\u505C\u6B62\u5766\u514B"
   m_EditorClassIdentifier: 
   bulletName: "\u96F7\u795E\u2160\u53F7"
+  bulletName_eng: Thor I
   speed: 10
   damage: 50
   maxDistance: 15

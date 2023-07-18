@@ -370,6 +370,7 @@ GameObject:
   - component: {fileID: 1904730260447066926}
   - component: {fileID: 1904730260447066924}
   - component: {fileID: 1904730260447066927}
+  - component: {fileID: 9128610416103330942}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -439,6 +440,46 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u786E\u8BA4"
+--- !u!114 &9128610416103330942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904730260447066929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:0db1b23ca2ddae0458132dc1288532c8
+    m_TableEntryReference:
+      m_KeyId: 1157169725440
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1904730260447066927}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1904730260528512772
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,6 +568,7 @@ GameObject:
   - component: {fileID: 1904730260858039163}
   - component: {fileID: 1904730260858039161}
   - component: {fileID: 1904730260858039160}
+  - component: {fileID: 1058353612534017112}
   m_Layer: 5
   m_Name: text_instruct
   m_TagString: Untagged
@@ -596,6 +638,46 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u83B7\u53D6\u8865\u7ED9\uFF1F"
+--- !u!114 &1058353612534017112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904730260858039162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:0db1b23ca2ddae0458132dc1288532c8
+    m_TableEntryReference:
+      m_KeyId: 13341081600
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1904730260858039160}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1904730260913240016
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,27 +1051,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c2be64ccf1e0ca140b41684abad5c212, type: 3}
   - {fileID: 21300000, guid: 6e03e732b2412a348a8d77a1373a26f1, type: 3}
   - {fileID: 21300000, guid: 50f58c0ea75e00047aefbac85c7a53dd, type: 3}
-  string_rank:
-  - "\u9752\u94DCI"
-  - "\u9752\u94DCII"
-  - "\u9752\u94DCIII"
-  - "\u767D\u94F6I"
-  - "\u767D\u94F6II"
-  - "\u767D\u94F6III"
-  - "\u9EC4\u91D1I"
-  - "\u9EC4\u91D1II"
-  - "\u9EC4\u91D1III"
-  - "\u767D\u91D1I"
-  - "\u767D\u91D1II"
-  - "\u767D\u91D1III"
-  - "\u94BB\u77F3I"
-  - "\u94BB\u9970II"
-  - "\u94BB\u77F3III"
-  - "\u5927\u5E08I"
-  - "\u5927\u5E08II"
-  - "\u5927\u5E08III"
-  - "\u7279\u7EA7\u5927\u5E08"
-  - "\u4F20\u5947"
+  string_rank: []
 --- !u!114 &8409098005512721879
 MonoBehaviour:
   m_ObjectHideFlags: 0

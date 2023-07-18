@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: "07\u53CC\u53D1"
   m_EditorClassIdentifier: 
   bulletName: "\u53CC\u53D1\u70AE\u5F39"
+  bulletName_eng: Twinfire
   speed: 10
   damage: 50
   maxDistance: 15
