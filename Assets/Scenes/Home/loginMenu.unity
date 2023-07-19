@@ -667,4 +667,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3663ad15437df4592e6ba38f10b70c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsTapTapPlatform: 1
+  IsTapTapPlatform: 0

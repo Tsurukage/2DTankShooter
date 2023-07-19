@@ -20,6 +20,7 @@ public class TapTapLogin : MonoBehaviour
         else
         {
             //This is for other authentication
+            LoadToGame();
         }
     }
 
