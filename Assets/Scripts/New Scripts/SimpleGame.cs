@@ -64,7 +64,8 @@ public class SimpleGame : MonoBehaviour
                 stage_names = LoadTextFile("Localization/English/stage_names");
                 break;
         }
-        Stage_Name = stage_names[(int)Player.Rank];
+        if (Stage_Name != null)
+            Stage_Name = stage_names[(int)Player.Rank];
     }
     private string[] LoadTextFile(string path)
     {
