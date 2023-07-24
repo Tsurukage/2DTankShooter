@@ -4724,48 +4724,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
-      propertyPath: _enemyComp.Array.data[1]._name
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
-      propertyPath: _enemyComp.Array.data[2]._name
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
       propertyPath: _enemyComp.Array.data[0]._enemySO
       value: 
-      objectReference: {fileID: 11400000, guid: c6ea7aca2cbafa54793ee61deca78a55, type: 2}
-    - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
-      propertyPath: _enemyComp.Array.data[1]._enemySO
-      value: 
-      objectReference: {fileID: 11400000, guid: 074eb7a82dc72fe4c9095604053a8cbc, type: 2}
-    - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
-      propertyPath: _enemyComp.Array.data[2]._enemySO
-      value: 
-      objectReference: {fileID: 11400000, guid: 203c8233d43189e48baf1a3cfff76765, type: 2}
+      objectReference: {fileID: 11400000, guid: 32169e206c7922b40a2719c15f46e0f0, type: 2}
     - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
       propertyPath: _enemyComp.Array.data[0].position.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
       propertyPath: _enemyComp.Array.data[0].position.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
-      propertyPath: _enemyComp.Array.data[1].position.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
-      propertyPath: _enemyComp.Array.data[1].position.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
-      propertyPath: _enemyComp.Array.data[2].position.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
-      propertyPath: _enemyComp.Array.data[2].position.y
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8742343534464491820, guid: 907d728fc0f5d044b991f86ade4ea0b5, type: 3}
       propertyPath: _enemyCounterComp.Array.data[0]._name
