@@ -35,7 +35,9 @@ public class SectionPlayerRank : MonoBehaviour
         SetAvatar(avatar);
         SetGender(gender);
         SetNationality(nationality);
-        SetRank(rank);
+        //SetRank(rank);
+        var language = PlayerPrefs.GetInt("language");
+        SetLanguage((Language)language);
         SetBadge(badge);
     }
     void SetRankPos(int rankPos) => text_rankPos.text = rankPos.ToString();
@@ -72,4 +74,18 @@ public class SectionPlayerRank : MonoBehaviour
         text_rankName.text = rank_name[rank];
     }
     void SetBadge(int badge) => text_badge.text = badge.ToString();
+    public void SetLanguage(Language language)
+    {
+        if (language == Language.English)
+            rank_name = LoadTextFile("Localization/English/rank_names");
+        else if (language == Language.Chinese)
+            rank_name = LoadTextFile("Localization/Chinese/rank_names");
+        SetRank((int)Player.Rank);
+    }
+
+    private string[] LoadTextFile(string path)
+    {
+        TextAsset textAsset = Resources.Load<TextAsset>(path);
+        return textAsset.text.Split('\n');
+    }
 }

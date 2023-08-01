@@ -55,4 +55,18 @@ public class Prefab_NPC : MonoBehaviour
         text_level.text = rank_name[rank];
     }
     public void SetBadge(int badge) => text_badge.text = badge.ToString();
+    public void SetLanguage(Language language, int rank = 0)
+    {
+        if (language == Language.English)
+            rank_name = LoadTextFile("Localization/English/rank_names");
+        else if (language == Language.Chinese)
+            rank_name = LoadTextFile("Localization/Chinese/rank_names");
+        SetRank(rank);
+    }
+
+    private string[] LoadTextFile(string path)
+    {
+        TextAsset textAsset = Resources.Load<TextAsset>(path);
+        return textAsset.text.Split('\n');
+    }
 }

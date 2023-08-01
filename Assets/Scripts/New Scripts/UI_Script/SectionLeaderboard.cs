@@ -68,7 +68,9 @@ public class SectionLeaderboard : MonoBehaviour
             var objPrefab = npcObj.GetComponent<Prefab_NPC>();
             objPrefab.SetName(npc.Name);
             objPrefab.SetNation(npc.Nationality);
-            objPrefab.SetRank((int)npc.Rank);
+            //objPrefab.SetRank((int)npc.Rank);
+            var language = PlayerPrefs.GetInt("language");
+            objPrefab.SetLanguage((Language)language, (int)npc.Rank); //切换NPC的段位和段位名称语言
             objPrefab.SetIcon(npc.Avatar);
             objPrefab.SetBadge(npc.Badge);
             objPrefab.SetGender((int)npc.Gender);
