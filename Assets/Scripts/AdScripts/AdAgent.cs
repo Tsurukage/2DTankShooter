@@ -73,7 +73,7 @@ public class AdAgent : MonoBehaviour
 #if UNITY_EDITOR
                 successAction(true);
 #else
-                PangleAdController.RequestDirectRewardedAd((success, message) => successAction(success));
+                //PangleAdController.RequestDirectRewardedAd((success, message) => successAction(success));
 #endif
                 break;
         }
