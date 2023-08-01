@@ -16,9 +16,9 @@ public class AdAgent : MonoBehaviour
     [SerializeField]private Button _requestButton;
 #endif
     [SerializeField]private bool _unityAdTestMode;
-    [SerializeField]private AdType _adType = AdType.Pangle;
-    private PangleAdController _pangleAdController;
-    private PangleAdController PangleAdController => _pangleAdController ??= new PangleAdController();
+    [SerializeField]private AdType _adType = AdType.Unity;
+    //private PangleAdController _pangleAdController;
+    //private PangleAdController PangleAdController => _pangleAdController ??= new PangleAdController();
     private UnityAdController _unityAdController;
     private UnityAdController UnityAdController => _unityAdController ??= new UnityAdController();
 
@@ -124,26 +124,26 @@ public class AdAgent : MonoBehaviour
 
     private void InitPangleAd()
     {
-        if(PangleAdController.IsInit) return;
+//        if(PangleAdController.IsInit) return;
 
-        PangleAdController.Init((success, message) =>
-        {
-            Print(message);
-        });
-#if UNITY_EDITOR
-        if(_requestButton != null)
-        {
-            _requestButton.onClick.AddListener(() =>
-            {
-                Print("加载中...");
-                PangleAdController.RequestDirectRewardedAd((success, message) =>
-                {
-                    Print(message);
-                    if (success) return;
-                    Print(message);
-                });
-            });
-        }
-#endif
+//        PangleAdController.Init((success, message) =>
+//        {
+//            Print(message);
+//        });
+//#if UNITY_EDITOR
+//        if(_requestButton != null)
+//        {
+//            _requestButton.onClick.AddListener(() =>
+//            {
+//                Print("加载中...");
+//                PangleAdController.RequestDirectRewardedAd((success, message) =>
+//                {
+//                    Print(message);
+//                    if (success) return;
+//                    Print(message);
+//                });
+//            });
+//        }
+//#endif
     }
 }
